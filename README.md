@@ -1,4 +1,5 @@
-# Grupo_14_nombreADefinir
+# Grupo_14_Escabia3
+
 Proyecto Integrador del Grupo N# 14
 
 1) ¿Qué productos o servicios brindará nuestro sitio? 
