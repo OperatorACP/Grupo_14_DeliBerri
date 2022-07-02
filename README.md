@@ -46,3 +46,7 @@ Soy Nicky, tengo 25 años, soy de Perú y vivo en Buenos Aires desde hace 4 año
 **Axel Caceres Prayones**
 
 Buenas! Soy Axel, tengo 24 años y soy de Paraguay, actualmente estoy viajando y trabajando en E.E.U.U  y en Paraguay por temporada. Este curso de Full stack es mi primer acercamiento al mundo de la programación formalmente. Estudio Relaciones Internacionales en la Universidad Americana y actualmente estoy trabajando en la compra/venta de armas de fuego. Hice tiempo en el ejercito y tambien trabajé como analista financiero para varias empresas multinacionales como Nestle, NBS, etc. Me apasiona el gaming, mantenerme en buena forma, el armamento y el hardware de la computación. También soy adicto al café.
+
+**Facundo Maseras**
+
+Hola! Soy Facundo, de Argentina, vivo en Tigre con mi familia. Tengo 22 años, estudio arquitectura y actualmente estoy trabajando en un estudio. Este ultimo me empezo a interesar todo el mundo de la tecnologia, y por eso es que inicie este curso de Full Stack, el cual es mi primera experiencia en el mundo de la programacion. Soy una persona muy inquieta, me gusta el futbol, y soy gran fanatico del asado.
