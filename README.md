@@ -28,7 +28,7 @@ Nuestra oferta al publico se ajustará de acuerdo a la demanda del mismo cliente
 ## INTEGRANTES
 **Nicolle Bardales**
 
-Soy Nicky, tengo 25 años, soy de Perú y vivo en Buenos Aires desde hace 4 años. Este curso de Full stack es mi primer acercamiento al mundo de la programación. Estudio Diseño de Imagen y Sonido en la FADU y trabajo full time en un equipo de Data Migration para implementaciones de sistemas (en este trabajo comencé a interesarme en la programación). Me gusta todo lo relacionado a lo digital y a las artes. Vivo gracias al café.
+Soy Nicky, tengo 25 años, soy de Perú y vivo en Buenos Aires desde hace 4 años. Este curso de Full stack es mi primer acercamiento al mundo de la programación. Estudio Diseño de Imagen y Sonido en la FADU y trabajo full time en un equipo de Data Migration para implementaciones de sistemas. Me gusta todo lo relacionado a lo digital y a las artes. Vivo gracias al café.
 
 **Axel Caceres Prayones**
 
