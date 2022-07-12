@@ -18,11 +18,11 @@ Nuestra oferta al publico se ajustará de acuerdo a la demanda del mismo cliente
 
 ## REFERENCIAS RELEVANTES
 
- - [Cheersapp](https://www.cheersapp.com.ar)
- - [Full Escabio](https://www.fullescabio.com)
- - [La bodega del mundo](https://www.labodegadelmundo.com.py)
- - [Outlet de Bebidas](https://www.outletdebebidas.com.ar)
- - [Craft Society](https://www.craftsociety.com.ar/)
+ - [Cheersapp](https://www.cheersapp.com.ar) - Footer, categorías de bebidas, recetario.
+ - [Full Escabio](https://www.fullescabio.com) - Paleta de colores, distribución, header, footer, categoría de bebidas + fotografía.
+ - [La bodega del mundo](https://www.labodegadelmundo.com.py) - Color de fondo, distribución, pocos elementos.
+ - [Outlet de Bebidas](https://www.outletdebebidas.com.ar) - Home, Header.
+ - [Craft Society](https://www.craftsociety.com.ar/) - Carrito, Header.
  - [Mikkeller](https://shop.mikkeller.dk/) - Estética, paleta de colores, gráficos, logo.
 
 ## INTEGRANTES
