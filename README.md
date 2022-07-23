@@ -52,4 +52,4 @@ Holaaa! Ignacio Ipiñazar por acá, vivo en Buenos Aires y tengo 32 años. Estud
 descubrí la programación de casualidad; cuando esta misma agencia decidió armar un sistema de reservas. Fui el nexo con la agencia de programación
 y trabajaba a la par de los desarrolladores. A partir de ahí siempre pensé en una carrera en esto, nunca hice cursos extensos pero si cortos de front,
 como HTML, CSS y un poco de JavaScript. Me gusta mucho viajar y el fútbol! 
->>>>>>> 70c6d611698c6de3fb5cde04bdc7578dcdafc477
+
