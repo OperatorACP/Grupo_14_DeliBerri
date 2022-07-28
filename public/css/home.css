@@ -33,7 +33,7 @@ a{
 	justify-content:space-between;
 	align-items: center;
 	padding: 0 24px;
-	background-color: black;
+	background: url('/img/header-background.jpg');
 }
 
 .nav-menu{
