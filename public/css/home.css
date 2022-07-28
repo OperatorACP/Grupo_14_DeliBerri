@@ -30,7 +30,7 @@ a{
 .navbar{
 	min-height: 70px;
 	display: flex;
-	justify-content:space-between;
+	
 	align-items: center;
 	padding: 0 24px;
 	background: url('/img/header-background.jpg');
@@ -154,6 +154,15 @@ line-height: 25px;
 }
 
 
+.round {
+    
+    border-radius: 15px;
+    border: 1px #000 solid;
+    padding: 5px 5px 5px 25px;
+    top: 0;
+    left: 0;
+    z-index: 5;
+}
 
 
 
@@ -224,7 +233,7 @@ ul{
 	text-align: center;
 	line-height: 40px;
 	border-radius: 50%;
-	color: #ffffff;
+	color: #e91e63;
 	transition: all 0.5s ease;
 }
 .footer-col .social-links a:hover{
@@ -232,9 +241,18 @@ ul{
 	background-color: #ffffff;
 }
 
+
 .fa-search{
 	color: #e91e63;
-}
+	padding: 2px;
+	line-height: 25px;
+	}
+	
+	.fa-search:hover{
+		color: #ffffff;
+		font-weight: 900;
+		font-size: 20px;
+	}
 
 /*MEDIA QUERIES*/
 
@@ -285,6 +303,7 @@ ul{
     width: 50%;
     margin-bottom: 30px;
 }
+
 }
 @media(max-width: 574px){
   .footer-col{
