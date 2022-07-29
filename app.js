@@ -23,6 +23,15 @@ app.get('/cerveza', (req,res)=>{
     res.sendFile(__dirname + '/views/cerveza.html');
 });
 
+app.get('/vino', (req,res)=>{
+    res.sendFile(__dirname + '/views/vino.html');
+});
+
+app.get('/licores', (req,res)=>{
+    res.sendFile(__dirname + '/views/licores.html');
+});
+
+
 
 
 
