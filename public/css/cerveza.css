@@ -1,0 +1,122 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+body{
+	line-height: 1.5;
+	font-family: 'Poppins', sans-serif;
+	background-color: #24262b;
+}
+*{
+	padding:0;
+	margin:0;
+	box-sizing: border-box;
+}
+
+.background{
+    background-color: #24262b;
+    margin: auto;
+}
+
+.conteiner{
+	display: block;
+	width: 90vw;
+	margin: auto;
+	margin-top: 1rem;
+	margin-bottom: 3rem;
+	background-color: #808287;
+	padding: 1rem 1rem;
+	box-shadow: 10px 15px 27px 8px rgba(168,168,168,0.4);
+	border-radius: 0.5rem;
+}
+
+.conteiner .title{
+	font-size: 2rem;
+	color: #444;
+	margin-bottom: 1rem;
+	text-transform: uppercase;
+	text-align: center;
+}
+
+.conteiner .products-conteiner{
+	display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    list-style: none;
+    flex-wrap: wrap;
+}
+
+.conteiner .products-conteiner .product{
+	display: block;
+	height: 30rem;
+	max-width: 40vh;
+	text-align: center;
+	padding: 2rem 2rem;
+	background: #fff;
+	box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.2);
+	outline: .1rem solid #ccc;
+	outline-offset: -1.5rem;
+	cursor: pointer;
+	border-radius: 10px;
+	margin-bottom: 2rem;
+}
+
+.conteiner .products-conteiner .product:hover{
+	outline: .2rem solid #e91e63;
+	outline-offset: 0;
+	transition: all 250ms;
+	transform: scale(1.05);
+}
+
+.conteiner .products-conteiner .product img{
+	max-width: 30vh;
+}
+
+.conteiner .products-conteiner .product h3{
+	padding: 5rem 0;
+	font-size: 2rem;
+	color: #444;
+}
+
+.conteiner .products-conteiner .product:hover h3{
+	color: #e91e63;
+}
+
+.conteiner .products-conteiner .product .price{
+	font-size: 1.5rem;
+	color: #444;
+}
+
+.conteiner .products-conteiner .product .product-name{
+	font-size: 1rem;
+	color: #444;
+	margin-top: -4rem;
+	margin-bottom: -4rem;
+}
+
+.buttons a{
+	flex: 1 1 16rem;
+	height: 3rem;
+	padding: 0.5rem;
+	font-size: 0.75rem;
+	color: #444;
+	border: 0.2rem solid #e91e63;
+	border-radius: 10px;
+}
+
+.cart{
+	background: rgba(233, 30, 99, 0.1);
+	transition: 150ms;
+}
+.cart:hover{
+	background: rgba(233, 30, 99, 0.1);
+	color: black;
+	font-size: 1.1rem;
+}
+
+.buy{
+	background: rgba(233, 30, 99, 0.1);
+	transition: 150ms;
+}
+.buy:hover{
+	background: rgba(233, 30, 99, 0.1);
+	color: black;
+	font-size: 1.1rem;
+}
