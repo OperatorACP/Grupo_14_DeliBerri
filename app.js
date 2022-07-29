@@ -19,6 +19,9 @@ app.get('/register', (req,res)=>{
     res.sendFile(__dirname + '/views/register.html');
 });
 
+app.get('/cerveza', (req,res)=>{
+    res.sendFile(__dirname + '/views/cerveza.html');
+});
 
 
 
