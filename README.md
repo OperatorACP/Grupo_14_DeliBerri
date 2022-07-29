@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 # MercadoLiebre
 Trabajo Practico DH
 =======
