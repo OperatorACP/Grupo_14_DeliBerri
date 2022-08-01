@@ -25,21 +25,21 @@
     border-radius: 5px;
     border: none;
     font-weight: bold;
-    transition: all 0.5s;
+    transition: all 150ms;
     outline: none;
     box-sizing: border-box;
-  
+    vertical-align: bottom;
 }
 
 .control:hover{
-    border: 1px solid  #e91e63;
+    border: 3px solid  #e91e63;
 }
 
 .control-formulario {
     margin-bottom: 30px;
-    padding: 5;
+    padding: 5px;
     width: 50%;
-    
+    color: white;
 }
 
 .control-formulario label {
@@ -52,9 +52,18 @@
 .control-formulario-checkbox{
     margin-bottom: 50px;
     text-align: left;
+    color: white;
 }
 
+.checkbox-label{
+    padding-left: 15px;
+    text-indent: -15px;
+}
 
+label input[type='checkbox']{
+ margin-top: 20px;
+ 
+}
 
 .boton-formulario {
     font-size: 18px;
