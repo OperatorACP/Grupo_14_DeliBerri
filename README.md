@@ -53,3 +53,7 @@ descubrí la programación de casualidad; cuando esta misma agencia decidió arm
 y trabajaba a la par de los desarrolladores. A partir de ahí siempre pensé en una carrera en esto, nunca hice cursos extensos pero si cortos de front,
 como HTML, CSS y un poco de JavaScript. Me gusta mucho viajar y el fútbol! 
 
+## LINK A TRELLO
+
+https://trello.com/b/H4MSGktX/grupo-14-proyecto-integrador
+
