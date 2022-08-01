@@ -82,3 +82,22 @@
 .boton-formulario-envio:hover {
     background-color: #e91e63;
 }
+
+.otras-opciones{
+    display: block;
+	transition: 0.7s ease;
+	font-size: 14px;
+	text-transform: capitalize;
+	color: #ffffff;
+	text-decoration: none;
+	font-weight: 300;
+	color: #bbbbbb;
+	transition: all 0.3s ease;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.otras-opciones:hover{
+	color: #ffffff;
+	font-weight: 900;
+}
