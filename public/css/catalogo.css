@@ -91,6 +91,65 @@ body{
 	margin-bottom: -4rem;
 }
 
+
+/* PROMO */
+
+.promo{
+	color: #e91e63;
+}
+
+.desierto25{
+	height: 50%;
+}
+
+.red-bull-24{
+	height: 50%;
+}
+
+.coca-cola{
+	height: 50%;
+}
+
+.imperial-cream-scout-beer{
+	height: 50%;
+}
+
+/* LICORES */
+
+.baileys{
+	height: 57%;
+}
+
+.fernet-branca{
+	height: 63%;
+}
+
+.blue-coracao{
+	height: 63%;
+}
+
+.jagermeister{
+	height: 63%;
+}
+
+/* VINOS */
+
+.cafayate{
+	height: 60%;
+}
+
+.calia-tinto{
+	height: 66%;
+}
+
+.calia-blanco{
+	height: 66%;
+}
+
+.trumpeter{
+	height: 60%;
+}
+
 .buttons a{
 	flex: 1 1 16rem;
 	height: 3rem;

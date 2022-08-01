@@ -262,7 +262,10 @@ ul{
 @media(max-width: 767px){
 
 .hamburger{
-	display: block;
+	flex-direction: column;
+	display: flex;
+	flex-wrap: nowrap;
+	margin: 0 0 40px 20px;
   }
 .hamburger.activate.bar:nth-child(2){
     opacity: 0;
@@ -293,6 +296,11 @@ ul{
  .nav-menu.active{
 	left: 0;
  }
+.nav-branding{
+	flex-direction: column;
+    display: flex;
+margin: 0 0 0 20px;
+}
 
 }
 

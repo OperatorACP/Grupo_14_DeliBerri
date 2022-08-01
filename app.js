@@ -11,20 +11,20 @@ app.get('/', (req,res)=>{
     res.sendFile(__dirname + '/views/index.html');
 });
 
-app.get('/login', (req,res)=>{
-    res.sendFile(__dirname + '/views/login.html');
+app.get('/promociones', (req,res)=>{
+    res.sendFile(__dirname + '/views/promociones.html');
 });
 
 app.get('/register', (req,res)=>{
     res.sendFile(__dirname + '/views/register.html');
 });
 
-app.get('/cerveza', (req,res)=>{
-    res.sendFile(__dirname + '/views/cerveza.html');
+app.get('/cervezas', (req,res)=>{
+    res.sendFile(__dirname + '/views/cervezas.html');
 });
 
-app.get('/vino', (req,res)=>{
-    res.sendFile(__dirname + '/views/vino.html');
+app.get('/vinos', (req,res)=>{
+    res.sendFile(__dirname + '/views/vinos.html');
 });
 
 app.get('/licores', (req,res)=>{

@@ -8,13 +8,19 @@
 }
 
 
-
 .control {
     width: 100%;
     padding: 8px;
     border-radius: 5px;
     border: none;
     font-weight: bold;
+    transition: all 0.5s;
+    outline: none;
+    box-sizing: border-box;
+}
+
+.control:hover{
+    border: 1px solid  #e91e63;
 }
 
 .control-formulario {
@@ -38,7 +44,7 @@
     padding: 8px 10px;
     border-radius: 5px;
     border: lightgrey;
-    
+    outline: none;
 }
 
 .boton-formulario:hover {
