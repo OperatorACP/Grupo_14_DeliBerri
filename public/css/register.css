@@ -1,3 +1,11 @@
+.formulario{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 50px;
+}
+
+
 
 .create-form {
     background-color: #24262b;
@@ -5,6 +13,9 @@
     width: 100vw;
     padding: 50px;
     border: #e91e63;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
 }
 
 
@@ -17,6 +28,7 @@
     transition: all 0.5s;
     outline: none;
     box-sizing: border-box;
+  
 }
 
 .control:hover{
@@ -26,12 +38,20 @@
 .control-formulario {
     margin-bottom: 30px;
     padding: 5;
+    width: 50%;
+    
 }
 
 .control-formulario label {
     display: block;
     margin-bottom: 15px;
     font-weight: bold;
+}
+
+
+.control-formulario-checkbox{
+    margin-bottom: 50px;
+    text-align: left;
 }
 
 
@@ -45,6 +65,7 @@
     border-radius: 5px;
     border: lightgrey;
     outline: none;
+    width: 50%;
 }
 
 .boton-formulario:hover {

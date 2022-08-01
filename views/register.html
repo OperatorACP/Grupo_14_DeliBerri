@@ -51,7 +51,7 @@
     </nav>
 </header>
 
-<form action="/registroUsuario" method="POST" class="create-form" for="guardar">
+<form class="formulario" action="/registroUsuario" method="POST" class="create-form" for="guardar">
 
     <div class="control-formulario">
         <label>Datos de Usuario</label>
@@ -81,17 +81,18 @@
 
     <div class="control-formulario">
         <label>Perfil de usuario</label>
-        <div class="italic">Comprador <input type="radio" name="perfil" value="Comprar" class="control"></div>
+       
      
     </div>
 
-    <div class="control-formulario">
+    <div class="control-formulario-checkbox">
+        
         <label>Categorías de interés</label>
-        <div>Cervezas<input type="checkbox" name="categoria" value="electro" class="control"></div>
-        <div>Licores<input type="checkbox" name="categoria" value="moda" class="control"></div>
-        <div>Vinos<input type="checkbox" name="categoria" value="Hogar" class="control"></div>
-        <div>Bebidas No Alcoholicas<input type="checkbox" name="categoria" value="Juguetería" class="control"></div>
-        <div>Otros<input type="checkbox" name="categoria" value="Vida sana" class="control"></div>
+        <input  type="checkbox" name="categoria" value="electro" class="control">Cervezas</input>
+        <input type="checkbox" name="categoria" value="moda" class="control">Licores</input>
+        <input type="checkbox" name="categoria" value="Hogar" class="control">Vinos</input>
+        <input type="checkbox" name="categoria" value="Juguetería" class="control">Bebidas No Alcoholicas</input>
+        <input type="checkbox" name="categoria" value="Vida sana" class="control">Otros</input>
     </div>
 
     <div class="control-formulario">
