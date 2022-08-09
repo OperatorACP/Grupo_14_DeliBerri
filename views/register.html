@@ -24,22 +24,28 @@
 		<nav>
 		   <ul class="nav-menu">
 			 <li class="nav-item">
-				 <a href="/promociones" class="nav-link">Promociones <i href="/promociones" class="fas fa-dollar-sign"></i></a>
+				 <a href="/promociones" class="nav-link">Promociones</a>
+                 <a href="/promociones"><i class="fas fa-dollar-sign"></i></a>
 			 </li>
 			 <li class="nav-item">
-				 <a href="/vinos" class="nav-link">Vinos<i href="/vinos" class="fas fa-wine-bottle"></i></a>
+				 <a href="/vinos" class="nav-link">Vinos </a>
+                 <a href='/vinos'><i class="fas fa-wine-bottle"></i></a>
 			 </li>
 			 <li class="nav-item">
-				  <a href="/cervezas" class="nav-link">Cervezas <i href="/cervezas" class="fas fa-beer"></i></a>
+				  <a href="/cervezas" class="nav-link">Cervezas </a>
+                  <a href='/cervezas'><i class="fas fa-beer"></i></a>
 			 </li>
 			<li class="nav-item">
-				  <a href="/licores" class="nav-link">Licores<i href="/licores"  class="fas fa-glass-martini"></i></a>
+				  <a href="/licores" class="nav-link">Licores</a>
+                  <a href="/licores"> <i class="fas fa-glass-martini"></i></a>
 			 </li>
 			 <li class="nav-item">
-				  <a href="/login" class="nav-link">Ingresá / Registrate<i href="/login" class="fas fa-sign-in-alt"></i></a>
+				  <a href="/login" class="nav-link">Ingresá / Registrate</a>
+                  <a href='/login'><i class="fas fa-sign-in-alt"></i></a>
 			 </li>
 			 <li class="nav-item">
-				 <a href="/carrito" class="nav-link">Carrito de Compras<i href= '/carito' class="fas fa-shopping-cart"></i></a>
+				 <a href="/carrito" class="nav-link">Carrito de Compras</a>
+                 <a href='/carrito'><i class="fas fa-shopping-cart"></i></a>
 			 </li>
 		   </ul>  
 		</nav>
@@ -51,7 +57,7 @@
 	
 	</header>
 
-<form class="formulario" action="/registroUsuario" method="POST" class="create-form" for="guardar">
+<form class="formulario" action="/registroUsuario" method="POST">
 
     <div class="control-formulario">
         <label>Datos de Usuario</label>
@@ -88,16 +94,16 @@
 
     <div class="control-formulario-checkbox">
        
-        <label class="checkbox-label"><input type="checkbox" name="categoria" value="electro" class="control">Cervezas</input></label>
-        <label class="checkbox-label"><input type="checkbox" name="categoria" value="moda" class="control">Licores</input></label>
-        <label class="checkbox-label"><input type="checkbox" name="categoria" value="Hogar" class="control">Vinos</input></label>
-        <label class="checkbox-label"><input type="checkbox" name="categoria" value="Juguetería" class="control">Bebidas No Alcoholicas</input></label>
-        <label class="checkbox-label"><input type="checkbox" name="categoria" value="Vida sana" class="control">Otros</input></label>
+        <label class="checkbox-label"><input type="checkbox" name="categoria" value="electro" class="control">Cervezas</label>
+        <label class="checkbox-label"><input type="checkbox" name="categoria" value="moda" class="control">Licores</label>
+        <label class="checkbox-label"><input type="checkbox" name="categoria" value="Hogar" class="control">Vinos</label>
+        <label class="checkbox-label"><input type="checkbox" name="categoria" value="Juguetería" class="control">Bebidas No Alcoholicas</label>
+        <label class="checkbox-label"><input type="checkbox" name="categoria" value="Vida sana" class="control">Otros</label>
     </div>
 
     <div class="control-formulario">
         <label>Imagen de perfil</label>
-        <input type="file" name="avatar" accept="jpg, jpeg" class="control">
+        <input type="file" name="avatar" accept="jpg/jpeg" class="control">
     </div>
 
 
@@ -152,8 +158,10 @@
                 <small class="copyright">&copy; Copyright 2022, DeliBerri Corporation</small>
             </div>
         </div>
-     <li class="copyright">Tel. +54 123-4567-890 (Matriz)</li>
-     <li class="copyright">cs@deliberri.com.ar</li>
+        <ul>
+            <li class="copyright">Tel. +54 123-4567-890 (Matriz)</li>
+            <li class="copyright">cs@deliberri.com.ar</li>
+          </ul> 
     </div>
 </footer>
 
