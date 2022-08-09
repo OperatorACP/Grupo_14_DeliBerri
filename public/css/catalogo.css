@@ -180,3 +180,20 @@ body{
 	color: black;
 	font-size: 1.1rem;
 }
+
+
+@media (min-width: 768px){
+
+	.conteiner{
+		display: block;
+		width: 90vw;
+		margin: auto;
+		margin-top: 1rem;
+		margin-bottom: 3rem;
+		background-color: #808287;
+		padding: 1rem 1rem;
+		box-shadow: 10px 15px 27px 8px rgba(168,168,168,0.4);
+		border-radius: 0.5rem;
+	}
+
+}
