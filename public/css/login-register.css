@@ -55,6 +55,30 @@
     color: white;
 }
 
+.edicion-productos{
+    margin-bottom: 30px;
+    padding: 5px;
+    width: 50%;
+    color: white;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+}
+
+
+.control-producto{
+    margin-bottom: 30px;
+    padding: 5px;
+    width: 50%;
+    color: white;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+   
+}
+
 .checkbox-label{
     padding-left: 15px;
     text-indent: -15px;

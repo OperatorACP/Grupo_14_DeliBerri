@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>DeliBerri</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+</head>
+<body>
+
+    <%-include('../partials/header')%>
+
+<form class="formulario" action="/registroUsuario" method="POST">
+
+    <div class="control-formulario">
+        <label>Datos de Usuario</label>
+        <input type="text" name="nombre" class="control" placeholder="Nombre y apellido" required>
+    </div>
+
+    <div class="control-formulario">
+        <input type="text" name="usuario" class="control" placeholder="Nombre de usuario" required>
+    </div>
+    
+    <div class="control-formulario">
+        <input type="password" name="password" placeholder="Contraseña" class="control" required>
+    </div>
+
+    <div class="control-formulario">
+        <input type="password" name="password" placeholder="Confirmar contraseña" class="control" required>
+    </div>
+
+    <div class="control-formulario">
+        <label>Fecha de nacimiento</label>
+        <input type="date" name="fecha" class="control" required>
+    </div>
+
+    <div class="control-formulario">
+        <label>Lugar de Domicilio</label>
+        <input type="text" name="domicilio" class="control" placeholder="Domicilio" required>
+    </div>
+
+    <div class="control-formulario">
+    
+        <label>Categorías de interés</label>
+     
+    </div>
+
+    <div class="control-formulario-checkbox">
+       
+        <label class="checkbox-label"><input type="checkbox" name="categoria" value="electro" class="control">Cervezas</label>
+        <label class="checkbox-label"><input type="checkbox" name="categoria" value="moda" class="control">Licores</label>
+        <label class="checkbox-label"><input type="checkbox" name="categoria" value="Hogar" class="control">Vinos</label>
+        <label class="checkbox-label"><input type="checkbox" name="categoria" value="Juguetería" class="control">Bebidas No Alcoholicas</label>
+        <label class="checkbox-label"><input type="checkbox" name="categoria" value="Vida sana" class="control">Otros</label>
+    </div>
+
+    <div class="control-formulario">
+        <label>Imagen de perfil</label>
+        <input type="file" name="avatar" accept="jpg/jpeg" class="control">
+    </div>
+
+
+
+    <button type="submit" class="boton-formulario" name="guardar">Guardar</button>
+    <button type="reset" class="boton-formulario">Borrar</button>
+
+    <div class="control-formulario">
+        <a href="/login" class="otras-opciones">¿Ya tienes una cuenta? Ingresá!</a>
+    </div>
+
+</form>
+
+<%-include('../partials/footer')%>
+
+</body>
+</html>

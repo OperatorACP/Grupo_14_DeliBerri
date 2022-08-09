@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>DeliBerri</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+</head>
+<body>
+
+    <%-include('../partials/header')%>
+
+<form action="/registroUsuario" method="POST" class="formulario" >
+
+    <div class="control-formulario">
+        <label class="control-formulario-titulo">Bienvenido a Deliberri!</label>
+        <input type="text" name="usuario" class="control" placeholder="Nombre de usuario" required>
+    </div>
+    
+    <div class="control-formulario">
+        <input type="password" name="password" placeholder="Contraseña" class="control" required>
+    </div>
+
+    <button type="submit" class="boton-formulario" name="ingresar">Ingresar</button>
+
+    <div class="control-formulario">
+        <a href="#" class="otras-opciones">¿Olvidaste tu contraseña?</a>
+    </div>
+
+    <div class="control-formulario">
+        <a href="/register" class="otras-opciones">Registrate!</a>
+    </div>
+
+</form>
+
+<%-include('../partials/footer')%>
+
+</body>
+</html>
