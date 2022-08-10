@@ -86,6 +86,8 @@ a{
 color: #e91e63;
 padding: 2px;
 line-height: 25px;
+position: absolute;
+margin-left: 5px;
 }
 
 .fa-dollar-sign:hover{
@@ -98,6 +100,8 @@ line-height: 25px;
 color: #e91e63;
 padding: 2px;
 line-height: 25px;
+position: absolute;
+margin-left: 5px;
 }
 
 .fa-wine-bottle:hover{
@@ -110,6 +114,8 @@ line-height: 25px;
 color: #e91e63;
 padding: 2px;
 line-height: 25px;
+position: absolute;
+margin-left: 5px;
 }
 
 .fa-beer:hover{
@@ -122,6 +128,8 @@ line-height: 25px;
 color: #e91e63;
 padding: 2px;
 line-height: 25px;
+position: absolute;
+margin-left: 5px;
 }
 
 .fa-glass-martini:hover{
@@ -134,6 +142,8 @@ line-height: 25px;
 color: #e91e63;
 padding: 2px;
 line-height: 25px;
+position: absolute;
+margin-left: 5px;
 }
 
 .fa-sign-in-alt:hover{
@@ -146,6 +156,8 @@ line-height: 25px;
 color: #e91e63;
 padding: 2px;
 line-height: 25px;
+position: absolute;
+margin-left: 5px;
 }
 
 .fa-shopping-cart:hover{
