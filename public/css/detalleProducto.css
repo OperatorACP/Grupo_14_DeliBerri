@@ -33,8 +33,7 @@ body{
 
 .conteiner-detalleProducto .products-conteiner-detalleProducto .product-detalleProducto{
 	display: block;
-	height: 30rem;
-	max-width: 40vh;
+	max-width: 80vh;
 	text-align: center;
 	padding: 2rem 2rem;
 	background: #fff;
@@ -43,13 +42,16 @@ body{
 	outline-offset: -1.5rem;
 	cursor: pointer;
 	border-radius: 10px;
-	margin-bottom: 2rem;
 }
 
 
 .product-image-detalleProducto{
-    height: 30rem;
+    height: 80vw;
     border-radius: 10px;
+}
+
+.product-imageconteiner-detalleProducto{
+	width: 100%;
 }
 
 .conteiner-detalleProducto .products-conteiner-detalleProducto .product-detalleProducto .price-detalleProducto{
