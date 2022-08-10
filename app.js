@@ -41,9 +41,16 @@ app.get('/carrito', (req,res)=>{
     res.render(__dirname + '/views/products/carrito.ejs');
 });
 
+app.get('/detalleProducto', (req,res)=>{
+    res.render(__dirname + '/views/products/detalleProducto.ejs');
+});
+
+
 app.get('/edicionProductos', (req,res)=>{
     res.render(__dirname + '/views/products/edicionProductos.ejs');
 });
+
+
 
 
 
