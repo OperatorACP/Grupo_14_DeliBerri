@@ -1,13 +1,32 @@
 const express = require('express');
 const app = express();
+const router = express.Router()
+const path = require('path')
+const port = process.env.PORT || 3000;
+
+module.exports= router;
+
 app.set('view engine' , 'ejs')
 app.set('views' , './views')
 app.use(express.static('public'));
-const port = process.env.PORT || 3000;
-
 app.listen(port,  () => {
     console.log("Servidor corriendo en el puerto " + port);
 });
+
+
+
+let users = path.join('data', 'users.json');
+let usersDirection = path.dirname(users);
+let productos = path.join('data','productos.json');
+let productosDirection = path.dirname(productos);
+
+
+
+router.get('/productos', (req, res) => {
+    res.send(req.query)
+  })
+
+
 
 app.get('/', (req,res)=>{
     res.render(__dirname + '/views/index.ejs');
