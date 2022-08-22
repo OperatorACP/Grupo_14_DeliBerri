@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>DeliBerri</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+</head>
+<body>
+
+    <%-include('../partials/header')%>
+
+<form class="formulario" action="/registroUsuario" method="POST">
+
+    <div class="control-formulario">
+        <label>Datos del Producto</label>
+        
+        <input type="text" name="nombre" class="control" placeholder="Nombre" required>
+    </div>
+    
+    <div class="control-formulario">
+    
+        <label>Tipo De Bebida</label>
+     
+    </div>
+<div>
+    <select name="marca" id="marca">
+        <optgroup label="Cervezas">
+          <option value="Heineken">Heineken</option>
+          <option value="Andes">Andes</option>
+          <option value="Imperial">Imperial</option>
+        </optgroup>
+        <optgroup label="Vinos">
+          <option value="Cafayate">Cafayate</option>
+          <option value="Calia">Calia</option>
+          <option value="Trumpeter">Trumpeter</option>
+        </optgroup>
+        <optgroup label="Licores">
+            <option value="baileys">Baileys</option>
+            <option value="fernet">Fernet</option>
+            <option value="bols">Bols</option>
+            <option value="jagermeister">Jagermeister</option>
+          </optgroup>
+      </select>
+</div> 
+
+<input type="text" name="nombre" class="control" placeholder="Modelo" required>
+</div>
+<input type="text" name="nombre" class="control" placeholder="Descripción" required>
+</div>
+<input type="text" name="nombre" class="control" placeholder="Contenido" required>
+</div>
+<input type="text" name="nombre" class="control" placeholder="Unidades" required>
+</div>
+<div class="control-formulario">
+        <input type="text" name="usuario" class="control" placeholder="Precio" required>
+    </div>
+
+    <div class="control-formulario">
+        <label for="cars">Descuento Otorgado</label>
+  <select name="descuento" id="descuento">
+    <optgroup label="Descuento">
+      <option value= 25>25%</option>
+      <option value= 50>50%</option>
+      <option value= 75>75%</option>
+      <option value= 100>100%</option>
+    </optgroup>
+  </select>
+    </div>
+
+    <div class="control-formulario">
+        <label>Imagen de perfil</label>
+        <input type="file" name="avatar" accept="jpg/jpeg" class="control">
+    </div>
+
+
+
+    <button type="submit" class="boton-formulario" name="guardar">Guardar</button>
+    <button type="reset" class="boton-formulario">Cancelar</button>
+
+</form>
+
+<%-include('../partials/footer')%>
+
+</body>
+</html>
