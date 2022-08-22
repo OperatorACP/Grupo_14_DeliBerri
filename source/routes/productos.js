@@ -1,4 +1,6 @@
 const router = require("../app");
+const express = require('express');
+const router = express.Router();
 const productController = require("../controllers/productController");
 
 router.get('/', function(req,res,next){
