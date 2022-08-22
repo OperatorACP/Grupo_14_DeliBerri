@@ -3,25 +3,18 @@ const app = express();
 const router = express.Router()
 const path = require('path')
 const port = process.env.PORT || 3000;
-
-module.exports= router;
+const publicPath = path.join(__dirname, '../public');
+let users = path.join('database', 'users.json');
+let productos = path.join('database','productos.json');
 
 app.set('view engine' , 'ejs')
 app.set('views' , './views')
-app.use(express.static('public'));
+app.use(express.static(publicPath));
 app.use(express.urlencoded({ extended: false }));
 
 app.listen(port,  () => {
     console.log("Servidor corriendo en el puerto " + port);
 });
-
-
-
-let users = path.join('database', 'users.json');
-let productos = path.join('database','productos.json');
-
-
-
 
 router.get('/productos', (req, res) => {
     res.send(req.query)
