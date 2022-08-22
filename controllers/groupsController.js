@@ -57,11 +57,11 @@ module.exports = {
     },
     search: (req, res) => {
         
-        // Traigo todos los grupos
+        // Traigo todos los productos
 
-        // Filtro los grupos
+        // Filtro los productos
 
-        // Envío los grupos y lo que busco el usuario a la vista
+        // Envío los productos y lo que busca el usuario a la vista
 
         res.render('productos/search', {});
     },
