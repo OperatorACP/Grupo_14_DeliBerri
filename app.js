@@ -9,24 +9,23 @@ module.exports= router;
 app.set('view engine' , 'ejs')
 app.set('views' , './views')
 app.use(express.static('public'));
+app.use(express.urlencoded({ extended: false }));
+
 app.listen(port,  () => {
     console.log("Servidor corriendo en el puerto " + port);
 });
 
 
 
-let users = path.join('data', 'users.json');
-let usersDirection = path.dirname(users);
-let productos = path.join('data','productos.json');
-let productosDirection = path.dirname(productos);
+let users = path.join('database', 'users.json');
+let productos = path.join('database','productos.json');
+
 
 
 
 router.get('/productos', (req, res) => {
     res.send(req.query)
   })
-
-
 
 app.get('/', (req,res)=>{
     res.render(__dirname + '/views/index.ejs');
@@ -58,6 +57,10 @@ app.get('/register', (req,res)=>{
 
 app.get('/carrito', (req,res)=>{
     res.render(__dirname + '/views/products/carrito.ejs');
+});
+
+app.get('/users', (req,res)=>{
+    res.render(__dirname + '/data/users.ejs');
 });
 
 app.get('/detalleProducto', (req,res)=>{
