@@ -1,4 +1,4 @@
-const router = require("../app");
+const router = require("../../app");
 const express = require('express');
 const router = express.Router();
 const productController = require("../controllers/productController");
@@ -10,7 +10,7 @@ router.get('/', function(req,res,next){
 
 router.get('/', productController.register)
 
-router.get('/create', productController.login);
+router.get('/create', productController.store);
 
 router.get('/:id', productController.list);
 

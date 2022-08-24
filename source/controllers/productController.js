@@ -1,7 +1,6 @@
 const fs = require('fs');
 const path = require('path');
 const jsonTable = require('../database/jsonTable');
-
 const productosModel = jsonTable('productos');
 
 module.exports = {
