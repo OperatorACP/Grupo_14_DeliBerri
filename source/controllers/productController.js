@@ -11,15 +11,16 @@ module.exports = {
         res.render('productos/index',  { productos });
     },
     create: (req, res) => {
-        res.render('productos/create');
+        // res.render('productos/create');
+        res.render(path.resolve(__dirname, '../views/products/create.ejs'));
     },
     store: (req, res) => {
+        console.log("hola")
+        // let group = req.body;
 
-        let group = req.body;
+        // groupId = productosModel.create(group);
 
-        groupId = productosModel.create(group);
-
-        res.redirect('/productos/' + groupId);
+        // res.redirect('/productos/' + groupId);
     },
     edit: (req, res) => {
         let group = productosModel.find(req.params.id)

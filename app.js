@@ -8,6 +8,7 @@ const publicPath = path.join(__dirname, './public');
 let users = path.join('database', 'users.json');
 let productos = path.join('database','productos.json');
 
+
 app.set('view engine' , 'ejs')
 app.set('views', path.join(__dirname, './source/views'));
 app.use(express.static(publicPath));
@@ -71,10 +72,13 @@ app.get('/edicionProductos', (req,res)=>{
 });
 
 
-app.get('/create', (req,res)=>{
-    res.render(__dirname + '/source/views/products/create.ejs');
-});
+// app.get('/create', (req,res)=>{
+//     res.render(__dirname + '/source/views/products/create.ejs');
+// });
 
+const rutasProductos = require('./source/routes/productos.routes');
+
+app.use(rutasProductos)
 
 
 
