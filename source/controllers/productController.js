@@ -3,6 +3,7 @@ const path = require('path');
 const jsonTable = require('../database/jsonTable');
 const productosModel = jsonTable('productos');
 
+
 module.exports = {
     index: (req, res) => {
 
@@ -15,12 +16,36 @@ module.exports = {
         res.render(path.resolve(__dirname, '../views/products/create.ejs'));
     },
     store: (req, res) => {
-        console.log("hola")
-        // let group = req.body;
+        
+        groupId = productosModel.create({
+            nombre: req.body.nombre,
+            marca: req.body.marca,
+            descripcion: req.body.descripcion,
+            tipo: req.body.tipo,    
+            contenido: req.body.contenido,
+            unidades: req.body.unidades,
+            precio: req.body.precio,
+            descuento: req.body.descuento,
+            //imagen:  req.files.imagen,
+        });
 
-        // groupId = productosModel.create(group);
 
-        // res.redirect('/productos/' + groupId);
+        const saveData = (groupId) =>{
+            const finished = (error) =>{
+                if(error){
+                    console.log(error)
+                    return;
+                }
+            }
+
+const jsonData = JSON.stringify(groupId, null, 2)
+fs.writeFile('./source/database/productos.json',jsonData,finished)
+
+        };
+
+        
+         res.redirect('/productos/' + groupId);
+
     },
     edit: (req, res) => {
         let group = productosModel.find(req.params.id)
