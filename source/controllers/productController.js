@@ -12,12 +12,12 @@ module.exports = {
         res.render('productos/index',  { productos });
     },
     create: (req, res) => {
-        // res.render('productos/create');
+        res.render('productos/create');
         res.render(path.resolve(__dirname, '../views/products/create.ejs'));
     },
     store: (req, res) => {
         
-        groupId = productosModel.create({
+        let groupId = productosModel.create({
             nombre: req.body.nombre,
             marca: req.body.marca,
             descripcion: req.body.descripcion,
@@ -29,22 +29,7 @@ module.exports = {
             //imagen:  req.files.imagen,
         });
 
-
-        const saveData = (groupId) =>{
-            const finished = (error) =>{
-                if(error){
-                    console.log(error)
-                    return;
-                }
-            }
-
-const jsonData = JSON.stringify(groupId, null, 2)
-fs.writeFile('./source/database/productos.json',jsonData,finished)
-
-        };
-
-        
-         res.redirect('/productos/' + groupId);
+    return res.send(groupId);
 
     },
     edit: (req, res) => {
