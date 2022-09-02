@@ -1,27 +1,19 @@
-// const router = require("../../app");
 const express = require('express');
 const router = express.Router();
 const productController = require("../controllers/productController");
 
-router.get('/', function(req,res,next){
-    res.send('Respond with a Resource');
-});
+router.get('/', productController.index); // /productos/ href
 
+router.get('/crear', productController.create); // /productos/crear href
 
-// router.get('/', productController.register)
+router.get('/detalle/:id', productController.show); // /productos/detalle/:id href
 
-router.get('/create', productController.create);
+router.get('/editar/:id', productController.edit); // /productos/editar/:id  href
 
-router.post('/create', productController.store);
+router.post('/guardar', productController.store); // /productos/guardar Multer action
 
-// router.get('/:id', productController.list);
+router.put('/:id', productController.update); // /productos/:id?m=PUT Multer action
 
-// router.post('/', productController.list);
-
-// router.get('/:id/edit', productController.list);
-
-// router.put('/:id', productController.list);
-
-// router.delete('/:id', productController.list);
+router.delete('/:id', productController.destroy); // /productos/:id?m=DELETE action
 
 module.exports= router;
