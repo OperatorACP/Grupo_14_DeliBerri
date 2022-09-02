@@ -9,11 +9,16 @@ module.exports = {
 
         let productos = productosModel.all()
 
-        res.render('productos/index',  { productos });
+        res.render('products/index',  { productos });
+    },
+    show: (req, res) => {
+        let all = productosModel.all()
+        let product = all.find(product => product.id == req.params.id)
+        return res.render('products/detail', { product });
     },
     create: (req, res) => {
-        res.render('productos/create');
-        res.render(path.resolve(__dirname, '../views/products/create.ejs'));
+        let categories = all.map(product => product.tipo).filter((element, index, array) => array.indexOf(element) !== index)
+        return res.render('products/create',{ categoires });
     },
     store: (req, res) => {
         
@@ -29,50 +34,36 @@ module.exports = {
             //imagen:  req.files.imagen,
         });
 
-    return res.send(groupId);
+    return res.redirect('/productos/detalle/'+groupId);
 
     },
     edit: (req, res) => {
-        let group = productosModel.find(req.params.id)
-        let categories = categoriesModel.all();
-
-        res.render('productos/edit', { group, categories });
+        let all = productosModel.all()
+        let product = all.find(product => product.id == req.params.id)
+        let categories = all.map(product => product.tipo).filter((element, index, array) => array.indexOf(element) !== index)
+        return res.render('products/edit', { product,catagories });
     },
     update: (req, res) => {
-        let group = req.body;
+        let producto = req.body;
 
-        group.id = req.params.id;
+        producto.id = req.params.id;
 
-        groupId = productosModel.update(group);
+        let productoId = productosModel.update(producto); // crear metodo en el JSONTable // Usando el map y writeFileSync
 
-        res.redirect('/productos/' + groupId)
-    },
-    show: (req, res) => {
-        let group = productosModel.find(req.params.id);
-
-        res.render('productos/detail', { group });
+        return res.redirect('/productos/detalle/' + producto.id)
     },
     destroy: (req, res) => {
 
-        let group = productosModel.find(req.params.id);
-        let imagePath = path.join(__dirname, '../public/img/' + group.image);
+       let all = productosModel.all()
+       let product = all.find(product => product.id == req.params.id)
+       let imagePath = path.join(__dirname, '../public/img/' + product.image);
         
-        productosModel.delete(req.params.id);
+        productosModel.delete(product.id); // crearla en el JSONTable // Usar filter y writeFileSync
 
         if (fs.existsSync(imagePath)) {
             fs.unlinkSync(imagePath)
         }
 
-        res.redirect('/productos')
-    },
-    search: (req, res) => {
-        
-        // Traigo todos los productos
-
-        // Filtro los productos
-
-        // Envío los productos y lo que busca el usuario a la vista
-
-        res.render('productos/search', {});
-    },
+        return res.redirect('/productos')
+    }
 }
