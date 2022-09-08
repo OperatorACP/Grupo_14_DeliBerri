@@ -46,3 +46,6 @@ server.get("/beers", (req, res) => {
 server.get("/spirits", (req, res) => {
   return res.render(join(__dirname, "/views/users/spirits.ejs"));
 });
+
+
+

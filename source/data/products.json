@@ -259,5 +259,17 @@
     "homeservice": "No",
     "image": "default.png",
     "sku": 3
+  },
+  {
+    "bebida": "Cerveza",
+    "marca": "Heineken",
+    "content": 550,
+    "units": 2,
+    "sale": 0,
+    "price": 250,
+    "description": "",
+    "homeservice": "Sí",
+    "image": "default.png",
+    "sku": 4
   }
 ]
