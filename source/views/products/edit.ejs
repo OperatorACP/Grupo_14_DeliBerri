@@ -14,7 +14,8 @@
    <nav>
       <a href="/productos/"> Volver</a>
    </nav>
-   <form action="/productos/guardar" method="post" enctype="multipart/form-data">
+   <form action="/productos/actualizar?m=PUT" method="post" enctype="multipart/form-data">
+      <input type="hidden" name="sku" value="<%= product.sku %>">
 
       <fieldset>
          <legend>Bebida</legend>
@@ -26,7 +27,7 @@
       </fieldset>
       <fieldset>
         <legend>Marca</legend>
-        <select name="marca" value="marca" id="marca">
+        <select name="marca" id="marca" value="<%= product.marca %>">
           <optgroup label="Cervezas">
             <option value="Heineken">Heineken</option>
             <option value="Andes">Andes</option>
@@ -47,15 +48,15 @@
       </fieldset>
       <fieldset>
          <legend>Contenido (ml)</legend>
-         <input type="text" name="content" id="content">
+         <input type="text" name="content" id="content" value="<%= product.content %>">
       </fieldset>
       <fieldset>
          <legend>Unidades</legend>
-         <input type="text" name="units" id="units">
+         <input type="text" name="units" id="units" value="<%= product.units %>">
       </fieldset>
      <fieldset>
       <legend>Descuento (%)</legend>
-      <select name="sale" value="sale" id="sale">
+      <select name="sale" value="sale" id="sale" value="<%= product.sale %>">
          <option value= 0>0</option>
          <option value= 25>25%</option>
          <option value= 50>50%</option>
@@ -64,17 +65,19 @@
    </fieldset>
    <fieldset>
     <legend>Precio ($)</legend>
-    <input type="text" name="price" id="price">
+    <input type="text" name="price" id="price" value="<%= product.price %>">
  </fieldset>
       <fieldset>
          <legend>Descripción del producto</legend>
-         <input type="text" name="description" id="description">
+         <input type="text" name="description" id="description" value="<%= product.description %>">
       </fieldset>
       <fieldset>
          <legend>A domicilio</legend>
-         <input type="radio" name="homeservice" id="home-service-yes" value="Sí">
+         <input type="radio" name="homeservice" id="home-service-yes" value="Sí" <%=product.homeservice=='Sí'
+         ? "checked" : "" %>>
          <label for="homeservice">Sí</label>
-         <input type="radio" name="homeservice" id="home-service-no" value="No">
+         <input type="radio" name="homeservice" id="home-service-no" value="No" <%=product.homeservice=='Sí'
+         ? "checked" : "" %>>
          <label for="homeservice">No</label>
       </fieldset>
       <fieldset>

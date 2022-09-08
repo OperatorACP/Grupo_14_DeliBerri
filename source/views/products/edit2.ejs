@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Edicion de Productos</title>
+</head>
+
+<%-include('../partials/header')%>
+
+<body>
+
+<form action="edicion-productos">
+
+    <div class="edicion-productos">
+    
+        <label>Edicion de Productos</label>
+     
+    </div>
+
+    <div class="edicion-productos">
+       
+    <label>Nombre<input type="text" name="categoria" value="cervezas" class="control-producto"></label>
+    <label>Descripción<input type="text" name="categoria" value="moda" class="control-producto"></label>
+
+    <div class="control-formulario">
+        <label>Imagen de perfil</label>
+        <input type="file" name="avatar" accept="jpg/jpeg" class="control"> 
+    </div>
+
+    <label>Categoría<input type="text" name="categoria" value="Juguetería" class="control-producto"></label>
+    <label>Colores<input type="text" name="categoria" value="Vida sana" class="control-producto"></label>
+    <label>Precios<input type="text" name="categoria" value="Vida sana" class="control-producto"></label>
+
+    </div>
+
+ 
+
+    <button type="submit" class="boton-formulario" name="guardar">Guardar</button>
+    <button type="reset" class="boton-formulario">Borrar</button>
+    
+</form>
+
+
+    
+</body>
+
+<%-include('../partials/footer')%>
+
+</html>

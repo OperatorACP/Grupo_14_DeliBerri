@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <%- include('../partials/head.ejs') %>
+      <title>Lista de productos</title>
+      <link rel="stylesheet" href="/css/list.css">
+</head>
+
+<body>
+   <header>
+
+   </header>
+
+   <main>
+      <% if (products.length> 0) { %>
+         <ul>
+            <% products.forEach(element=> { %>
+               <%- include('../partials/product.ejs',{element:element}) %>
+                  <% }) %>
+         </ul>
+         <% } else { %>
+            <h2>
+               No hay productos
+            </h2>
+            <% } %>
+               <nav>
+                  <a href="/productos/nuevo"> Nuevo</a>
+               </nav>
+   </main>
+
+   <footer>
+
+   </footer>
+
+</body>
+
+</html>

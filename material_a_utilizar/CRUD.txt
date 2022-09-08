@@ -1,0 +1,32 @@
+// CRUD
+
+// Create
+
+| HTTP | Acción | Metodo |
+---
+| GET | Mostramos el formulario de creación | register / create | href=/???/create
+---
+| POST | Guardamos los datos en el json | save / store | action=/???/save
+
+// Read
+
+| HTTP | Acción | Metodo |
+---
+| GET | Mostramos la lista de recursos (productos) | list / index | href=/???/
+---
+| GET | Mostramos un solo recurso (producto) | detail / show | href=/???/detail/:id
+
+// Update
+
+| HTTP | Acción | Metodo |
+---
+| GET | Mostramos el formulario de edición con los datos de un recurso | modify / edit |
+---
+| PUT | Actualizamos los datos de un solo recurso | update |
+
+// Delete
+
+| HTTP | Acción | Metodo |
+---
+| DELETE | Borrar un solo recurso | erase / destroy / remove |
+---

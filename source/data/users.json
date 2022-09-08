@@ -1,0 +1,20 @@
+[
+    {
+       "id":1,
+       "name":"Rosa",
+       "lastName":"Merinda",
+       "userAlias":"Rosita",
+       "eMail":"rosamerinda@gmail.com",
+       "password":"Rosa123",
+       "type":"regular"
+    },
+    {
+       "id":2,
+       "name":"Carlos",
+       "lastName":"Bottardo",
+       "userAlias":"Carlitos_Bot",
+       "eMail":"carlosbottardo@yahoo.com",
+       "password":"carlosElCapo33",
+       "type":"regular"
+    }
+ ]
