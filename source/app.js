@@ -17,35 +17,51 @@ server.use(methodOverride("m"));
 
 server.use(require("./routes/products.routes"));
 
-// ¿¿¿ ???
+// Ruta de Index
 
 server.get("/", (req, res) => {
   return res.render(join(__dirname, "/views/index.ejs"));
 });
+
+
+// Rutas de /views/products
+
+server.get("/productDetail", (req, res) => {
+  return res.render(join(__dirname, "/views/products/productDetail.ejs"));
+});
+server.get("/productCart", (req, res) => {
+  return res.render(join(__dirname, "/views/products/productCart.ejs"));
+});
+server.get("/sale", (req, res) => {
+  return res.render(join(__dirname, "/views/products/sale.ejs"));
+});
+server.get("/wines", (req, res) => {
+  return res.render(join(__dirname, "/views/products/wines.ejs"));
+});
+server.get("/beers", (req, res) => {
+  return res.render(join(__dirname, "/views/products/beers.ejs"));
+});
+server.get("/spirits", (req, res) => {
+  return res.render(join(__dirname, "/views/products/spirits.ejs"));
+});
+
+server.get("/create", (req, res) => {
+  return res.render(join(__dirname, "/views/products/create.ejs"));
+});
+
+server.get("/edit", (req, res) => {
+  return res.render(join(__dirname, "/views/products/edit.ejs"));
+});
+
+
+// Rutas de /views/users
+
+
 server.get("/register", (req, res) => {
   return res.render(join(__dirname, "/views/users/register.ejs"));
 });
 server.get("/login", (req, res) => {
   return res.render(join(__dirname, "/views/users/login.ejs"));
 });
-server.get("/productDetail", (req, res) => {
-  return res.render(join(__dirname, "/views/users/productDetail.ejs"));
-});
-server.get("/productCart", (req, res) => {
-  return res.render(join(__dirname, "/views/users/productCart.ejs"));
-});
-server.get("/sale", (req, res) => {
-  return res.render(join(__dirname, "/views/users/sale.ejs"));
-});
-server.get("/wines", (req, res) => {
-  return res.render(join(__dirname, "/views/users/wines.ejs"));
-});
-server.get("/beers", (req, res) => {
-  return res.render(join(__dirname, "/views/users/beers.ejs"));
-});
-server.get("/spirits", (req, res) => {
-  return res.render(join(__dirname, "/views/users/spirits.ejs"));
-});
-
 
 
