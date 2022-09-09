@@ -1,4 +1,4 @@
-# Proyecto Integrador del Grupo N 14 - Delibirri**
+# Proyecto Integrador del Grupo N 14 - Delibirri
 
 **¿Qué productos o servicios brindará nuestro sitio?**
 
@@ -10,7 +10,7 @@ Esta apuntado al consumidor que disfrute de bebidas alcohólicas o que desee obs
 
 **¿Cómo ajustaremos nuestra oferta a ese público?**
 
-Nuestra oferta al publico se ajustará de acuerdo a la demanda del mismo cliente ya que contaremos con una amplia selección de bebidas alcoholicas.
+Nuestra oferta al publico se ajustará de acuerdo a la demanda del mismo cliente ya que contaremos con una amplia selección de bebidas alcohólicas.
 
 ## REFERENCIAS RELEVANTES
 
