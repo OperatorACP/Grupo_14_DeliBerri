@@ -12,7 +12,7 @@
 
     <%-include('../partials/header')%>
 
-<form class="formulario" action="/registroUsuario" method="POST">
+<form class="formulario" href="/register" method="POST">
 
     <div class="control-formulario">
         <label>Datos de Usuario</label>
@@ -71,7 +71,7 @@
     <button type="reset" class="boton-formulario">Borrar</button>
 
     <div class="control-formulario">
-        <a href="/login" class="otras-opciones">¿Ya tienes una cuenta? Ingresá!</a>
+        <a href="source/views/users/login.ejs" class="otras-opciones">¿Ya tienes una cuenta? Ingresá!</a>
     </div>
 
 </form>
