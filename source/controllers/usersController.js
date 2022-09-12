@@ -3,7 +3,7 @@ const { userInfo } = require('os');
 const path = require('path');
 const User = require('../models/user')
 const {validationResult} = require('express-validator')
-
+const bcryptjs = require('bcryptjs')
 
 const userController = {
   register : (req, res) => {
@@ -20,9 +20,15 @@ if (resultValidation.errors.length > 0) {
   });
 
 }
-req.body.avatar = req.file? req.file.filename : null
 
-  User.create(req.body)
+ let userToCreate = {
+ ...req.body,
+password: bcryptjs.hashSync(req.body.password, 10),
+ avatar: req.file? req.file.filename : null
+ }
+ delete userToCreate.confirm_password
+ User.create(userToCreate);
+
 return res.redirect('/login')
 
   },

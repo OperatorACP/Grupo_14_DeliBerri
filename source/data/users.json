@@ -7,20 +7,7 @@
         "email": "rosamerinda@gmail.com",
         "password": "Rosa123",
         "type": "regular"
-    },
-    {
-        "id": 2,
-        "name": "Carlos",
-        "lastName": "Bottardo",
-        "userAlias": "Carlitos_Bot",
-        "email": "carlosbottardo@yahoo.com",
-        "password": "carlosElCapo33",
-        "type": "regular"
-    },
-    {
-        "id": 3,
-        "name": "Axel",
-        "email": "loquita123@gmail.com"
     }
-  
+    
+    
 ]
