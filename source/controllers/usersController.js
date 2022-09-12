@@ -29,6 +29,7 @@ password: bcryptjs.hashSync(req.body.password, 10),
  delete userToCreate.confirm_password
  User.create(userToCreate);
 
+ 
 return res.redirect('/login')
 
   },
