@@ -12,7 +12,7 @@
 
     <%-include('../partials/header')%>
 
-<form class="formulario" href="/register" method="POST">
+<form class="formulario" method="POST" enctype="multipart/form-data">
 
     <div class="control-formulario">
         <label>Datos de Usuario</label>
@@ -53,21 +53,21 @@
 
     <div class="control-formulario-checkbox">
        
-        <label class="checkbox-label"><input type="checkbox" name="categoria" value="electro" class="control">Cervezas</label>
-        <label class="checkbox-label"><input type="checkbox" name="categoria" value="moda" class="control">Licores</label>
-        <label class="checkbox-label"><input type="checkbox" name="categoria" value="Hogar" class="control">Vinos</label>
-        <label class="checkbox-label"><input type="checkbox" name="categoria" value="Juguetería" class="control">Bebidas No Alcoholicas</label>
-        <label class="checkbox-label"><input type="checkbox" name="categoria" value="Vida sana" class="control">Otros</label>
+        <label class="checkbox-label"><input type="checkbox" name="categoria" value="Cervezas" class="control">Cervezas</label>
+        <label class="checkbox-label"><input type="checkbox" name="categoria" value="Licores" class="control">Licores</label>
+        <label class="checkbox-label"><input type="checkbox" name="categoria" value="Vinos" class="control">Vinos</label>
+        <label class="checkbox-label"><input type="checkbox" name="categoria" value="Bebidas No Alcoholicas" class="control">Bebidas No Alcoholicas</label>
+        <label class="checkbox-label"><input type="checkbox" name="categoria" value="Otros" class="control">Otros</label>
     </div>
 
-    <div class="control-formulario">
+     <div class="control-formulario">
         <label>Imagen de perfil</label>
         <input type="file" name="avatar" accept="jpg/jpeg" class="control">
-    </div>
+    </div>  
 
 
 
-    <button type="submit" class="boton-formulario" name="guardar">Guardar</button>
+    <button type="submit" class="boton-formulario">Guardar</button>
     <button type="reset" class="boton-formulario">Borrar</button>
 
     <div class="control-formulario">

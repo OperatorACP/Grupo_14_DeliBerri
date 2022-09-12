@@ -16,6 +16,7 @@ server.use(express.urlencoded({ extended: true }));
 server.use(methodOverride("m"));
 
 server.use(require("./routes/products.routes"));
+server.use(require("./routes/users.routes"));
 
 // Ruta de Index
 
