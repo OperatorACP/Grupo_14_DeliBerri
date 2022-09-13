@@ -1,13 +1,19 @@
 [
     {
         "id": 1,
-        "name": "Rosa",
-        "lastName": "Merinda",
-        "userAlias": "Rosita",
-        "email": "rosamerinda@gmail.com",
-        "password": "Rosa123",
-        "type": "regular"
+        "nombre": "Jose",
+        "apellido": "Molinas",
+        "usuario": "JM097",
+        "email": "josemolinas97@gmail.com",
+        "password": "$2a$10$lEBG8BUboZJkmdtj.9YRbu559ehUs2xM6Wksjlj3QI.7GOm440RIK",
+        "fecha": "1980-11-04",
+        "lugar": "Colombia",
+        "categoriaDeInteres": [
+            "Cervezas",
+            "Licores",
+            "Vinos"
+        ],
+        "avatar": "1663030831703_img.jpg"
     }
-    
-    
+   
 ]

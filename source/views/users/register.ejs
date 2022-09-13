@@ -46,8 +46,22 @@
 
     <div class="control-formulario">
         <label>Lugar de Nacimiento</label>
-        <input type="text" name="lugar" class="control" placeholder="Pais" required>
     </div>
+
+    <div>
+    <select name="pais" value="pais" id="pais" class="control"  placeholder="pais" required>
+        <optgroup label="Pais">
+          <option value="Colombia">Colombia</option>
+          <option value="Paraguay">Paraguay</option>
+          <option value="Brazil">Brazil</option>
+          <option value="Venezuela">Venezuela</option>
+          <option value="Chile">Chile</option>
+          <option value="Perú">Perú</option>
+          <option value="Bolivia">Bolivia</option>
+          <option value="Uruguay">Uruguay</option>
+          <option value="Otros">Otros</option>
+       </optgroup></select>
+</div>
 
     <div class="control-formulario">
     
@@ -81,7 +95,7 @@ function registroUsuarioExitoso() {
 </script>
 
     <div class="control-formulario">
-        <a href="source/views/users/login.ejs" class="otras-opciones">¿Ya tienes una cuenta? Ingresá!</a>
+        <a href="/login" class="otras-opciones">¿Ya tienes una cuenta? Ingresá!</a>
     </div>
 
 </form>

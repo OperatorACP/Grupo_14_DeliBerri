@@ -21,20 +21,53 @@ if (resultValidation.errors.length > 0) {
 
 }
 
+let userInDB = User.findByField('email', req.body.email);
+
+if(userInDB){
+  return res.render('/register', {
+  errors: {
+    email:{
+      msg: 'Este email ya esta registrado'
+    }
+  },
+    oldData : req.body
+  });
+}
+
+
  let userToCreate = {
  ...req.body,
 password: bcryptjs.hashSync(req.body.password, 10),
  avatar: req.file? req.file.filename : null
  }
- delete userToCreate.confirm_password
- User.create(userToCreate);
 
+ delete userToCreate.confirm_password
  
+ let userCreated = User.create(userToCreate);
+
 return res.redirect('/login')
 
   },
   login: (req, res) => {
     return res.render('users/login')
+  },
+
+  loginProcess: (req,res) => {
+    let userToLogin = User.findByField('email', req.body.email)
+
+   if(userToLogin){
+return res.send(userToLogin)
+
+   }
+
+   return res.render('users/login', {
+    errors: {
+      email: {
+        msg: 'No se encuentra este email en nuestra base de datos'
+      }
+    }
+   })
+
   },
 
   profile: (req, res) => {

@@ -12,11 +12,18 @@
 
     <%-include('../partials/header')%>
 
-<form action="/registroUsuario" method="POST" class="formulario" >
+<form method="POST" class="formulario">
 
     <div class="control-formulario">
         <label class="control-formulario-titulo">Bienvenido a Deliberri!</label>
-        <input type="text" name="usuario" class="control" placeholder="Nombre de usuario" required>
+        <input type="email" name="email" class="control" placeholder="Direccion de Correo Electronico" required>
+
+<% if (locals.error && errors.email) { %>
+<div class="text-danger">
+    <%= errors.email.msg %>
+</div>
+<% } %>
+
     </div>
     
     <div class="control-formulario">
