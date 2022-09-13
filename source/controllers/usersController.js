@@ -34,7 +34,6 @@ if(userInDB){
   });
 }
 
-
  let userToCreate = {
  ...req.body,
 password: bcryptjs.hashSync(req.body.password, 10),
@@ -56,20 +55,28 @@ return res.redirect('/login')
     let userToLogin = User.findByField('email', req.body.email)
 
    if(userToLogin){
-return res.send(userToLogin)
+    let isThePasswordOk = bcryptjs.compareSync(req.body.password, userToLogin.password)
+    if(isThePasswordOk){
+          return res.send('Ok, puedes ingresar')
+       }
+        else return res.render('users/login', {
+        errors: {
+          email: {
+            msg: 'Las credenciales son invalidas'
+          }
+        }
+       })
+   };
 
-   }
-
-   return res.render('users/login', {
-    errors: {
-      email: {
-        msg: 'No se encuentra este email en nuestra base de datos'
-      }
-    }
-   })
+  //  return res.render('users/login', {
+  //   errors: {
+  //     email: {
+  //       msg: 'No se encuentra este email en nuestra base de datos'
+  //     }
+  //   }
+  //  })
 
   },
-
   profile: (req, res) => {
     return res.render() //Falta crear vista de perfil
   }
