@@ -1,9 +1,26 @@
 const express = require("express");
+const session = require("express-session");
+const cookies = require("cookie-parser");
 const { join } = require("path");
 const methodOverride = require("method-override");
+const userLoggedMiddleware = require("./middlewares/userLoggedMiddleware");
+
 const server = express();
+
 const { port, start } = require("./modules/server");
 server.listen(port, start());
+
+server.use(
+  session({
+    secret: "Shh, it's a secret!",
+    resave: false,
+    saveUninitialized: false,
+  })
+);
+
+server.use(cookies());
+
+server.use(userLoggedMiddleware);
 
 server.set("views", join(__dirname, "./views"));
 server.set("view engine", "ejs");
@@ -23,7 +40,6 @@ server.use(require("./routes/users.routes"));
 server.get("/", (req, res) => {
   return res.render(join(__dirname, "/views/index.ejs"));
 });
-
 
 // Rutas de /views/products
 
@@ -54,9 +70,7 @@ server.get("/edit", (req, res) => {
   return res.render(join(__dirname, "/views/products/edit.ejs"));
 });
 
-
 // Rutas de /views/users
-
 
 server.get("/register", (req, res) => {
   return res.render(join(__dirname, "/views/users/register.ejs"));
@@ -64,5 +78,3 @@ server.get("/register", (req, res) => {
 server.get("/login", (req, res) => {
   return res.render(join(__dirname, "/views/users/login.ejs"));
 });
-
-

@@ -1,13 +1,8 @@
 <!DOCTYPE html>
    <html lang="en">
 <head> 
-    <title>Creá una oferta de servicio</title>
-   <meta charset="utf-8">
-   <meta name="viewport" content="width=device-width, initial-scale=1">
-   <link rel="stylesheet" href="css/main.css">
-   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-   <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
-    
+    <title>Creá una oferta de producto</title>
+    <%-include('../partials/head')%>
 </head>
 
 <body>
@@ -26,6 +21,8 @@
             <option value="Cerveza">Cerveza</option>
             <option value="Vino">Vino</option>
             <option value="Licor">Licor</option>
+            <option value="Fernet">Fernet</option>
+            <option value="Jagermeister">Jagermeister</option>
           </select>
       </fieldset>
       <fieldset>
@@ -42,12 +39,17 @@
             <option value="Trumpeter">Trumpeter</option>
           </optgroup>
           <optgroup label="Licores">
-              <option value="baileys">Baileys</option>
-              <option value="fernet">Fernet</option>
-              <option value="bols">Bols</option>
-              <option value="jagermeister">Jagermeister</option>
+              <option value="Baileys">Baileys</option>
+              <option value="Bols">Bols</option>
             </optgroup>
+            <optgroup label="Nada">
+               <option value=""></option>
+             </optgroup>
         </select>
+      </fieldset>
+      <fieldset>
+         <legend>Descripción del producto</legend>
+         <input type="text" name="description" id="description">
       </fieldset>
       <fieldset>
          <legend>Contenido (ml)</legend>
@@ -71,10 +73,6 @@
     <input type="text" name="price" id="price">
  </fieldset>
       <fieldset>
-         <legend>Descripción del producto</legend>
-         <input type="text" name="description" id="description">
-      </fieldset>
-      <fieldset>
          <legend>A domicilio</legend>
          <input type="radio" name="homeservice" id="home-service-yes" value="Sí">
          <label for="homeservice">Sí</label>
@@ -87,16 +85,8 @@
         <label for="image">Subir imagen</label>
      </fieldset>
 
-      <button onclick="registroProductoExitoso()" type="submit"> Guardar</button>
+      <button type="submit"> Guardar</button>
       <button type="reset">Cancelar</button>
-
-      <script>
-         function registroProductoExitoso() {
-           alert("Producto agregado y creado con exito!");
-         }
-         </script>
-
-
    </form>
 
    <%-include('../partials/footer')%>

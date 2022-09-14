@@ -1,46 +1,54 @@
 <header>
 
-    <div class="navbar">
-        <a href= '/'><img  src="img/Logo_DeliBirri_v1prueba.png" alt="logo" class="logo"></a>
-        <form id="search-form" class="search-form">
-            <input  placeholder="Buscar Productos.." name="search" class="round">
-           <i class="fa fa-search"></i>
-        </form>
-    </div>
+   <div class="navbar">
+      <a href='/'><img src="img/Logo_DeliBirri_v1prueba.png" alt="logo" class="logo"></a>
+      <form id="search-form" class="search-form">
+         <input placeholder="Buscar Productos.." name="search" class="round">
+         <i class="fa fa-search"></i>
+      </form>
+   </div>
 
-    <div>
-    <nav>
-       <ul class="nav-menu">
-         <li class="nav-item">
-             <a href="/sale" class="nav-link">Promociones</a>
-             <a href="/sale"><i class="fas fa-dollar-sign"></i></a>
-         </li>
-         <li class="nav-item">
-             <a href="/wines" class="nav-link">Vinos </a>
-             <a href='/wines'><i class="fas fa-wine-bottle"></i></a>
-         </li>
-         <li class="nav-item">
-              <a href="/beers" class="nav-link">Cervezas </a>
-              <a href='/beers'><i class="fas fa-beer"></i></a>
-         </li>
-        <li class="nav-item">
-              <a href="/spirits" class="nav-link">Licores</a>
-              <a href="/spirits"> <i class="fas fa-glass-martini"></i></a>
-         </li>
-         <li class="nav-item">
-              <a href="/login" class="nav-link">Ingresá / Registrate</a>
-              <a href='/login'><i class="fas fa-sign-in-alt"></i></a>
-         </li>
-         <li class="nav-item">
-             <a href="/productCart" class="nav-link">Carrito de Compras</a>
-             <a href='/productCart'><i class="fas fa-shopping-cart"></i></a>
-         </li>
-       </ul>  
-    </nav>
-    </div>
+   <div>
+      <nav>
+         <ul class="nav-menu">
 
-    <div class="hamburger">
-        <i class="fa-solid fa-bars"></i>
-    </div>
+            <li class="nav-item">
+               <a href="/sale" class="nav-link">Promociones</a>
+               <a href="/sale"><i class="fas fa-dollar-sign"></i></a>
+            </li>
+            <li class="nav-item">
+               <a href="/wines" class="nav-link">Vinos </a>
+               <a href='/wines'><i class="fas fa-wine-bottle"></i></a>
+            </li>
+            <li class="nav-item">
+               <a href="/beers" class="nav-link">Cervezas </a>
+               <a href='/beers'><i class="fas fa-beer"></i></a>
+            </li>
+            <li class="nav-item">
+               <a href="/spirits" class="nav-link">Licores</a>
+               <a href="/spirits"> <i class="fas fa-glass-martini"></i></a>
+            </li>
+            <% if (locals.isLogged) { %>
+               <li class="nav-item">
+                  <a href="/logout" class="nav-link">Salir de <%= locals.userLogged.nombre %></a>
+                  <img src='/users/<%= locals.userLogged.avatar %>' width="50" style="border-radius: 100%">
+               </li>
+               <% } else { %>
+                  <li class="nav-item">
+                     <a href="/login" class="nav-link">Ingresá / Registrate</a>
+                     <a href='/login'><i class="fas fa-sign-in-alt"></i></a>
+                  </li>
+                  <% } %>
+                     <li class="nav-item">
+                        <a href="/productCart" class="nav-link">Carrito de Compras</a>
+                        <a href='/productCart'><i class="fas fa-shopping-cart"></i></a>
+                     </li>
+         </ul>
+      </nav>
+   </div>
+
+   <div class="hamburger">
+      <i class="fa-solid fa-bars"></i>
+   </div>
 
 </header>
