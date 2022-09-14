@@ -1,15 +1,14 @@
 <!DOCTYPE html>
-<html>
-
-<head>
-   <%- include('../partials/head.ejs')%>
-      <title>Creá una oferta de servicio</title>
+   <html lang="en">
+<head> 
+    <title>Creá una oferta de producto</title>
+    <%-include('../partials/head')%>
 </head>
 
 <body>
-   <header>
-
-   </header>
+  
+ <%- include('../partials/header')%>
+  
 
    <nav>
       <a href="/productos/"> Volver</a>
@@ -22,6 +21,8 @@
             <option value="Cerveza">Cerveza</option>
             <option value="Vino">Vino</option>
             <option value="Licor">Licor</option>
+            <option value="Fernet">Fernet</option>
+            <option value="Jagermeister">Jagermeister</option>
           </select>
       </fieldset>
       <fieldset>
@@ -38,12 +39,17 @@
             <option value="Trumpeter">Trumpeter</option>
           </optgroup>
           <optgroup label="Licores">
-              <option value="baileys">Baileys</option>
-              <option value="fernet">Fernet</option>
-              <option value="bols">Bols</option>
-              <option value="jagermeister">Jagermeister</option>
+              <option value="Baileys">Baileys</option>
+              <option value="Bols">Bols</option>
             </optgroup>
+            <optgroup label="Nada">
+               <option value=""></option>
+             </optgroup>
         </select>
+      </fieldset>
+      <fieldset>
+         <legend>Descripción del producto</legend>
+         <input type="text" name="description" id="description">
       </fieldset>
       <fieldset>
          <legend>Contenido (ml)</legend>
@@ -67,10 +73,6 @@
     <input type="text" name="price" id="price">
  </fieldset>
       <fieldset>
-         <legend>Descripción del producto</legend>
-         <input type="text" name="description" id="description">
-      </fieldset>
-      <fieldset>
          <legend>A domicilio</legend>
          <input type="radio" name="homeservice" id="home-service-yes" value="Sí">
          <label for="homeservice">Sí</label>
@@ -87,9 +89,8 @@
       <button type="reset">Cancelar</button>
    </form>
 
-   <footer>
+   <%-include('../partials/footer')%>
 
-   </footer>
 </body>
 
 </html>

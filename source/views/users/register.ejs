@@ -12,23 +12,31 @@
 
     <%-include('../partials/header')%>
 
-<form class="formulario" action="/registroUsuario" method="POST">
+<form class="formulario" method="POST" enctype="multipart/form-data">
 
     <div class="control-formulario">
         <label>Datos de Usuario</label>
-        <input type="text" name="nombre" class="control" placeholder="Nombre y apellido" required>
+        <input type="text" name="nombre" class="control" placeholder="Nombre/s" required>
+    </div>
+
+    <div class="control-formulario">
+        <input type="text" name="apellido" class="control" placeholder="Apellido/s" required>
     </div>
 
     <div class="control-formulario">
         <input type="text" name="usuario" class="control" placeholder="Nombre de usuario" required>
     </div>
-    
+
     <div class="control-formulario">
-        <input type="password" name="password" placeholder="Contraseña" class="control" required>
+        <input type="email" name="email" class="control" placeholder="Correo Electronico" required>
     </div>
 
     <div class="control-formulario">
-        <input type="password" name="password" placeholder="Confirmar contraseña" class="control" required>
+        <input type="password" name="password" placeholder="Contraseña" class="control" id='password' required >
+    </div>
+
+    <div class="control-formulario">
+        <input type="password" name="confirm_password" placeholder="Confirmar contraseña" class="control" id='confirm_password' required>
     </div>
 
     <div class="control-formulario">
@@ -37,9 +45,24 @@
     </div>
 
     <div class="control-formulario">
-        <label>Lugar de Domicilio</label>
-        <input type="text" name="domicilio" class="control" placeholder="Domicilio" required>
+        <label>Lugar de Nacimiento</label>
     </div>
+
+    <div>
+    <select name="pais" value="pais" id="pais" class="control"  placeholder="pais" required>
+        <optgroup label="Pais">
+            <option value="Argentina">Argentina</option>
+          <option value="Colombia">Colombia</option>
+          <option value="Paraguay">Paraguay</option>
+          <option value="Brazil">Brazil</option>
+          <option value="Venezuela">Venezuela</option>
+          <option value="Chile">Chile</option>
+          <option value="Perú">Perú</option>
+          <option value="Bolivia">Bolivia</option>
+          <option value="Uruguay">Uruguay</option>
+          <option value="Otros">Otros</option>
+       </optgroup></select>
+</div>
 
     <div class="control-formulario">
     
@@ -49,22 +72,28 @@
 
     <div class="control-formulario-checkbox">
        
-        <label class="checkbox-label"><input type="checkbox" name="categoria" value="electro" class="control">Cervezas</label>
-        <label class="checkbox-label"><input type="checkbox" name="categoria" value="moda" class="control">Licores</label>
-        <label class="checkbox-label"><input type="checkbox" name="categoria" value="Hogar" class="control">Vinos</label>
-        <label class="checkbox-label"><input type="checkbox" name="categoria" value="Juguetería" class="control">Bebidas No Alcoholicas</label>
-        <label class="checkbox-label"><input type="checkbox" name="categoria" value="Vida sana" class="control">Otros</label>
+        <label class="checkbox-label"><input type="checkbox" name="categoriaDeInteres" value="Cervezas" class="control">Cervezas</label>
+        <label class="checkbox-label"><input type="checkbox" name="categoriaDeInteres" value="Licores" class="control">Licores</label>
+        <label class="checkbox-label"><input type="checkbox" name="categoriaDeInteres" value="Vinos" class="control">Vinos</label>
+        <label class="checkbox-label"><input type="checkbox" name="categoriaDeInteres" value="Bebidas No Alcoholicas" class="control">Bebidas No Alcoholicas</label>
+        <label class="checkbox-label"><input type="checkbox" name="categoriaDeInteres" value="Otros" class="control">Otros</label>
     </div>
 
-    <div class="control-formulario">
+     <div class="control-formulario">
         <label>Imagen de perfil</label>
         <input type="file" name="avatar" accept="jpg/jpeg" class="control">
-    </div>
+    </div>  
 
 
 
-    <button type="submit" class="boton-formulario" name="guardar">Guardar</button>
+    <button onclick="registroUsuarioExitoso()" type="submit" class="boton-formulario">Guardar</button>
     <button type="reset" class="boton-formulario">Borrar</button>
+
+<script>
+function registroUsuarioExitoso() {
+  alert("Usuario creado con exito!");
+}
+</script>
 
     <div class="control-formulario">
         <a href="/login" class="otras-opciones">¿Ya tienes una cuenta? Ingresá!</a>

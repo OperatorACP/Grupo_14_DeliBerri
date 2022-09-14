@@ -1,16 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-   <%- include('../partials/head.ejs') %>
+<head>  
       <title>Lista de productos</title>
-      <link rel="stylesheet" href="/css/list.css">
+      <%-include('../partials/head')%>
 </head>
 
 <body>
-   <header>
-
-   </header>
+ 
+<%- include('../partials/header') %>
+   
 
    <main>
       <% if (products.length> 0) { %>
@@ -29,9 +28,7 @@
                </nav>
    </main>
 
-   <footer>
-
-   </footer>
+   <%-include('../partials/footer')%>
 
 </body>
 

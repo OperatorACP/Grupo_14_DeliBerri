@@ -43,11 +43,11 @@ const controller = {
       if (element.sku == req.body.sku) {
         element.bebida = req.body.bebida;
         element.marca = req.body.marca;
+        element.description = req.body.description;
         element.content = parseInt(req.body.content);
         element.units = parseInt(req.body.units);
         element.sale = parseInt(req.body.sale);
         element.price = parseInt(req.body.price);
-        element.description = req.body.description;
         element.homeservice = req.body.homeservice;
         element.image =
           req.files && req.files.length > 0
