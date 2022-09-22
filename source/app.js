@@ -10,6 +10,7 @@ const server = express();
 const { port, start } = require("./modules/server");
 server.listen(port, start());
 
+
 server.use(
   session({
     secret: "Shh, it's a secret!",
