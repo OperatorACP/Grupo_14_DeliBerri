@@ -1,4 +1,4 @@
-# Proyecto Integrador del Grupo N 14 - Delibirri
+# Proyecto Integrador del Grupo N 14 - DeliBirri
 
 **¿Qué productos o servicios brindará nuestro sitio?**
 
