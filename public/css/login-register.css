@@ -29,11 +29,18 @@
     outline: none;
     box-sizing: border-box;
     vertical-align: bottom;
+    outline: 1px solid #e91e63;
+    border: 3px solid transparent;
+    -webkit-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
 }
 
-.control:hover{
-    border: 3px solid  #e91e63;
-}
+  .control:hover {
+    outline: 0px solid transparent;
+    border: 3px solid #e91e63;
+    -webkit-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+  }
 
 .control-formulario {
     margin-bottom: 30px;
@@ -52,6 +59,15 @@
 .control-formulario-checkbox{
     margin-bottom: 50px;
     text-align: left;
+    color: white;
+}
+
+input.check-input{
+    margin-right: 8px;
+}
+
+.form-check{
+    padding: 15px;
     color: white;
 }
 

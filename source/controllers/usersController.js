@@ -36,7 +36,7 @@ const userController = {
     };
     delete userToCreate.confirm_password;
     let userCreated = User.create(userToCreate);
-    return res.redirect("/login");
+    return res.redirect("/profile");
   },
 
   login: (req, res) => {

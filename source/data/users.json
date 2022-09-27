@@ -47,5 +47,54 @@
    "Vinos"
   ],
   "avatar": "1663089540293_img.jpg"
+ },
+ {
+  "id": 4,
+  "nombre": "Ivan",
+  "apellido": "Caceres",
+  "usuario": "Carling79",
+  "email": "ivan123@gmail.com",
+  "password": "$2a$10$n/JgQVJUxYaFpiv7ff/Tb.e.211JoPk0pvZGYQz6iXzs/Dp2sLrWW",
+  "fecha": "1111-11-11",
+  "pais": "Paraguay",
+  "categoriaDeInteres": [
+   "Cervezas",
+   "Licores",
+   "Vinos",
+   "Bebidas No Alcoholicas"
+  ],
+  "avatar": "1663886160119_img.jpg"
+ },
+ {
+  "id": 5,
+  "nombre": "dasd",
+  "apellido": "Caceresdasdsa",
+  "usuario": "dsadsad",
+  "email": "dasdsad@gmail.com",
+  "password": "$2a$10$NmPEekcn/K0YhyIulqMp6eTjuxiqLcVWdNVl0bZXqTHAu5PM2ti8.",
+  "fecha": "1111-11-11",
+  "pais": "Paraguay",
+  "categoriaDeInteres": [
+   "Cervezas",
+   "Licores",
+   "Vinos",
+   "Bebidas No Alcoholicas"
+  ],
+  "avatar": "1663886343789_img.jpg"
+ },
+ {
+  "id": 6,
+  "nombre": "asd",
+  "apellido": "asd",
+  "usuario": "asd",
+  "email": "asd@asd.com",
+  "password": "$2a$10$CWC.kthiUE0bIf5EBhYpnuZofh2tHtivmMjW89teZjmougK0QrHmK",
+  "fecha": "1111-11-11",
+  "pais": "Argentina",
+  "categoriaDeInteres": [
+   "Vinos",
+   "Bebidas No Alcoholicas"
+  ],
+  "avatar": "1664235353591_img.jpg"
  }
 ]
