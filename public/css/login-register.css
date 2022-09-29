@@ -29,7 +29,6 @@
     outline: none;
     box-sizing: border-box;
     vertical-align: bottom;
-    outline: 1px solid #e91e63;
     border: 3px solid transparent;
     -webkit-transition: all 0.2s ease-in-out;
     transition: all 0.2s ease-in-out;
