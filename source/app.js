@@ -33,8 +33,8 @@ server.use(express.urlencoded({ extended: true }));
 
 server.use(methodOverride("m"));
 
-server.use(require("./routes/products.routes"));
-server.use(require("./routes/users.routes"));
+server.use(require("./routes/productsRoutes"));
+server.use(require("./routes/usersRoutes"));
 
 // Ruta de Index
 

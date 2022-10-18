@@ -4,7 +4,8 @@
   "description": "Proyecto integrador Grupo 14 Digital House",
   "main": "source/app.js",
   "scripts": {
-    "test": "nodemon source/app.js -e js,mjs,json,ejs,css"
+    "test": "nodemon source/app.js -e js,mjs,json,ejs,css",
+    "sq": "sequelize init"
   },
   "keywords": [],
   "author": "",
@@ -20,10 +21,10 @@
     "multer": "^1.4.5-lts.1",
     "mysql2": "^2.3.3",
     "sequelize": "^6.23.2",
-    "sequelize-cli": "^6.5.1",
     "validator": "^13.7.0"
   },
   "devDependencies": {
-    "nodemon": "^2.0.19"
+    "nodemon": "^2.0.19",
+    "sequelize-cli": "^6.5.1"
   }
 }
