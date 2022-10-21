@@ -35,6 +35,7 @@ server.use(methodOverride("m"));
 
 server.use(require("./routes/productsRoutes"));
 server.use(require("./routes/usersRoutes"));
+server.use(require("./routes/categoriesRoutes"));
 
 // Ruta de Index
 
