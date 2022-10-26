@@ -6,6 +6,7 @@ module.exports = function (sequelize, DataTypes) {
       type: DataTypes.INTEGER,
       primaryKey: true,
       autoIncrement: true,
+      unique: true,
     },
     name: {
       type: DataTypes.STRING,
@@ -22,7 +23,7 @@ module.exports = function (sequelize, DataTypes) {
   category.associate = function (models) {
     category.hasMany(models.product, {
       as: "products",
-      foreignKey: "id",
+     foreignKey: "id",
     });
   };
 

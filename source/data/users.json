@@ -96,5 +96,20 @@
    "Bebidas No Alcoholicas"
   ],
   "avatar": "1664235353591_img.jpg"
+ },
+ {
+  "id": 7,
+  "name": "Jose",
+  "lastname": "Blabla",
+  "user": "jose123",
+  "email": "jose123@hotmail.com",
+  "password": "$2a$10$Mr8S8qkHiYpMUlWmvC9K7.86svtjuKuC0UTOwuGRWYEKOob.CnYQi",
+  "date": "1111-11-11",
+  "country": "Argentina",
+  "categoriaDeInteres": [
+   "Licores",
+   "Vinos"
+  ],
+  "avatar": "1666820881439_img.jpg"
  }
 ]
