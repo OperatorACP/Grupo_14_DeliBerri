@@ -1,19 +1,67 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><%= category.name %> </title>
 
-    <head>
-        <title>Lista de categorias</title>
-        <%-include('../partials/head')%>
-     </head>
+   <!DOCTYPE html>
+   <html lang="en">
+   <head>
+      <title>DeliBerri</title>
+      <link rel="icon" type="image/x-icon" href="../../../img/favicon.ico"/> 
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" href="/css/main.css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+      <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+       <meta charset="UTF-8">
+       <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+</head>
 
 <body>
+
+    <%-include('../partials/header')%>
+
+ <main>
+
+
+      <h1 class="titulo">Editar una Categoria</h1>
     
-<H1>PRUEBA</H1>
+      <form action="/categorias/edit/:id" method="POST">
+
+<div>
+   <label for=''>Nombre de Categoria</label>
+    <input type="text" name="nombre" value="<%=category.name%>"> 
+</div>
+<div>
+    <label for=''>ID de Categoria</label>
+    <input type="text" name="id" value="<%=category.id%>"> 
+</div>
+
+<label for="">Categoria</label>
+<select name="categoria">
+
+<% for (let i =0; i < category.length; i ++) { %>
+
+<% if (category[i].id == detalle.id) { %>
+<option value="<%category[i].id%>" selected>
+    <%=category[i].name%>
+</option>
+<% } else { %>
+    <option value="<%category[i].id%>">
+        <%=category[i].name%>
+    </option>
+<% } %>
+
+<% } %>
+
+</select>
+<button type="submit">Guardar</button>
+<p> 
+    <a class="botonVolver" href="/categorias">Cancelar</a>
+ </p>
+      </form>
+
+</main>
 
 </body>
+
+<%-include('../partials/footer')%>
 
 </html>

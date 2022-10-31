@@ -29,35 +29,46 @@ const categoriesController = {
       .then(() => {
         return res.redirect("/categorias");
       })
-     .catch((error) => res.send(error));
-      //  const success = (data) => console.log(data);
-      //  const error = (error) => console.log(error);
-      //  return upload.then(success).catch(error);
+      .catch((error) => res.send(error));
+  },
+
+  edit: function (req, res) {
+   const pedidoCategoria = db.category.findByPk(req.params.id);
+
+   const pedidoDetalle = db.category.findAll();
+
+   Promise.all([pedidoCategoria, pedidoDetalle])
+   .then(function([category, detalle]){
+res.render('../views/categories/categoriesEdit', {category:category,detalle:detalle })
+   })
   },
 
   update : function(req,res) {
-
- const selected = db.category.findByPk(2)
-
-       const successSelected = (data) => db.category.update({
-        name: 'Energizante'
-    },{
-        where: {
-           id: data.id
-        }
+    db.category.update({
+      name: req.body.name,
+      id: req.body.id
+    }, {
+      where: {
+    
+        id: req.params.id
+      }
     })
-       const success = updateded => console.log(updateded);
-      const error = (error) => console.log(error);
-       return selected.then(successSelected).then(success).catch(error);
+    .then(() => {
+      return res.redirect("/categorias");
+    })
+    .catch((error) => res.send(error));
  },
  
   destroy : function(req,res) {
      db.category.destroy({
          where: {
-          id: 1,
+          id: data.id ,
          },
 
        });
+       const success = updateded => console.log(updateded);
+      const error = (error) => console.log(error);
+       return selected.then(successSelected).then(success).catch(error);
   },
  
 };
