@@ -40,11 +40,11 @@
 <% for (let i =0; i < category.length; i ++) { %>
 
 <% if (category[i].id == detalle.id) { %>
-<option value="<%category[i].id%>" selected>
+<option value="/categorias/edit/<%= category[i].id %>" selected>
     <%=category[i].name%>
 </option>
 <% } else { %>
-    <option value="<%category[i].id%>">
+    <option value="/categorias/edit/<%= category[i].id %>">
         <%=category[i].name%>
     </option>
 <% } %>
@@ -52,7 +52,12 @@
 <% } %>
 
 </select>
+<a href="/categorias/edit/<%=category.id%>">
 <button type="submit">Guardar</button>
+</a>
+<form action="/categorias/delete/<%=category.id%>" method="DELETE">
+<button type="submit">Borrar el Elemento</button>
+</form>
 <p> 
     <a class="botonVolver" href="/categorias">Cancelar</a>
  </p>

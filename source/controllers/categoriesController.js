@@ -49,23 +49,19 @@ res.render('../views/categories/categoriesEdit', {category:category,detalle:deta
       id: req.body.id
     }, {
       where: {
-    
         id: req.params.id
       }
-    })
-    .then(() => {
-      return res.redirect("/categorias");
-    })
-    .catch((error) => res.send(error));
+    });
+   res.redirect("/categorias");
  },
  
-  destroy : function(req,res) {
+  delete : function(req,res) {
      db.category.destroy({
          where: {
-          id: data.id ,
+          id: req.params.id ,
          },
-
        });
+       res.redirect("/categorias");
        const success = updateded => console.log(updateded);
       const error = (error) => console.log(error);
        return selected.then(successSelected).then(success).catch(error);
