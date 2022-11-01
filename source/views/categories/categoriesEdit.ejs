@@ -14,37 +14,30 @@
     
 </head>
 
+<%-include('../partials/header')%>
+
 <body>
 
-    <%-include('../partials/header')%>
+    <h1 class="titulo">Categoria:  <%= category.name %></h1>
+<h2>
+    <section class="formulario">
+</h2>
+        <form action="/categorias/edit/<%= category.id %>?_method=POST" method="POST">
 
- <main>
+            <label for="name">Nombre </label>
 
+            <p><input type="text" name="name" id="name" value="<%= category.name %>" required></p>
+           
+            <p> <button class="botonAgregar" type="submit">Guardar</button>
+        
+            <a  class="botonVolver" href="/categorias">Volver al Listado</a></p>
 
-      <h1 class="titulo">Editar una Categoria</h1>
-    
-<form action="/categorias/edit/<%= category.id %>?_method=PUT" method="PUT">
-   <label for=''>Nombre de Categoria</label>
-    <input type="text" name="nombre" value="<%=category.name%>"> 
-</form>
+        </form>
+        
+    </section>
 
-<form action="/categorias/edit/<%= category.id %>?_method=PUT" method="POST">
- <button type="submit">Guardar</button>   
-</form>
-
-
-<form action="/categorias/delete/<%=category.id%>" method="DELETE">
-<button type="submit">Borrar el Elemento</button>
-</form>
-
-<p> 
-<a class="botonVolver" href="/categorias">Cancelar</a>
- </p>
-
-</form>
-</main>
 </body>
 
-<%-include('../partials/footer')%>
+<%-include('../partials/footer')%> 
 
 </html>
