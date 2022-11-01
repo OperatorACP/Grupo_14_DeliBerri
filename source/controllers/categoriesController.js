@@ -44,16 +44,20 @@ res.render('../views/categories/categoriesEdit', {category:category,detalle:deta
   },
 
   update : function(req,res) {
+    console.log('req ' + JSON.stringify(req.body))
     db.category.update({
-      name: req.body.name,
-      id: req.body.id
+      name: req.body.name
     }, {
       where: {
         id: req.params.id
       }
-    });
-   res.redirect("/categorias");
- },
+    })
+    .then((a) => {
+      console.log(a[0])
+      res.redirect(`/categorias/detalle/${req.params.id}`)
+    })
+  
+  },
  
   delete : function(req,res) {
      db.category.destroy({
@@ -71,41 +75,7 @@ res.render('../views/categories/categoriesEdit', {category:category,detalle:deta
 
 module.exports = categoriesController;
 
- //UPDATE//
 
-//  const update = function() {
-
-//  const selected = db.category.findByPk(13)
-  
-//          const successSelected = (data) => db.category.update({
-//           name: 'Tu hermana'
-//        },{
-//           where: {
-//              id: data.id
-//          }
-//        })
-//          const success = updateded => console.log(updateded);
-//          const error = (error) => console.log(error);
-//          return selected.then(successSelected).then(success).catch(error);
-//    }
-
-//  update()
-
-// //    //DESTROY//
-
-//  const destroy =  function(req,res) {
-//     db.category.destroy({
-//         where: {
-//           id: 3,
-//         },
-
-//       });
-//  }
-
-
-//  destroy()
-
- 
 
 
 
