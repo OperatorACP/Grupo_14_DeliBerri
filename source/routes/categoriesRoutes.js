@@ -17,7 +17,8 @@ router.get("/categorias/edit/:id", categoriesController.edit);
 router.post("/categorias/edit/:id", categoriesController.update);
 
 // DELETE //
-router.delete("/categorias/delete//:id", categoriesController.delete);
+router.get("/categorias/delete/:id", categoriesController.delete);
+router.post("/categorias/delete/:id", categoriesController.destroy);
 
 
 
