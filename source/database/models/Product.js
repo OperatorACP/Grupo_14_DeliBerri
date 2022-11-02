@@ -26,6 +26,10 @@ module.exports = function (sequelize, DataTypes) {
     promotion: {
       type: DataTypes.INTEGER,
       notNull: true,
+    },
+    productsCategory: {
+      type: DataTypes.INTEGER,
+      notNull: true,
     }
   };
 

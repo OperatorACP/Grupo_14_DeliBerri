@@ -47,30 +47,30 @@ server.get("/", (req, res) => {
 // Rutas de /views/products
 
 server.get("/productDetail", (req, res) => {
-  return res.render(join(__dirname, "/views/products/productDetail.ejs"));
+  return res.render(join(__dirname, "/views/inventory/productDetail.ejs"));
 });
 server.get("/productCart", (req, res) => {
-  return res.render(join(__dirname, "/views/products/productCart.ejs"));
+  return res.render(join(__dirname, "/views/inventory/productCart.ejs"));
 });
 server.get("/sale", (req, res) => {
-  return res.render(join(__dirname, "/views/products/sale.ejs"));
+  return res.render(join(__dirname, "/views/inventory/sale.ejs"));
 });
 server.get("/wines", (req, res) => {
-  return res.render(join(__dirname, "/views/products/wines.ejs"));
+  return res.render(join(__dirname, "/views/inventory/wines.ejs"));
 });
 server.get("/beers", (req, res) => {
-  return res.render(join(__dirname, "/views/products/beers.ejs"));
+  return res.render(join(__dirname, "/views/inventory/beers.ejs"));
 });
 server.get("/spirits", (req, res) => {
-  return res.render(join(__dirname, "/views/products/spirits.ejs"));
+  return res.render(join(__dirname, "/views/inventory/spirits.ejs"));
 });
 
 server.get("/create", (req, res) => {
-  return res.render(join(__dirname, "/views/products/create.ejs"));
+  return res.render(join(__dirname, "/views/inventory/create.ejs"));
 });
 
 server.get("/edit", (req, res) => {
-  return res.render(join(__dirname, "/views/products/edit.ejs"));
+  return res.render(join(__dirname, "/views/inventory/edit.ejs"));
 });
 
 // Rutas de /views/users

@@ -1,0 +1,44 @@
+
+
+   <!DOCTYPE html>
+   <html lang="en">
+   <head>
+      <title>DeliBerri</title>
+      <link rel="icon" type="image/x-icon" href="../../../img/favicon.ico"/> 
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" href="/css/main.css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+      <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+       <meta charset="UTF-8">
+       <meta name="viewport" content="width=device-width, initial-scale=1.0">
+       <title><%= product.title %> </title>
+</head>
+
+<body>
+
+   <%-include('../partials/header')%>
+
+<main>
+
+   
+
+   <h1 class="titulo">Agregar Producto</h1>
+   <br>
+   <section class="formulario">
+      <form action="/productos/create" method="POST">
+         <label for="title">Nombre de Producto </label>
+         <p><input type="text" name="name" id="" required></p>
+         <br>
+         <p> <button class="botonAgregar" type="submit" href="/productos">Agregar</button>
+            <a class="botonVolver" href="/productos">Volver al Listado de Categorias</a>
+         </p>
+      </form>
+   </section>
+
+</body>
+</main>
+
+<%-include('../partials/footer')%>
+
+</html>
