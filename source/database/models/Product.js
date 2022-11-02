@@ -27,10 +27,12 @@ module.exports = function (sequelize, DataTypes) {
       type: DataTypes.INTEGER,
       notNull: true,
     },
-    productsCategory: {
+    category_id: {
       type: DataTypes.INTEGER,
       notNull: true,
-    }
+      foreignKey: true
+    },
+   
   };
 
   let config = {

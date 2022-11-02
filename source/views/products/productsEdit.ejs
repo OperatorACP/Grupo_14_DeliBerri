@@ -1,0 +1,62 @@
+
+   <!DOCTYPE html>
+   <html lang="en">
+   <head>
+      <title>DeliBerri</title>
+      <link rel="icon" type="image/x-icon" href="../../../img/favicon.ico"/> 
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" href="/css/main.css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+      <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+       <meta charset="UTF-8">
+       <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+</head>
+
+<%-include('../partials/header')%>
+
+<body>
+
+    <h1 class="titulo">Producto:  <%= product.title %></h1>
+<h2>
+    <section class="formulario">
+</h2>
+        <form action="/productos/edit/<%= product.id %>?_method=POST" method="POST">
+
+            <label for="name">Nombre del producto </label>
+
+            <p><input type="text" name="title" id="title" value="<%= product.title %>" required></p>
+
+            <label for="name">Precio </label>
+         
+            <p><input type="text" name="price" id="price" value="<%= product.price %>" required></p>
+
+            <label for="name">Descripcion del Producto </label>
+
+            <p><input type="text" name="description" id="description" value="<%= product.description %>" required></p>
+
+            <label for="name">Status de Promo </label>
+
+            <p><input type="radio" name="promotion" id="promotion" value="<%= product.promotion %>" required>Sin Descuento</p>
+            <p><input type="radio" name="promotion" id="promotion" value="<%= product.promotion %>" required>25%</p>
+            <p><input type="radio" name="promotion" id="promotion" value="<%= product.promotion %>" required>50%</p>
+            <p><input type="radio" name="promotion" id="promotion" value="<%= product.promotion %>" required>75%</p>
+
+            <label for="name">Imagen del Producto </label>
+
+            <p><input type="file" name="image" id="image" value="<%= product.image %>" required></p>
+           
+            <p> <button class="botonAgregar" type="submit">Guardar</button>
+        
+            <a  class="botonVolver" href="/categorias">Volver al Listado</a></p>
+
+        </form>
+        
+    </section>
+
+</body>
+
+<%-include('../partials/footer')%> 
+
+</html>

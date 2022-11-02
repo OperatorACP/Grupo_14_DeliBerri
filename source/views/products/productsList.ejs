@@ -29,7 +29,7 @@
    <div class="buscar-titulo">
       <form action="/productos/buscar" method="POST">
          <input type="text" name="titulo" id="titulo">
-         <button class="boton-buscar" type="submit">Buscar una Categoria</button>
+         <button class="boton-buscar" type="submit">Buscar un Producto</button>
       </form>
 
    </div>
@@ -37,7 +37,7 @@
       <% for( let i=0; i < product.length; i++ ) { %>
          <li>
             <a href="/productos/detalle/<%= product[i].id %>">
-               <%= product[i].name %>
+               <%= product[i].title %>
             </a>
          </li>
          <% } %>

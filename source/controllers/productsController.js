@@ -26,7 +26,11 @@ const productsController = {
    create: function (req, res) {
      db.product
        .create({
-         name: req.body.title,
+        title: req.body.title,
+        price: req.body.price,
+        description: req.body.description,
+        promotion: req.body.promotion,
+        image: req.body.image,
        })
        .then(() => {
          return res.redirect("/productos");
@@ -77,6 +81,7 @@ const productsController = {
        })
        .catch((error) => res.send(error));
    },
+   
    destroy: function (req, res) {
      db.product
        .destroy({ where: { id: req.params.id }, force: true })
