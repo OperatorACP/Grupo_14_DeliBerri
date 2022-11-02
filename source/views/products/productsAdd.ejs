@@ -27,12 +27,35 @@
    <br>
    <section class="formulario">
       <form action="/productos/create" method="POST">
-         <label for="title">Nombre de Producto </label>
-         <p><input type="text" name="name" id="" required></p>
-         <br>
+
+         <label for="name">Nombre del producto </label>
+
+         <p><input type="text" name="title" id="title" value="<%= product.title %>" required></p>
+
+         <label for="name">Precio </label>
+      
+         <p><input type="text" name="price" id="price" value="<%= product.price %>" required></p>
+
+         <label for="name">Descripcion del Producto </label>
+
+         <p><input type="text" name="description" id="description" value="<%= product.description %>" required></p>
+
+         <label for="name">Status de Promo </label>
+
+         <p><input type="radio" name="promotion" id="promotion" value="<%= product.promotion %>" required>Sin Descuento</p>
+         <p><input type="radio" name="promotion" id="promotion" value="<%= product.promotion %>" required>25%</p>
+         <p><input type="radio" name="promotion" id="promotion" value="<%= product.promotion %>" required>50%</p>
+         <p><input type="radio" name="promotion" id="promotion" value="<%= product.promotion %>" required>75%</p>
+
+         <label for="name">Imagen del Producto </label>
+
+         <p><input type="file" name="image" id="image" value="<%= product.image %>" ></p>
+
          <p> <button class="botonAgregar" type="submit" href="/productos">Agregar</button>
+            
             <a class="botonVolver" href="/productos">Volver al Listado de Productos</a>
          </p>
+         
       </form>
    </section>
 
