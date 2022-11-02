@@ -26,20 +26,20 @@ const productsController = {
    create: function (req, res) {
      db.product
        .create({
-         name: req.body.name,
+         name: req.body.title,
        })
        .then(() => {
-         return res.redirect("/categorias");
+         return res.redirect("/productos");
        })
        .catch((error) => res.send(error));
    },
  
    edit: function (req, res) {
-     const pedidoCategoria = db.product.findByPk(req.params.id);
+     const pedidoProducto = db.product.findByPk(req.params.id);
  
      const pedidoDetalle = db.product.findAll();
  
-     Promise.all([pedidoCategoria, pedidoDetalle]).then(function ([
+     Promise.all([pedidoProducto, pedidoDetalle]).then(function ([
        product,
        detalle,
      ]) {
@@ -55,7 +55,7 @@ const productsController = {
      db.product
        .update(
          {
-           name: req.body.name,
+           title: req.body.title,
          },
          {
            where: {
@@ -65,7 +65,7 @@ const productsController = {
        )
        .then((a) => {
          console.log(a[0]);
-         res.redirect(`/categorias/detalle/${req.params.id}`);
+         res.redirect(`/products/detalle/${req.params.id}`);
        });
    },
  
