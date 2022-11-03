@@ -41,9 +41,9 @@ const productsController = {
    edit: function (req, res) {
      const pedidoProducto = db.product.findByPk(req.params.id);
  
-     const pedidoDetalle = db.product.findAll();
+     const pedidoDetalleProducto = db.product.findAll();
  
-     Promise.all([pedidoProducto, pedidoDetalle]).then(function ([
+     Promise.all([pedidoProducto, pedidoDetalleProducto]).then(function ([
        product,
        detalle,
      ]) {
@@ -59,7 +59,11 @@ const productsController = {
      db.product
        .update(
          {
-           title: req.body.title,
+          title: req.body.title,
+          price: req.body.price,
+          description: req.body.description,
+          promotion: req.body.promotion,
+          image: req.body.image,
          },
          {
            where: {
@@ -69,7 +73,7 @@ const productsController = {
        )
        .then((a) => {
          console.log(a[0]);
-         res.redirect(`/products/detalle/${req.params.id}`);
+         res.redirect(`/productos/detalle/${req.params.id}`);
        });
    },
  
@@ -86,7 +90,7 @@ const productsController = {
      db.product
        .destroy({ where: { id: req.params.id }, force: true })
        .then(() => {
-         return res.redirect("/categorias");
+         return res.redirect("/productos");
        })
        .catch((error) => res.send(error));
    }

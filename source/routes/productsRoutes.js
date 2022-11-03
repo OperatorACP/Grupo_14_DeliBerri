@@ -1,14 +1,14 @@
 const express = require("express");
 const router = express.Router();
 const productsController = require("../controllers/productsController");
-
+const productsMulter = require('../middlewares/multerMiddleware')
 
 
 //CRUD//
 
 // CREATE //
 router.get("/productos/add", productsController.add);
-router.post("/productos/create", productsController.create);
+router.post("/productos/create",productsController.create);
 
 // READ //
 router.get("/productos", productsController.list);
