@@ -17,7 +17,7 @@
 
     <div class="control-formulario">
         <label class="control-formulario-titulo">Bienvenido a Deliberri!</label>
-        <input type="email" name="email" class="control" placeholder="Direccion de Correo Electronico" required>
+        <input action= '/login' type="email" name="email" class="control" placeholder="Direccion de Correo Electronico" value="<%= user.email %>" required>
 
  <% if (locals.error && errors.email) { %>
 <div class="text-danger">
@@ -28,7 +28,7 @@
     </div>
     
     <div class="control-formulario">
-        <input type="password" name="password" placeholder="Contraseña" class="control" required>
+        <input type="password" name="password" placeholder="Contraseña" class="control" value="<%= user.password %>" required>
     </div>
 
     <div class="form-check">
