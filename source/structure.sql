@@ -3,59 +3,57 @@
 -- Model: New Model    Version: 1.0
 -- MySQL Workbench Forward Engineering
 
-DROP DATABASE IF EXISTS `deliberridb`;
-
-
--- -----------------------------------------------------
--- Schema deliberridb
--- -----------------------------------------------------
+DROP DATABASE IF EXISTS deliberridb;
+SET GLOBAL FOREIGN_KEY_CHECKS=0;
 
 -- -----------------------------------------------------
 -- Schema deliberridb
 -- -----------------------------------------------------
-CREATE DATABASE  `deliberridb`;
-USE `deliberridb` ;
 
 -- -----------------------------------------------------
--- Table `deliberridb`.`category`
+-- Schema deliberridb
 -- -----------------------------------------------------
-
-CREATE TABLE IF NOT EXISTS `deliberridb`.`category` (
-  `id` INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-  `name` VARCHAR(255) NOT NULL);
-
+CREATE DATABASE  deliberridb;
+USE deliberridb ;
 
 -- -----------------------------------------------------
--- Table `deliberridb`.`products`
+-- Table deliberridb.category
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `deliberridb`.`products` (
-  `id` INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-  `title` VARCHAR(45) NULL,
-  `price` DECIMAL NULL,
-  `image` VARCHAR(45) NULL,
-  `description` VARCHAR(45) NULL,
-  `promotion` INT NULL,
-  `category_id` INT NOT NULL,
-    FOREIGN KEY (`category_id`)
-    REFERENCES `deliberridb`.`category` (`id`)
+
+CREATE TABLE IF NOT EXISTS deliberridb.category (
+  id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  name VARCHAR(255) NOT NULL);
+
+
+-- -----------------------------------------------------
+-- Table deliberridb.products
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS deliberridb.products (
+  id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  title VARCHAR(45) NULL,
+  price DECIMAL NULL,
+  image VARCHAR(45) NULL,
+  description VARCHAR(45) NULL,
+  promotion INT NULL,
+  category_id INT NOT NULL,
+    FOREIGN KEY (category_id)
+    REFERENCES deliberridb.category (id)
   );
 
 
 -- -----------------------------------------------------
--- Table `deliberridb`.`users`
+-- Table deliberridb.users
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `deliberridb`.`users` (
-  `id` INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-  `name` VARCHAR(45) NULL,
-  `lastName` DECIMAL NULL,
-  `user` VARCHAR(45) NULL,
-  `email` VARCHAR(45) NULL,
-  `password` INT NULL,
-  `birthDate` DATE NULL,
-  `nationality` VARCHAR(45) NULL,
-  `interestCategory` VARCHAR(45) NULL,
-  `avatar` VARCHAR(80) NULL,
-  `isAdmin` VARCHAR(45) NULL
+CREATE TABLE IF NOT EXISTS deliberridb.users (
+  id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  name VARCHAR(45) NULL,
+  lastName DECIMAL NULL,
+  user VARCHAR(45) NULL,
+  email VARCHAR(45) NULL,
+  password INT NULL,
+  birthDate DATE NULL,
+  nationality VARCHAR(45) NULL,
+  interestCategory VARCHAR(45) NULL,
+  avatar VARCHAR(80) NULL,
+  isAdmin VARCHAR(45) NULL
  );
-
-
