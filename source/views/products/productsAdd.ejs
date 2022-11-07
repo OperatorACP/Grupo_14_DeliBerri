@@ -28,24 +28,28 @@
    <section class="formulario">
       <form class="products" action="/productos/create" method="POST">
 
+         <div class="errores">
+         <ul></ul>
+         </div>
+
          <label for="name">Nombre del producto </label>
 
-         <p><input type="text" name="title" id="title" value="<%= product.title %>" required></p>
+         <p><input type="text" name="title" id="title" value="<%= product.title %>" ></p>
 
          <label for="name">Precio </label>
       
-         <p><input type="text" name="price" id="price" value="<%= product.price %>" required></p>
+         <p><input type="text" name="price" id="price" value="<%= product.price %>" ></p>
 
          <label for="name">Descripcion del Producto </label>
 
-         <p><input type="text" name="description" id="description" value="<%= product.description %>" required></p>
+         <p><input type="text" name="description" id="description" value="<%= product.description %>" ></p>
 
          <label for="name">Status de Promo </label>
 
-         <p><input type="radio" name="promotion" id="promotion" value="<%= product.promotion %>" required>Sin Descuento</p>
-         <p><input type="radio" name="promotion" id="promotion" value="<%= product.promotion %>" required>25%</p>
-         <p><input type="radio" name="promotion" id="promotion" value="<%= product.promotion %>" required>50%</p>
-         <p><input type="radio" name="promotion" id="promotion" value="<%= product.promotion %>" required>75%</p>
+         <p><input type="radio" name="promotion" id="promotion" value="0">Sin Descuento</p>
+         <p><input type="radio" name="promotion" id="promotion" value="25">25%</p>
+         <p><input type="radio" name="promotion" id="promotion" value="50">50%</p>
+         <p><input type="radio" name="promotion" id="promotion" value="75">75%</p>
 
          <label for="name">Imagen del Producto </label>
 
@@ -59,7 +63,7 @@
       </form>
    </section>
 
-<script src=“/js/productsAddValidation.js” ></script>
+<script src='/js/productsAddValidation.js' ></script>
 </body>
 </main>
 
