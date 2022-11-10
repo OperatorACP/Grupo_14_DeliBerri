@@ -18,32 +18,26 @@
     <div class="control-formulario">
         <label>Datos de Usuario</label>
         
-        <input type="text" name="name" class="control" placeholder="Nombre/s" value="<%= user.name %>" required>
+        <input type="text" name="name" id='name' class="control" placeholder="Nombre/s" value="<%= locals.old ? old.name:'' %>" required>
     </div>
 
     <div class="control-formulario">
-        <input type="text" name="lastname" class="control" placeholder="Apellido/s" value="<%= user.lastname %>"required>
+        <input type="text" name="lastname" id='lastname' class="control" placeholder="Apellido/s" value="<%= locals.old ? old.lastname:''  %>"required>
     </div>
 
     <div class="control-formulario">
-        <input type="text" name="user" class="control" placeholder="Nombre de usuario"  value="<%= user.user %>"required>
+        <input type="text" name="user" id='user' class="control" placeholder="Nombre de usuario"  value="<%= locals.old ? old.user:''  %>"required>
     </div>
+
 
     <div class="control-formulario">
-        <input type="email" name="email" class="control" placeholder="Correo Electronico" value="<%= user.email %>" required>
+        <input type="password" name="password" id="password" placeholder="Contraseña" class="control" id='password' value="<%= locals.old ? old.passsword:'' %>"required >
     </div>
 
-    <div class="control-formulario">
-        <input type="password" name="password" placeholder="Contraseña" class="control" id='password' value="<%= user.password %>"required >
-    </div>
-
-    <!-- <div class="control-formulario">
-        <input type="password" name="confirm_password" placeholder="Confirmar contraseña" class="control" id='confirm_password' required>
-    </div> -->
-
+  
     <div class="control-formulario">
         <label>Fecha de nacimiento</label>
-        <input type="date" name="date" class="control" value="<%= user.birthDate %>" required>
+        <input type="date" name="date" id="date" class="control" value="<%= locals.old ? old.date:''  %>" required>
     </div>
 
     <div class="control-formulario">
@@ -51,7 +45,7 @@
     </div>
 
     <div>
-    <select name="country" value="country" id="pais" class="control"  placeholder="pais" value="<%= user.nationality %>" required>
+    <select name="country" value="country" id="pais" class="control"  placeholder="pais" value="<%= locals.old ? old.pais:'' %>" required>
         <optgroup label="Pais">
             <option value="Argentina">Argentina</option>
           <option value="Colombia">Colombia</option>
@@ -74,17 +68,14 @@
 
     <div class="control-formulario-checkbox">
        
-        <label class="checkbox-label"><input type="checkbox" name="categoriaDeInteres" value="<%= user.interestCategory %>" class="control" >Cervezas</label>
-        <label class="checkbox-label"><input type="checkbox" name="categoriaDeInteres" value="<%= user.interestCategory %>" class="control">Licores</label>
-        <label class="checkbox-label"><input type="checkbox" name="categoriaDeInteres" value="<%= user.interestCategory %>" class="control">Vinos</label>
-        <label class="checkbox-label"><input type="checkbox" name="categoriaDeInteres" value="<%= user.interestCategory %>" class="control">Bebidas No Alcoholicas</label>
-        <label class="checkbox-label"><input type="checkbox" name="categoriaDeInteres" value="<%= user.interestCategory %>"class="control">Otros</label>
+        <label class="checkbox-label"><input type="checkbox" name="categoriaDeInteres" id='categoriaDeInteres' value="<%= locals.old ? old.categoriaDeInteres:'' %>" class="control">Licores</label>
+        <label class="checkbox-label"><input type="checkbox" name="categoriaDeInteres" id='categoriaDeInteres' value="<%= locals.old ? old.categoriaDeInteres:'' %>" class="control" >Cervezas</label>
+        <label class="checkbox-label"><input type="checkbox" name="categoriaDeInteres" id='categoriaDeInteres' value="<%= locals.old ? old.categoriaDeInteres:'' %>" class="control">Vinos</label>
+        <label class="checkbox-label"><input type="checkbox" name="categoriaDeInteres" id='categoriaDeInteres' value="<%= locals.old ? old.categoriaDeInteres:'' %>" class="control">Bebidas No Alcoholicas</label>
+        <label class="checkbox-label"><input type="checkbox" name="categoriaDeInteres" id='categoriaDeInteres' value="<%= locals.old ? old.categoriaDeInteres:'' %>"class="control">Otros</label>
     </div>
 
-     <div class="control-formulario">
-        <label>Imagen de perfil</label>
-        <input type="file" name="avatar" accept="jpg/jpeg" class="control" value="<%= user.avatar %>">
-    </div>  
+    
 
 
 

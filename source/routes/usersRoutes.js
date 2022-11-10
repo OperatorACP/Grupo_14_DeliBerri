@@ -15,11 +15,11 @@ const isLogged = require('../middlewares/isLogged');
 const noLogged = require('../middlewares/noLogged');
 
 //ruta para mostrar el carrito
-router.get('/cart', noLogged, usersController.cart);
+// router.get('/cart', noLogged, usersController.cart);
 
 //rutas de registro
 router.get('/register',  usersController.register);
-router.post('/register',  usersController.record);
+router.post('/register',  usersController. processRegister);
 
 //ruta de login
 router.get('/login', usersController.login);
