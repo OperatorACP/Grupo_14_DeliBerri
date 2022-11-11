@@ -3,97 +3,109 @@
 <head>
   <title>DeliBerri</title>
   <meta charset="utf-8">
-  <link rel="icon" type="image/x-icon" href="img/favicon.ico"/> 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="css/main.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+  <link rel="icon" type="image/x-icon" href="img/favicon.ico"/> 
 </head>
 <body>
 
     <%-include('../partials/header')%>
 
-<form action='/register'class="formulario" method="POST" enctype="multipart/form-data">
+    <form action='/register'class="formulario" method="POST" enctype="multipart/form-data">
 
-    <div class="control-formulario">
-        <label>Datos de Usuario</label>
+        <div class="control-formulario">
+            <label>Datos de Usuario</label>
+            
+            <input type="text" name="name" id='name' class="control" placeholder="Nombre/s" value="<%= locals.oldData ? oldData.name:'' %>" >
+        </div>
+    
+        <div class="control-formulario">
+            <input type="text" name="lastname" id='lastname' class="control" placeholder="Apellido/s" value="<%= locals.oldData ? oldData.lastname:''  %>">
+        </div>
+    
+        <div class="control-formulario">
+            <input type="text" name="user" id='user' class="control" placeholder="Nombre de usuario"  value="<%= locals.oldData ? oldData.user:''  %>">
+        </div>
+
+        <div class="control-formulario">
+            <input type="email" name="email" id='email' class="control" placeholder="Email"  value="<%= locals.oldData ? oldData.email:''  %>">
+        </div>
+    
+    
+        <div class="control-formulario">
+            <input type="password" name="password" id="password" placeholder="Contraseña" class="control" id='password' value="<%= locals.oldData ? oldData.passsword:'' %>" >
+        </div>
+    
+      
+        <div class="control-formulario">
+            <label>Fecha de nacimiento</label>
+            <input type="date" name="date" id="date" class="control" value="<%= locals.oldData ? oldData.date:''  %>" >
+        </div>
+    
+        <div class="control-formulario">
+            <label>Lugar de Nacimiento</label>
+        </div>
+    
+        <div>
+        <select name="nationality" value="nationality" id="nationality" class="control"  placeholder="nationality" value="<%= locals.oldData ? oldData.nationality:'' %>" >
+            <optgroup label="Pais">
+                <option value="Argentina">Argentina</option>
+              <option value="Colombia">Colombia</option>
+              <option value="Paraguay">Paraguay</option>
+              <option value="Brazil">Brazil</option>
+              <option value="Venezuela">Venezuela</option>
+              <option value="Chile">Chile</option>
+              <option value="Perú">Perú</option>
+              <option value="Bolivia">Bolivia</option>
+              <option value="Uruguay">Uruguay</option>
+              <option value="Otros">Otros</option>
+           </optgroup></select>
+    </div>
+    
+        <div class="control-formulario">
         
-        <input type="text" name="name" id='name' class="control" placeholder="Nombre/s" value="<%= locals.old ? old.name:'' %>" required>
-    </div>
-
-    <div class="control-formulario">
-        <input type="text" name="lastname" id='lastname' class="control" placeholder="Apellido/s" value="<%= locals.old ? old.lastname:''  %>"required>
-    </div>
-
-    <div class="control-formulario">
-        <input type="text" name="user" id='user' class="control" placeholder="Nombre de usuario"  value="<%= locals.old ? old.user:''  %>"required>
-    </div>
-
-
-    <div class="control-formulario">
-        <input type="password" name="password" id="password" placeholder="Contraseña" class="control" id='password' value="<%= locals.old ? old.passsword:'' %>"required >
-    </div>
-
-  
-    <div class="control-formulario">
-        <label>Fecha de nacimiento</label>
-        <input type="date" name="date" id="date" class="control" value="<%= locals.old ? old.date:''  %>" required>
-    </div>
-
-    <div class="control-formulario">
-        <label>Lugar de Nacimiento</label>
-    </div>
-
-    <div>
-    <select name="country" value="country" id="pais" class="control"  placeholder="pais" value="<%= locals.old ? old.pais:'' %>" required>
-        <optgroup label="Pais">
-            <option value="Argentina">Argentina</option>
-          <option value="Colombia">Colombia</option>
-          <option value="Paraguay">Paraguay</option>
-          <option value="Brazil">Brazil</option>
-          <option value="Venezuela">Venezuela</option>
-          <option value="Chile">Chile</option>
-          <option value="Perú">Perú</option>
-          <option value="Bolivia">Bolivia</option>
-          <option value="Uruguay">Uruguay</option>
-          <option value="Otros">Otros</option>
-       </optgroup></select>
-</div>
-
-    <div class="control-formulario">
+            <label>Categorías de interés</label>
+         
+        </div>
     
-        <label>Categorías de interés</label>
-     
-    </div>
-
-    <div class="control-formulario-checkbox">
-       
-        <label class="checkbox-label"><input type="checkbox" name="categoriaDeInteres" id='categoriaDeInteres' value="<%= locals.old ? old.categoriaDeInteres:'' %>" class="control">Licores</label>
-        <label class="checkbox-label"><input type="checkbox" name="categoriaDeInteres" id='categoriaDeInteres' value="<%= locals.old ? old.categoriaDeInteres:'' %>" class="control" >Cervezas</label>
-        <label class="checkbox-label"><input type="checkbox" name="categoriaDeInteres" id='categoriaDeInteres' value="<%= locals.old ? old.categoriaDeInteres:'' %>" class="control">Vinos</label>
-        <label class="checkbox-label"><input type="checkbox" name="categoriaDeInteres" id='categoriaDeInteres' value="<%= locals.old ? old.categoriaDeInteres:'' %>" class="control">Bebidas No Alcoholicas</label>
-        <label class="checkbox-label"><input type="checkbox" name="categoriaDeInteres" id='categoriaDeInteres' value="<%= locals.old ? old.categoriaDeInteres:'' %>"class="control">Otros</label>
-    </div>
-
+        <div class="control-formulario-checkbox">
+           
+            <label class="checkbox-label"><input type="checkbox" name="interestCategory" id='interestCategory' value="<%= locals.oldData ? oldData.interestCategory:'' %>" class="control">Licores</label>
+            <label class="checkbox-label"><input type="checkbox" name="interestCategory" id='interestCategory' value="<%= locals.oldData ? oldData.interestCategory:'' %>" class="control" >Cervezas</label>
+            <label class="checkbox-label"><input type="checkbox" name="interestCategory" id='interestCategory' value="<%= locals.oldData ? oldData.interestCategory:'' %>" class="control">Vinos</label>
+            <label class="checkbox-label"><input type="checkbox" name="interestCategory" id='interestCategory' value="<%= locals.oldData ? oldData.interestCategory:'' %>" class="control">Bebidas No Alcoholicas</label>
+            <label class="checkbox-label"><input type="checkbox" name="interestCategory" id='interestCategory' value="<%= locals.oldData ? oldData.interestCategory:'' %>"class="control">Otros</label>
+        </div>
     
-
-
-
-    <button onclick="registroUsuarioExitoso()" type="submit" class="boton-formulario">Guardar</button>
-    <button type="reset" class="boton-formulario">Borrar</button>
-
-
-
-    <div class="control-formulario">
-        <a href="/login" class="otras-opciones">¿Ya tienes una cuenta? Ingresá!</a>
-    </div>
-
-</form>
+        
+        <!-- <div class="control-formulario">
+            <label class="control">Foto de perfil:</label>
+            <input name="avatar" type="file" multiple="multiple" class="control" accept= ".jpg, .jpeg .png .gif" id="avatar">
+            <% if (locals.errors && errors.avatar) { %>
+              <span style="color: red"><%= errors.avatar.msg %></span>
+            <%} %>
+        </div> -->
+    
+    
+        <button onclick="registroUsuarioExitoso()" type="submit" class="boton-formulario">Guardar</button>
+        <button type="reset" class="boton-formulario">Borrar</button>
+    
+    
+    
+        <div class="control-formulario">
+            <a href="/login" class="otras-opciones">¿Ya tienes una cuenta? Ingresá!</a>
+        </div>
+    
+    </form>
 
 <%-include('../partials/footer')%>
 
+<script src="/js/validatorRegister.js"></script>
+
 </body>
 
-<script defer src="source\views\scripts\alerts.js"></script>
+
 
 </html>

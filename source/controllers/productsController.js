@@ -24,8 +24,7 @@ const productsController = {
    },
  
    create: function (req, res) {
-     db.product
-       .create({
+     db.product.create({
         title: req.body.title,
         price: req.body.price,
         description: req.body.description,

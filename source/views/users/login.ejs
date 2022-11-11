@@ -13,44 +13,38 @@
 
     <%-include('../partials/header')%>
 
-<form method="POST" class="formulario">
+    <form action="/login" method="POST" class="formulario">
+      <h2 class="h2-log">Iniciar sesión</h2>
 
-    <div class="control-formulario">
+      <div class="control-formulario">
         <label class="control-formulario-titulo">Bienvenido a Deliberri!</label>
-        <input action= '/login' type="email" name="email" class="control" placeholder="Direccion de Correo Electronico" value="<%= user.email %>" required>
-
- <% if (locals.error && errors.email) { %>
-<div class="text-danger">
-    <%= errors.email.msg %>
-</div>
-<% } %> 
-
+        <input type="email" name="email" class="control" placeholder="Direccion de Correo Electronico" value="<%= locals.oldData ? oldData.email:'' %>" required>
+        <% if (locals.errors && errors.eMail) { %>
+          <span style="color: red"><%= errors.eMail.msg %></span>
+        <%} %>
     </div>
     
     <div class="control-formulario">
-        <input type="password" name="password" placeholder="Contraseña" class="control" value="<%= user.password %>" required>
+        <input type="password" name="password" placeholder="Contraseña" class="control" value="<%= locals.oldData ? oldData.password:'' %>" required>
+        <% if (locals.errors && errors.password) { %>
+          <span style="color: red"><%= errors.password.msg %></span>
+        <%} %>
     </div>
 
     <div class="form-check">
       <label class="form-check">
-         <input type="checkbox" class="check-input" name="remember_user">Recordar mi usuario
+         <input type="checkbox" class="" name="remember_user"><p class="control">Recordar credenciales</p>
       </label>
     </div>
 
     <button type="submit" class="boton-formulario" name="ingresar">Ingresar</button>
 
 
-    <div class="control-formulario">
-        <a href="#" class="otras-opciones">¿Olvidaste tu contraseña?</a>
-    </div>
 
-   <!-- Grammar checking  -->
    
     <div class="control-formulario">
         <a href="/register" class="otras-opciones">Registrate!</a>
     </div>
-
-</form>
 
 <%-include('../partials/footer')%>
 

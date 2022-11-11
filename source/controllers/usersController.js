@@ -1,70 +1,19 @@
- const bcryptjs = require('bcryptjs');
- const {validationResult} = require('express-validator');
- const fs = require('fs');
- const {extname,resolve} = require('path');
- const db = require("../database/models");
- const user = require('../routes/usersRoutes');
- const sequelize = db.sequelize;
- const User = db.user;
+const bcryptjs = require('bcryptjs');
+const { validationResult } = require('express-validator');
+const path = require('path');
+const db = require('../database/models/');
+const { Op } = require("sequelize");
 
- const usersController = {
-
-     login: async (req, res) => {
-         try {
-             return res.render('users/login', {old})
-         } catch (error) { console.log(error); }
-     },
+const sequelize = db.sequelize;
+const users = db.users;
 
 
-    
-     //Login de usuarios
+const usersController = {
+    register: (req, res) => {
+        res.render('users/register');
+    },
 
-     access:  (req , res) => {
-         try {
-             const resultValidation = validationResult(req)
-
-             if (resultValidation.errors.length > 0) { 
-                 return res.render('users/login', {
-                     errors: resultValidation.mapped(),
-                     old : req.body
-                 })
-             } else {
-                  db.user.findOne({
-                     where : {email : req.body.email}
-                 })
-                     .then(userToLogin => {        
-                         let correctPassword = bcryptjs.compareSync(req.body.password, userToLogin.password);
-                         if (correctPassword) {
-                             delete userToLogin.password;
-                             req.session.userLogged = userToLogin;
-                             userToLogin.admin == 1 ? req.session.isAdmin = true : req.session.isAdmin = false;
-                             req.body.remember != undefined ?
-                             res.cookie('userEmail', req.body.email, {maxAge : (((1000 * 60) * 60)*24)}) : null;  //cookie de 24 hs 
-                             return res.redirect('profile');
-                         } else {
-                             return res.render('users/login', {
-                                 errors: {password: {msg: 'Contraseña incorrecta'}},
-                                 old : req.body
-                             })
-                         }
-                     })
-                     .catch((fail) => { return res.render('users/login', {
-                             errors: {email: {msg: 'El email con el que intenta ingresar no existe'}}
-                         })
-                     })
-             }
-         } catch (error) { console.log(error); }
-     },
-
-     //register de usuarios
-
-     register:  (req , res) => { 
-         try {
-             return res.render('users/register');
-         } catch (error) { console.log(error); }
-     },
-
-     processRegister: async (req, res) => {
+    processRegister: async (req, res) => {
       
         const resultValidation = validationResult(req);
        
@@ -78,19 +27,18 @@
 
         if (!resultValidation.errors.length && !usuarioRepetido) {
             db.user.create({
-                name: req.body.name,
-                lastname: req.body.lastname,
+               name: req.body.name,
+                lastName: req.body.lastName,
                 user: req.body.user,
                 email: req.body.email,
-                password: bcryptjs.hashSync(req.body.password, 10),
+                password: bcryptjs.hashSync(req.body.password, bcryptjs.genSaltSync()),
                 birthDate: req.body.birthDate,
                 nationality: req.body.nationality,
                 interestCategory: req.body.interestCategory,
-                avatar: req.files && req.files.length > 0 ? req.files[0].filename : 'default.png',
-                isAdmin: req.body.email.includes('@IncluirCorreoDeAdmin') ? 1 : 0
-            })
-            
-            .then(function(userlogon) {
+                avatar: req.files.length ? req.files[0].filename : null,
+                isAdmin: req.body.isAdmin
+               
+            }).then(function(userlogon) {
                 req.session.userLogged = userlogon;
                 res.redirect('/users/profile');
             })
@@ -99,99 +47,110 @@
             })
         } else {
             if (usuarioRepetido) {
-                return res.render('register', {
+                return res.render('users/register', {
                     errors: {
                         eMail: {
                             msg: 'Este email ya está registrado'
                         }
                     },
-                    old: req.body
+                    oldData: req.body
             })} else {
                 
                 
-                return res.render('register', {
-                    errors: resultValidation.mapped(),
-                    old: req.body
+                return res.render('users/login', {
+                
+                    oldData: req.body
                 });
             }
         }
     },
 
-    //Profile access y logout
+   
 
-    profile:  (req , res) => { // GET profile
-         try {
-             return res.render('users/profile', {
-                 user: req.session.userLogged
-             })
-         } catch (error) { console.log(error); }
-     },
+    login: (req, res) => {
+        return res.render('users/login', {registerSuccessful: req.query.registerSuccessful});
+    },
 
-     logout:  (req, res) => {
-         try {
-             res.clearCookie('userEmail')
-             req.session.destroy()
-             return res.redirect('/')
-         } catch (error) { console.log(error); }
-     },
+    loginProcess: async (req, res) => {
+        let userToLogin = await db.user.findOne({
+            where: {
+                email: { [Op.like]: req.body.email }
+            }
+        })
+        if (userToLogin) {
+            let isOkThePassword = bcryptjs.compareSync(req.body.password, userToLogin.pass);
+            if (isOkThePassword) {
+                delete userToLogin.pass;
+                req.session.userLogged = userToLogin;
+                if (req.body.remember_user) {
+                    res.cookie('userEmail', req.body.email, { maxAge: 5 * 60 * 1000 });
+                }
 
-      //Profile edit y erase
+                return res.redirect('/users/profile');
+                
+            } else {//si no coincide la contraseña se renderiza la vista de login con error
+                res.render('users/login', {
+                    titulo: "Ingresá", old: req.body, errors: {
+                        eMail: {
+                            msg: "Las credenciales son invalidas"
+                        }
+                    }
+                })
+            }
 
-     updateUserNames: async (req, res) => {
-         try {
-             await db.User.update({
-                 name: req.body.name,
-                 lastname: req.body.lastname,
-                 }, {where : {id: req.params.id} })
-             return res.redirect('/users/profile');
-         } catch (error) { console.log(error); }
-     },
+        } else { //si no se encuentra el mail, volvemos a renderizar la vista de login con mensaje de error
+            res.render('users/login', {
+                titulo: "Ingresá", errors: {
+                    eMail: {
+                        msg: "El usuario no se encuentra en la base de datos"
+                    }
+                }
+            })
+        }
+    },
 
-     updateUserAvatar: async (req, res) => {
-         try {
-             await db.User.update({
-                 avatar: req.files && req.files.length > 0 ? req.files[0].filename : 'default.png',
-                 }, {where : {id: req.params.id}}
-                 /*.then(function(file) {
-                     let path = resolve(__dirname,'..','..','public','img','users',)
-                     fs.unlink(path)
-                 }) */
-                 )
-                 return res.redirect('/users/profile');
-             } catch (error) { console.log(error); }
-     },
+    profile: (req, res) => {
+        return res.render('userProfile', {
+            userlogon: req.session.userLogged
+        });
+    },
 
-     updateUserPass:  (req, res) => {
-         try {
-              db.User.findOne({ where : {email : req.body.email} })
-                 .then(userToUpdate => {
-                     let correctPassword = bcryptjs.compareSync(req.body.actualPass, userToUpdate.password);
-                     if ((correctPassword) && (req.body.newPass == req.body.checkNewPass)) {
-                         db.User.update({
-                             password: bcryptjs.hashSync(req.body.newPass, 10),
-                             }, {where : {id: userToUpdate.id}}
-                             )
-                         return res.redirect('/users/profile');
-                     }
-                 })
-         } catch (error) { console.log(error); }
-     },
+    edit: (req, res) => {
+        res.render('userProfileToEdit', {
+            userlogon: req.session.userLogged
+        })
+    },
 
-     destroy: async (req, res) => {
-         try {
-             await db.User.destroy({ where: {id: req.params.id} });
-             req.session.destroy();
-             return res.redirect('/');
-         } catch (error) { console.log(error); }
-     },
+    update: (req, res) => {
+        db.user.findByPk(req.session.userLogged.id)
+            .then(function (userlogon) {
+                userlogon.update({
+                
+                    name: req.body.name,
+                    lastName: req.body.lastname,
+                    user: req.body.user,
+                    email: req.body.email,
+                    password: bcryptjs.hashSync(req.body.password, bcryptjs.genSaltSync()),
+                    birthDate: req.body.birthDate,
+                    nationality: req.body.nationality,
+                    interestCategory: req.body.interestCategory,
+                    avatar: req.files.length ? req.files[0].filename : null,
+                    isAdmin: req.body.isAdmin
 
-      //Cart 
+                }).then(userlogon => {
+                    req.session.userLogged = userlogon;
+                    res.redirect('/users/profile')
+                }).catch(function(e){
+                    res.render('error')
+                });
+            })
+    },
 
-    //  cart: async (req , res) => {
-    //      try {
-    //          return res.render('users/cart');
-    //      } catch (error) { console.log(error); }
-    //  }
- }
+    logout: (req, res) => {
+        req.session.destroy();
+        res.clearCookie('userEmail');
+        return res.redirect('/');
+    }
+}
 
- module.exports = usersController;
+module.exports = usersController;

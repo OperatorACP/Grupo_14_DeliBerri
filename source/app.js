@@ -73,11 +73,4 @@ server.get("/edit", (req, res) => {
   return res.render(join(__dirname, "/views/sections/edit.ejs"));
 });
 
-// Rutas de /views/users
 
-server.get("/register", (req, res) => {
-  return res.render(join(__dirname, "/views/users/register.ejs"));
-});
-server.get("/login", (req, res) => {
-  return res.render(join(__dirname, "/views/users/login.ejs"));
-});

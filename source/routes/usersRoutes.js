@@ -1,40 +1,29 @@
-const express = require ('express');
+const express = require('express');
+const path = require('path')
+const userController = require("../controllers/usersController");
 
-const usersController = require('../controllers/usersController');
 
+// ************ Middlewares ************ 
+
+const guestMiddleware = require('../middlewares/guestMiddleware')
+const authMiddleware = require('../middlewares/authMiddleware')
+const uploadAvatar = require('../middlewares/multerMiddleware')
 const router = express.Router();
+const usersController = require('../controllers/usersController')
+const userLoggedMiddleware = require('../middlewares/userLoggedMiddleware');
+const validationsMiddlewareUser = require('../middlewares/validationsMiddleware');
 
-const multer = require('multer');
-//const storage = require('../modules/storage');
-//const upload = multer({storage:storage('../../uploads/users')});
+//************ Login ************ 
+router.get('/login', guestMiddleware, usersController.login);
+router.post('/login', validationsMiddlewareUser, userLoggedMiddleware, usersController.loginProcess);
+router.get('/profile', authMiddleware, usersController.profile)
+router.get('/profileToEdit/:id', authMiddleware, usersController.edit)
+router.put('/profileToEdit/:id', validationsMiddlewareUser, authMiddleware, uploadAvatar.any(), usersController.update)
+router.get('/logout',  usersController.logout)
+//************ Register ************ 
+router.get('/register', guestMiddleware, usersController.register);
+router.post('/register' , uploadAvatar.any('avatar'), validationsMiddlewareUser, usersController.processRegister);
 
-//const registerValidations = require('../validations/users/registerValidations');
-//const loginValidations = require('../validations/users/loginValidations');
 
-const isLogged = require('../middlewares/isLogged');
-const noLogged = require('../middlewares/noLogged');
-
-//ruta para mostrar el carrito
-// router.get('/cart', noLogged, usersController.cart);
-
-//rutas de registro
-router.get('/register',  usersController.register);
-router.post('/register',  usersController. processRegister);
-
-//ruta de login
-router.get('/login', usersController.login);
-router.post('/login',  usersController.access);
-
-// rutas de perfil
-router.get('/profile', usersController.profile);
-router.get('/logout', usersController.logout);
-
-//rutas de edición de usuario
-router.patch('/updateNames/:id', usersController.updateUserNames);
-router.patch('/updateAvatar/:id',  usersController.updateUserAvatar);
-router.patch('/updatePass/:id', usersController.updateUserPass);
-
-//ruta de borrado
-router.delete('/destroyUser/:id', usersController.destroy);
 
 module.exports = router;

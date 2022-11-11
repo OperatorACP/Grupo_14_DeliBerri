@@ -1,21 +1,28 @@
-const User = require("../models/User");
+const db = require('../database/models');
+const { Op } = require("sequelize");
+const sequelize = db.sequelize;
 
-function userLoggedMiddleware(req, res, next) {
-  res.locals.isLogged = false;
 
-  let emailInCookie = req.cookies.userEmail;
-  let userFromCookie = User.findByField("email", emailInCookie);
+async function userLoggedMiddleware(req, res, next) {
+    res.locals.isLogged = false;
 
-  if(userFromCookie) {
-   req.session.userLogged = userFromCookie;
-  }
+    let emailInCookie = req.cookies.userEmail;
+    let userFromCookie = await db.user.findOne({
+         where:{
+            email:{[Op.like]:emailInCookie}
+        }})
 
-  if (req.session.userLogged) {
-    res.locals.isLogged = true;
-    res.locals.userLogged = req.session.userLogged;
-  }
+    if(userFromCookie){
+        req.session.userLogged = userFromCookie;
+    }
 
-  next();
+    if (req.session.userLogged) {
+        res.locals.isLogged = true;
+        res.locals.userLogged = req.session.userLogged;
+    } 
+
+    next();
+
 }
 
 module.exports = userLoggedMiddleware;
