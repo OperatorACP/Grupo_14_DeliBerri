@@ -1,10 +1,11 @@
 window.addEventListener("load", function (e) {
-  let formulario = document.querySelector("form.products");
+  let formulario = document.querySelector("form.register");
 
   formulario.addEventListener("submit", function (e) {
+      e.preventDefault();
     let errores = [];
 
-    let campoNombre = document.querySelector("input.name");
+    let campoNombre = document.querySelector("input#name");
 
     if (campoNombre.value == "") {
       errores.push("El campo de nombre del usuario debe estar completo.");
@@ -14,7 +15,7 @@ window.addEventListener("load", function (e) {
       );
     }
 
-    let campoApellido = document.querySelector("input.lastname");
+    let campoApellido = document.querySelector("input#lastname");
 
     if (campoApellido.value == "") {
       errores.push("El campo de apellido del usuario debe estar completo.");
@@ -24,7 +25,7 @@ window.addEventListener("load", function (e) {
       );
     }
 
-    let campoUsuario = document.querySelector("input.user");
+    let campoUsuario = document.querySelector("input#user");
 
     if (campoUsuario.value == "") {
       errores.push("El campo de usuario debe estar completo.");
@@ -32,13 +33,13 @@ window.addEventListener("load", function (e) {
       errores.push("El usuario debe contener al menos 2 caracteres.");
     }
 
-    let campoEmail = document.querySelector("input.email");
+    let campoEmail = document.querySelector("input#email");
 
     if (campoEmail.value == "") {
       errores.push("El campo de email debe estar completo.");
     }
 
-    let campoContraseña = document.querySelector("input.password");
+    let campoContraseña = document.querySelector("input#password");
 
     if (campoContraseña.value == "") {
       errores.push("El campo de contraseña debe estar completo.");
@@ -48,25 +49,25 @@ window.addEventListener("load", function (e) {
       );
     }
 
-    let campoCumpleaños = document.querySelector("input.birthDate");
+   //  let campoCumpleaños = document.querySelector("input#birthDate");
 
-    if (campoCumpleaños.value == "") {
-      errores.push("El campo de cumpleaños debe estar completo.");
+   //  if (campoCumpleaños.value == "") {
+   //    errores.push("El campo de cumpleaños debe estar completo.");
+   //  }
+
+   //  let campoNacionalidad = document.querySelector("input#nationality");
+
+   //  if (campoNacionalidad.value == "") {
+   //    errores.push("Debe elegir una opción del campo de nacionalidad.");
+   //  }
+
+    let campoInteres = document.querySelector("input#interestCategory");
+
+    if (campoInteres == "") {
+      errores.push("Debe elegir al menos una opción cómo categoría de interés.");
     }
 
-    let campoNacionalidad = document.querySelector("input.nationality");
-
-    if (campoNacionalidad.value == "") {
-      errores.push("Debe elegir una opción del campo de nacionalidad.");
-    }
-
-    let campoInteres = document.querySelector("input.interestCategory");
-
-    if (campoInteres.value == "") {
-      errores.push("Debe elegir una opción cómo categoría de interés.");
-    }
-
-   let campoAvatar = document.querySelector("input.avatar");
+   let campoAvatar = document.querySelector("input#avatar");
 
    if (campoAvatar.value == "") {
      // <-- archivos JPG, JPEG, PNG ó GIF
@@ -74,12 +75,13 @@ window.addEventListener("load", function (e) {
    }
 
     if (errores.length > 0) {
-      e.preventDefault();
-    }
-
-    let ulErrores = document.querySelector("div.errores ul");
-    for (let i = 0; i < errores.length; i++) {
-      ulErrores.innerHTML += "<li>" + errores[i] + "</li>";
+      let ulErrores = document.querySelector("div.errores ul");
+      ulErrores.innerHTML = "";
+      for (let i = 0; i < errores.length; i++) {
+        ulErrores.innerHTML += "<li>" + errores[i] + "</li>";
+      }
+    } else {
+      formulario.submit();
     }
   });
 });

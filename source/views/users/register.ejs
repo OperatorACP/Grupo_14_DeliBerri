@@ -13,7 +13,11 @@
 
     <%-include('../partials/header')%>
 
-    <form action='/register'class="formulario" method="POST" enctype="multipart/form-data">
+    <form action='/register'class="register" method="POST" enctype="multipart/form-data">
+
+               <div class="errores">
+                  <ul></ul>
+               </div>
 
         <div class="control-formulario">
             <label>Datos de Usuario</label>
@@ -37,8 +41,13 @@
         <div class="control-formulario">
             <input type="password" name="password" id="password" placeholder="Contraseña" class="control" id='password' value="<%= locals.oldData ? oldData.passsword:'' %>" >
         </div>
-    
-      
+
+            <div class="control-formulario"></div>
+               <label for="name">Avatar del Usuario </label>
+               
+               <p><input type="file" name="avatar" id="avatar" value="<%= locals.oldData ? oldData.avatar:''  %>"></p>
+            </div>
+
         <div class="control-formulario">
             <label>Fecha de nacimiento</label>
             <input type="date" name="date" id="date" class="control" value="<%= locals.oldData ? oldData.date:''  %>" >
@@ -51,7 +60,7 @@
         <div>
         <select name="nationality" value="nationality" id="nationality" class="control"  placeholder="nationality" value="<%= locals.oldData ? oldData.nationality:'' %>" >
             <optgroup label="Pais">
-                <option value="Argentina">Argentina</option>
+               <option value="Argentina">Argentina</option>
               <option value="Colombia">Colombia</option>
               <option value="Paraguay">Paraguay</option>
               <option value="Brazil">Brazil</option>
@@ -89,7 +98,7 @@
         </div> -->
     
     
-        <button onclick="registroUsuarioExitoso()" type="submit" class="boton-formulario">Guardar</button>
+        <button type="submit" class="boton-formulario">Guardar</button>
         <button type="reset" class="boton-formulario">Borrar</button>
     
     
@@ -102,7 +111,7 @@
 
 <%-include('../partials/footer')%>
 
-<script src="/js/validatorRegister.js"></script>
+<script src='/js/usersRegisterValidation.js'></script>
 
 </body>
 
