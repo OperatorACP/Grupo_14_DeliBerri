@@ -22,7 +22,7 @@
       <%} %>
 <section class="user-profile">
  <div class="avatar-profile">
-  <img class="profile-avatar" src="/img/users/<%= locals.userLogged.avatar || 'default-avatar.png' %>"  alt="avatar" width="100%" height="100%">    
+  <img class="profile-avatar" src="/img/<%= locals.userLogged.avatar || 'default-avatar.png' %>"  alt="avatar" width="100%" height="100%">    
 </div>
   <h2 class="h2-prof">Bienvenido <div class="user-text"><%= locals.userLogged.user %></div></h2>
 
@@ -34,9 +34,9 @@
    
 </form>
 
-<form class="button-form" action="/users/profileToEdit/<%=locals.userLogged.id%>?_method=PUT" method="get">
+<form class="button-form" action="/profileToEdit/<%=locals.userLogged.id%>?_method=PUT" method="get">
    
-    <button class="button" href="/users/profileToEdit">Editar información</button>
+    <button class="button" href="/profileToEdit">Editar información</button>
 
 </form>
 

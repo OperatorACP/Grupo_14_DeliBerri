@@ -20,7 +20,7 @@ const usersController = {
       },
     });
 
-    if (!resultValidation.errors.length && !usuarioRepetido) {
+    if (!resultValidation.errors.length == 0 && !usuarioRepetido) {
       db.user.create({
           name: req.body.name,
           lastname: req.body.lastname,
@@ -38,7 +38,7 @@ const usersController = {
         })
         .then(function (userlogon) {
           req.session.userLogged = userlogon;
-          res.redirect("/users/profile");
+          res.redirect("/profile");
         })
         .catch((err) => {
           res.send(err);
@@ -86,7 +86,7 @@ const usersController = {
           res.cookie("userEmail", req.body.email, { maxAge: 5 * 60 * 1000 });
         }
 
-        return res.redirect("/users/profile");
+        return res.redirect("/profile");
       } else {
         //si no coincide la contraseña se renderiza la vista de login con error
         res.render("users/login", {
@@ -113,13 +113,13 @@ const usersController = {
   },
 
   profile: (req, res) => {
-    return res.render("userProfile", {
+    return res.render("users/userProfile", {
       userlogon: req.session.userLogged,
     });
   },
 
   edit: (req, res) => {
-    res.render("userProfileToEdit", {
+    res.render("users/userProfileToEdit", {
       userlogon: req.session.userLogged,
     });
   },
@@ -144,7 +144,7 @@ const usersController = {
         })
         .then((userlogon) => {
           req.session.userLogged = userlogon;
-          res.redirect("/users/profile");
+          res.redirect("/profile");
         })
         .catch(function (e) {
           res.render("error");
