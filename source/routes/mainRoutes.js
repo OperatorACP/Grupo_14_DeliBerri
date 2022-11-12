@@ -7,23 +7,23 @@ router.get("/", (req, res) => {
 });
 
 router.get("/sale", (req, res) => {
-  return res.render(join(__dirname, "../views/sections/sale.ejs"));
+  return res.render(join(__dirname, "../views/main/sale.ejs"));
 });
 router.get("/wines", (req, res) => {
-  return res.render(join(__dirname, "../views/sections/wines.ejs"));
+  return res.render(join(__dirname, "../views/main/wines.ejs"));
 });
 router.get("/beers", (req, res) => {
-  return res.render(join(__dirname, "../views/sections/beers.ejs"));
+  return res.render(join(__dirname, "../views/main/beers.ejs"));
 });
 router.get("/spirits", (req, res) => {
-  return res.render(join(__dirname, "../views/sections/spirits.ejs"));
+  return res.render(join(__dirname, "../views/main/spirits.ejs"));
 });
 
 router.get("/productDetail", (req, res) => {
-  return res.render(join(__dirname, "../views/sections/productDetail.ejs"));
+  return res.render(join(__dirname, "../views/main/productDetail.ejs"));
 });
 router.get("/productCart", (req, res) => {
-  return res.render(join(__dirname, "../views/sections/productCart.ejs"));
+  return res.render(join(__dirname, "../views/main/productCart.ejs"));
 });
 
 module.exports = router;
