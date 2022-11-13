@@ -13,7 +13,7 @@
 
     <%-include('../partials/header')%>
 
-    <form action='/register'class="register" method="POST" enctype="multipart/form-data">
+    <form action='/register' class="control-formulario" method="POST" enctype="multipart/form-data">
 
                <div class="errores">
                   <ul></ul>
@@ -42,11 +42,7 @@
             <input type="password" name="password" id="password" placeholder="Contraseña" class="control" id='password' value="<%= locals.oldData ? oldData.passsword:'' %>" >
         </div>
 
-            <div class="control-formulario"></div>
-               <label for="name">Avatar del Usuario </label>
-               
-               <p><input type="file" name="avatar" id="avatar" value="<%= locals.oldData ? oldData.avatar:''  %>"></p>
-            </div>
+         
 
         <div class="control-formulario">
             <label>Fecha de nacimiento</label>
@@ -57,7 +53,7 @@
             <label>Lugar de Nacimiento</label>
         </div>
     
-        <div>
+        <div class="control-formulario">
         <select name="nationality" value="nationality" id="nationality" class="control"  placeholder="nationality" value="<%= locals.oldData ? oldData.nationality:'' %>" >
             <optgroup label="Pais">
                <option value="Argentina">Argentina</option>
@@ -73,21 +69,21 @@
            </optgroup></select>
     </div>
     
-        <div class="control-formulario">
+     
+    
+   <div class="control-formulario">
         
             <label>Categorías de interés</label>
          
-        </div>
-    
-        <div class="control-formulario-checkbox">
-           
-            <label class="checkbox-label"><input type="checkbox" name="interestCategory" id='interestCategory' value="<%= locals.oldData ? oldData.interestCategory:'' %>" class="control">Licores</label>
-            <label class="checkbox-label"><input type="checkbox" name="interestCategory" id='interestCategory' value="<%= locals.oldData ? oldData.interestCategory:'' %>" class="control" >Cervezas</label>
-            <label class="checkbox-label"><input type="checkbox" name="interestCategory" id='interestCategory' value="<%= locals.oldData ? oldData.interestCategory:'' %>" class="control">Vinos</label>
-            <label class="checkbox-label"><input type="checkbox" name="interestCategory" id='interestCategory' value="<%= locals.oldData ? oldData.interestCategory:'' %>" class="control">Bebidas No Alcoholicas</label>
-            <label class="checkbox-label"><input type="checkbox" name="interestCategory" id='interestCategory' value="<%= locals.oldData ? oldData.interestCategory:'' %>"class="control">Otros</label>
-        </div>
-    
+        <select id="test">
+            <option value="1">Licores </option>
+            <option value="2"> Cervezas</option>
+            <option value="3">Vinos</option>
+            <option value="4">Bebidas No Alcoholicas</option>
+            <option value="5">Otros</option>
+            <option value="6">No tengo preferencia</option>
+          </select>
+     </div>
         
         <!-- <div class="control-formulario">
             <label class="control">Foto de perfil:</label>
@@ -96,7 +92,12 @@
               <span style="color: red"><%= errors.avatar.msg %></span>
             <%} %>
         </div> -->
-    
+        
+       <div class="control-formulario">
+               <label for="name">Avatar del Usuario </label>
+               <p><input type="file" name="avatar" id="avatar" value="<%= locals.oldData ? oldData.avatar:''  %>"></p>
+            </div>
+            </div>
     
         <button type="submit" class="boton-formulario">Guardar</button>
         <button type="reset" class="boton-formulario">Borrar</button>
