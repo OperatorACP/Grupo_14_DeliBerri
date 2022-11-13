@@ -51,7 +51,7 @@
     
         <div class="control-formulario">
             <label>Lugar de Nacimiento</label>
-        </div>
+        
     
         <div class="control-formulario">
         <select name="nationality" value="nationality" id="nationality" class="control"  placeholder="nationality" value="<%= locals.oldData ? oldData.nationality:'' %>" >
@@ -68,14 +68,14 @@
               <option value="Otros">Otros</option>
            </optgroup></select>
     </div>
-    
+    </div>
      
     
    <div class="control-formulario">
         
-            <label>Categorías de interés</label>
+            <label>Categoría Preferida</label>
          
-        <select id="test">
+        <select  id="test">
             <option value="1">Licores </option>
             <option value="2"> Cervezas</option>
             <option value="3">Vinos</option>
@@ -95,12 +95,12 @@
         
        <div class="control-formulario">
                <label for="name">Avatar del Usuario </label>
-               <p><input type="file" name="avatar" id="avatar" value="<%= locals.oldData ? oldData.avatar:''  %>"></p>
+               <p><input  type="file" name="avatar" id="avatar" value="<%= locals.oldData ? oldData.avatar:''  %>"></p>
             </div>
             </div>
     
-        <button type="submit" class="boton-formulario">Guardar</button>
-        <button type="reset" class="boton-formulario">Borrar</button>
+        <button type="submit" class="boton-formulario-register">Guardar</button>
+        <button type="reset" class="boton-formulario-register">Borrar</button>
     
     
     

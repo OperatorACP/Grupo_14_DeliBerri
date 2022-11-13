@@ -50,6 +50,32 @@
     text-align: center;
     margin: auto;
     display: table;
+    align-items: center;
+}
+
+.control-formulario-login {
+    margin-bottom: 30px;
+    padding: 25px;
+    padding-bottom: 30px;
+    width: 50%;
+    color: white;
+    text-align: center;
+    margin: auto;
+    display: table;
+    font-weight: bold;
+    
+}
+
+.control-formulario-titulo {
+    margin-bottom: 30px;
+    padding: 25px;
+    padding-bottom: 30px;
+    width: 50%;
+    color: white;
+    text-align: center;
+    margin: auto;
+    display: table;
+    font-size: 25px;
 }
 
 .control-formulario label {
@@ -73,6 +99,7 @@ input.check-input{
 .form-check{
     padding: 15px;
     color: white;
+    margin-top: 15px;
 }
 
 .edicion-productos{
@@ -109,7 +136,7 @@ label input[type='checkbox']{
  
 }
 
-.boton-formulario {
+.boton-formulario-register {
     font-size: 18px;
     font-weight: bold;
     background-color: #24262b;
@@ -119,9 +146,34 @@ label input[type='checkbox']{
     border: lightgrey;
     outline: none;
     width: 50%;
+    margin-top: 50px;
 }
 
-.boton-formulario:hover {
+.boton-formulario-login {
+    font-size: 18px;
+    font-weight: bold;
+    background-color: #24262b;
+    color: white;
+    margin-top: 50px;
+    padding: 8px 10px;
+    border-radius: 5px;
+    border: lightgrey;
+    outline: none;
+    width: 50%;
+}
+
+.boton-formulario-register:hover {
+    background-color: #e91e63;
+    color: white;
+    padding: 8px 10px;
+    border-radius: 5px;
+    font-size: 18px;
+    font-weight: bold;
+    border: none;
+    transition: all 0.5s;
+}
+
+.boton-formulario-login:hover {
     background-color: #e91e63;
     color: white;
     padding: 8px 10px;
@@ -164,8 +216,11 @@ label input[type='checkbox']{
   
    display: flex;
    justify-content: center;
+   margin-top: 50px;
 }
 
 #test{
     margin: 10px;
 }
+
+

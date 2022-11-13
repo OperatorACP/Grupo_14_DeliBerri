@@ -16,15 +16,15 @@
     <form action="/login" method="POST" class="formulario">
    
 
-      <div class="control-formulario">
-        <label class="control-formulario-titulo">Bienvenido a Deliberri!</label>
-        <input type="email" name="email" class="control" placeholder="Direccion de Correo Electronico" value="<%= locals.oldData ? oldData.email:'' %>" required>
+      <div class="control-formulario-login">
+        <label class="control-formulario-titulo ">Bienvenido a Deliberri!</label>
+        <input type="email" name="email" class="control" placeholder="Correo Electronico" value="<%= locals.oldData ? oldData.email:'' %>" required>
         <% if (locals.errors && errors.eMail) { %>
           <span style="color: red"><%= errors.eMail.msg %></span>
         <%} %>
     </div>
     
-    <div class="control-formulario">
+    <div class="control-formulario-login">
         <input type="password" name="password" placeholder="Contraseña" class="control" value="<%= locals.oldData ? oldData.password:'' %>" required>
         <% if (locals.errors && errors.password) { %>
           <span style="color: red"><%= errors.password.msg %></span>
@@ -40,12 +40,12 @@
     </div>
 </div>
   
-    <button type="submit" class="boton-formulario" name="ingresar">Ingresar</button>
+    <button type="submit" class="boton-formulario-login " name="ingresar">Ingresar</button>
 
 
 
    
-    <div class="control-formulario">
+    <div class="control-formulario-login">
         <a href="/register" class="otras-opciones">Registrate!</a>
     </div>
 
