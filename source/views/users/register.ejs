@@ -26,7 +26,7 @@
         </div>
     
         <div class="control-formulario">
-            <input type="text" name="lastname" id='lastname' class="control" placeholder="Apellido/s" value="<%= locals.oldData ? oldData.lastname:''  %>">
+            <input type="text" name="lastname" id='lastname' class="control" placeholder="Apellido/s" value="<%= locals.oldData ? oldData.lastName:''  %>">
         </div>
     
         <div class="control-formulario">
@@ -75,7 +75,7 @@
         
             <label>Categoría Preferida</label>
          
-        <select  id="test">
+        <select name="interestCategory" value="interestCategory" id="interestCategory" value="<%= locals.oldData ? oldData.interestCategory:'' %>">
             <option value="1">Licores </option>
             <option value="2"> Cervezas</option>
             <option value="3">Vinos</option>

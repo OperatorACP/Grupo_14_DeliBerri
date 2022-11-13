@@ -21,16 +21,17 @@ const usersController = {
     });
 
     if (!resultValidation.errors.length == 0 && !usuarioRepetido) {
-      db.user.create({
+      db.user
+        .create({
           name: req.body.name,
-          lastname: req.body.lastname,
+          lastName: req.body.lastName,
           user: req.body.user,
           email: req.body.email,
           password: bcryptjs.hashSync(
             req.body.password,
             bcryptjs.genSaltSync()
           ),
-          birthDate: req.body.birthDate,
+          birthDate: req.body.date,
           nationality: req.body.nationality,
           interestCategory: req.body.interestCategory,
           avatar: req.files.length ? req.files[0].filename : null,
@@ -75,10 +76,7 @@ const usersController = {
       },
     });
     if (userToLogin) {
-      let isOkThePassword = bcryptjs.compareSync(
-        req.body.password,
-        userToLogin.pass
-      );
+      let isOkThePassword = bcryptjs.compareSync(req.body.password,userToLogin.pass);
       if (isOkThePassword) {
         delete userToLogin.pass;
         req.session.userLogged = userToLogin;
@@ -129,14 +127,14 @@ const usersController = {
       userlogon
         .update({
           name: req.body.name,
-          lastName: req.body.lastname,
+          lastName: req.body.lastName,
           user: req.body.user,
           email: req.body.email,
           password: bcryptjs.hashSync(
             req.body.password,
             bcryptjs.genSaltSync()
           ),
-          birthDate: req.body.birthDate,
+          birthDate: req.body.date,
           nationality: req.body.nationality,
           interestCategory: req.body.interestCategory,
           avatar: req.files.length ? req.files[0].filename : null,

@@ -34,7 +34,7 @@
             <% if (locals.isLogged) { %>
                <li class="nav-item">
                   <a href="/logout" class="nav-link">Salir de <%= locals.userLogged.nombre %></a>
-                  <img src='/users/<%= locals.userLogged.avatar %>' width="50" style="border-radius: 100%">
+                  <img src='/img/<%= locals.userLogged.avatar %>' width="50" style="border-radius: 100%">
                </li>
                <% } else { %>
                   <li class="nav-item">
