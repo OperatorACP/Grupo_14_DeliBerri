@@ -30,11 +30,17 @@
                         <ul></ul>
                      </div>
 
-         <label for="title">Nombre de Categoria </label>
-         <p><input type="text" name="name" id="name">
-         </p>
-
-         <br>
+                     <label>Categoría Preferida</label>
+         
+                     <select name="interestCategory" value="interestCategory" id="interestCategory" value="<%= locals.oldData ? oldData.interestCategory:'' %>">
+                         <option value="1">Licores </option>
+                         <option value="2"> Cervezas</option>
+                         <option value="3">Vinos</option>
+                         <option value="4">Bebidas No Alcoholicas</option>
+                         <option value="5">Otros</option>
+                         <option value="6">No tengo preferencia</option>
+                       </select>
+                  </div>
          
          <p> <button class="botonAgregar" type="submit" href="/categorias">Agregar</button>
             <a class="botonVolver" href="/categorias">Volver al Listado de Categorias</a>

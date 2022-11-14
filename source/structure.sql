@@ -35,8 +35,8 @@ CREATE TABLE IF NOT EXISTS deliberridb.products (
   image VARCHAR(45) NULL,
   description VARCHAR(45) NULL,
   promotion INT NULL,
-  category_id INT NOT NULL,
-    FOREIGN KEY (category_id)
+  category_id INT NOT NULL ,
+    FOREIGN KEY (category_id) 
     REFERENCES deliberridb.category (id)
   );
 

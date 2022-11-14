@@ -30,6 +30,7 @@ const productsController = {
         description: req.body.description,
         promotion: req.body.promotion,
         image: req.body.image,
+        category_id: req.body.interestCategory
        })
        .then(() => {
          return res.redirect("/productos");
