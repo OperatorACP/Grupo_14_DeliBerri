@@ -24,11 +24,11 @@ const apiProductsController= {
     db.product.findByPk(req.params.id, {
         /*include: [{association: "status"}, {association: "categories"}]*/
     })
-    .then(product => {
+    .then(products => {
         return res.status(200).json({
-         url: product.image, 
+         url: products.image, 
          status: 200,   
-         product: product,
+         products: products,
          
         })
     })
@@ -55,11 +55,11 @@ lastProduct: (req, res) => {
         ],
         limit: 1
     })
-        .then(product => {
+        .then(products => {
             return res.status(200).json({
-                url: product.image, 
+                url: products.image, 
                 status: 200,   
-                product: product,
+                products: products,
                 
                })
            

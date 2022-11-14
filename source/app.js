@@ -37,6 +37,8 @@ server.use(require("./routes/usersRoutes"));
 const apiProductsRouter = require('./routes/api/productsRoutes');
 server.use ('/api/products', apiProductsRouter);
 
+const apiUsersRouter = require('./routes/api/usersRoutes')
+server.use ('/api', apiUsersRouter);
 
 
 const { port, start } = require("./modules/server");
