@@ -24,7 +24,7 @@ const usersController = {
       db.user
         .create({
           name: req.body.name,
-          lastName: req.body.lastName,
+          lastname: req.body.lastname,
           user: req.body.user,
           email: req.body.email,
           password: bcryptjs.hashSync(
@@ -76,9 +76,12 @@ const usersController = {
       },
     });
     if (userToLogin) {
-      let isOkThePassword = bcryptjs.compareSync(req.body.password,userToLogin.pass);
+      let isOkThePassword = bcryptjs.compareSync(req.body.password, userToLogin.password);
+      console.log(req.body.password)
+      console.log(userToLogin.password);
+      console.log(isOkThePassword);
       if (isOkThePassword) {
-        delete userToLogin.pass;
+        delete userToLogin.password;
         req.session.userLogged = userToLogin;
         if (req.body.remember_user) {
           res.cookie("userEmail", req.body.email, { maxAge: 5 * 60 * 1000 });
@@ -127,7 +130,7 @@ const usersController = {
       userlogon
         .update({
           name: req.body.name,
-          lastName: req.body.lastName,
+          lastname: req.body.lastname,
           user: req.body.user,
           email: req.body.email,
           password: bcryptjs.hashSync(

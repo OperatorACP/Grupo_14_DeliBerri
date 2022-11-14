@@ -52,6 +52,28 @@
     display: table;
     align-items: center;
 }
+.register {
+    margin-bottom: 30px;
+    padding: 25px;
+    padding-bottom: 25px;
+    width: 75%;
+    color: white;
+    text-align: center;
+    margin: auto;
+    display: table;
+    align-items: center;
+}
+.login {
+    margin-bottom: 30px;
+    padding: 25px;
+    padding-bottom: 25px;
+    width: 75%;
+    color: white;
+    text-align: center;
+    margin: auto;
+    display: table;
+    align-items: center;
+}
 
 .control-formulario-login {
     margin-bottom: 30px;

@@ -13,7 +13,7 @@
 
     <%-include('../partials/header')%>
 
-    <form action='/register' class="control-formulario" method="POST" enctype="multipart/form-data">
+    <form action='/register' class="register" method="POST" enctype="multipart/form-data">
 
                <div class="errores">
                   <ul></ul>
@@ -26,7 +26,7 @@
         </div>
     
         <div class="control-formulario">
-            <input type="text" name="lastname" id='lastname' class="control" placeholder="Apellido/s" value="<%= locals.oldData ? oldData.lastName:''  %>">
+            <input type="text" name="lastname" id='lastname' class="control" placeholder="Apellido/s" value="<%= locals.oldData ? oldData.lastname:''  %>">
         </div>
     
         <div class="control-formulario">

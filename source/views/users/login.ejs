@@ -13,19 +13,19 @@
 
     <%-include('../partials/header')%>
 
-    <form action="/login" method="POST" class="formulario">
+    <form action="/login" method="POST" class="login">
    
 
       <div class="control-formulario-login">
         <label class="control-formulario-titulo ">Bienvenido a Deliberri!</label>
-        <input type="email" name="email" class="control" placeholder="Correo Electronico" value="<%= locals.oldData ? oldData.email:'' %>" required>
+        <input type="email" name="email" class="control" placeholder="Correo Electronico" value="<%= locals.oldData ? oldData.email:'' %>">
         <% if (locals.errors && errors.eMail) { %>
           <span style="color: red"><%= errors.eMail.msg %></span>
         <%} %>
     </div>
     
     <div class="control-formulario-login">
-        <input type="password" name="password" placeholder="Contraseña" class="control" value="<%= locals.oldData ? oldData.password:'' %>" required>
+        <input type="password" name="password" placeholder="Contraseña" class="control" value="<%= locals.oldData ? oldData.password:'' %>">
         <% if (locals.errors && errors.password) { %>
           <span style="color: red"><%= errors.password.msg %></span>
         <%} %>
@@ -50,6 +50,8 @@
     </div>
 
 <%-include('../partials/footer')%>
+
+<script src='/js/usersLoginValidation.js'></script>
 
 </body>
 </html>

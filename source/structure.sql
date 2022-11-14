@@ -47,10 +47,10 @@ CREATE TABLE IF NOT EXISTS deliberridb.products (
 CREATE TABLE IF NOT EXISTS deliberridb.users (
   id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
   name VARCHAR(45) NULL,
-  lastName VARCHAR(45) NULL,
+  lastname VARCHAR(45) NULL,
   user VARCHAR(45) NULL,
   email VARCHAR(45) NULL,
-  password INT NULL,
+  password VARCHAR(45) NULL,
   birthDate DATE NULL,
   nationality VARCHAR(45) NULL,
   interestCategory VARCHAR(45) NULL,

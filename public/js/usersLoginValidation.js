@@ -1,28 +1,30 @@
 window.addEventListener("load", function (e) {
-  let formulario = document.querySelector("form.products");
+  let formulario = document.querySelector("form.login");
 
   formulario.addEventListener("submit", function (e) {
+    e.preventDefault();
     let errores = [];
 
-    let campoEmail = document.querySelector("input.email");
+    let campoEmail = document.querySelector("input#email");
 
-    if (campoEmail.value == "") {
+    if (campoEmail == "") {
       errores.push("El campo de email debe estar completo con uno válido.");
     }
 
-    let campoContraseña = document.querySelector("input.password");
+    let campoContraseña = document.querySelector("input#password");
 
-    if (campoContraseña.value == "") {
+    if (campoContraseña == "") {
       errores.push("El campo de contraseña debe estar completo.");
     }
 
     if (errores.length > 0) {
-      e.preventDefault();
-    }
-
-    let ulErrores = document.querySelector("div.errores ul");
-    for (let i = 0; i < errores.length; i++) {
-      ulErrores.innerHTML += "<li>" + errores[i] + "</li>";
+      let ulErrores = document.querySelector("div.errores ul");
+      ulErrores.innerHTML = "";
+      for (let i = 0; i < errores.length; i++) {
+        ulErrores.innerHTML += "<li>" + errores[i] + "</li>";
+      }
+    } else {
+      formulario.submit();
     }
   });
 });
