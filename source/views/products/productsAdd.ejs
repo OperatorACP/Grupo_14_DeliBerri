@@ -56,17 +56,19 @@
          <p><input type="file" name="image" id="image" value="<%= product.image %>" ></p>
 
 
-         <label>Categoría Preferida</label>
+         <div class="control-formulario">
+        
+            <label>Categoría Preferida</label>
          
-         <select name="interestCategory" value="interestCategory" id="interestCategory" value="<%= locals.oldData ? oldData.interestCategory:'' %>">
-             <option value="1">Licores </option>
-             <option value="2"> Cervezas</option>
-             <option value="3">Vinos</option>
-             <option value="4">Bebidas No Alcoholicas</option>
-             <option value="5">Otros</option>
-             <option value="6">No tengo preferencia</option>
-           </select>
-      </div>
+        <select name="interestCategory" value="interestCategory" id="interestCategory" value="<%= locals.oldData ? oldData.interestCategory:'' %>">
+            <option value="1">Licores </option>
+            <option value="2"> Cervezas</option>
+            <option value="3">Vinos</option>
+            <option value="4">Bebidas No Alcoholicas</option>
+            <option value="5">Otros</option>
+            <option value="6">No tengo preferencia</option>
+          </select>
+     </div>
 
          <p> <button class="botonAgregar" type="submit" href="/productos">Agregar</button>
             
