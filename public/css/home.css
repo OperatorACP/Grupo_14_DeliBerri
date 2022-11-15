@@ -149,6 +149,30 @@ margin-left: 5px;
 	color: #ffffff;
 }
 
+.fa-user{
+color: #e91e63;
+padding: 2px;
+line-height: 25px;
+position: absolute;
+margin-left: 5px;
+}
+
+.fa-user:hover{
+	color: #ffffff;
+}
+
+.fa-sign-out-alt{
+color: #e91e63;
+padding: 2px;
+line-height: 25px;
+position: absolute;
+margin-left: 5px;
+}
+
+.fa-sign-out-alt:hover{
+	color: #ffffff;
+}
+
 
 
 /*  Footer */

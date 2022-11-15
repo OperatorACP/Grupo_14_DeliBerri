@@ -159,51 +159,43 @@ label input[type='checkbox']{
 }
 
 .boton-formulario-register {
-    font-size: 18px;
-    font-weight: bold;
-    background-color: #24262b;
-    color: white;
-    padding: 8px 10px;
-    border-radius: 5px;
-    border: lightgrey;
-    outline: none;
-    width: 50%;
-    margin-top: 50px;
+   display: block;
+	margin-top: 10px;
+	margin-left: 25%;
+	width: 50%;
+	height: 40px;
+	border: none;
+	background-color: #e91e63 ;
+	cursor: pointer;
+	font-size: 16px;
+	align-items: center;
+	font-weight: 600;
+	color: white
 }
 
 .boton-formulario-login {
-    font-size: 18px;
-    font-weight: bold;
-    background-color: #24262b;
-    color: white;
-    margin-top: 50px;
-    padding: 8px 10px;
-    border-radius: 5px;
-    border: lightgrey;
-    outline: none;
-    width: 50%;
+   display: block;
+	margin-top: 10px;
+	margin-left: 25%;
+	width: 50%;
+	height: 40px;
+	border: none;
+	background-color: #e91e63 ;
+	cursor: pointer;
+	font-size: 16px;
+	align-items: center;
+	font-weight: 600;
+	color: white
 }
 
 .boton-formulario-register:hover {
-    background-color: #e91e63;
-    color: white;
-    padding: 8px 10px;
-    border-radius: 5px;
-    font-size: 18px;
-    font-weight: bold;
-    border: none;
-    transition: all 0.5s;
+	color: #24262b;
+	background-color: #ffffff;
 }
 
 .boton-formulario-login:hover {
-    background-color: #e91e63;
-    color: white;
-    padding: 8px 10px;
-    border-radius: 5px;
-    font-size: 18px;
-    font-weight: bold;
-    border: none;
-    transition: all 0.5s;
+	color: #24262b;
+	background-color: #ffffff;
 }
 
 .boton-formulario-envio:hover {

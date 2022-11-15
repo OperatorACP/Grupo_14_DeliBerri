@@ -27,10 +27,7 @@ const usersController = {
           lastname: req.body.lastname,
           user: req.body.user,
           email: req.body.email,
-          password: bcryptjs.hashSync(
-            req.body.password,
-            bcryptjs.genSaltSync()
-          ),
+          password: bcryptjs.hashSync(req.body.password, 10),
           birthDate: req.body.date,
           nationality: req.body.nationality,
           interestCategory: req.body.interestCategory,
@@ -77,9 +74,6 @@ const usersController = {
     });
     if (userToLogin) {
       let isOkThePassword = bcryptjs.compareSync(req.body.password, userToLogin.password);
-      console.log(req.body.password)
-      console.log(userToLogin.password);
-      console.log(isOkThePassword);
       if (isOkThePassword) {
         delete userToLogin.password;
         req.session.userLogged = userToLogin;
@@ -132,14 +126,6 @@ const usersController = {
           name: req.body.name,
           lastname: req.body.lastname,
           user: req.body.user,
-          email: req.body.email,
-          password: bcryptjs.hashSync(
-            req.body.password,
-            bcryptjs.genSaltSync()
-          ),
-          birthDate: req.body.date,
-          nationality: req.body.nationality,
-          interestCategory: req.body.interestCategory,
           avatar: req.files.length ? req.files[0].filename : null,
           isAdmin: req.body.isAdmin,
         })

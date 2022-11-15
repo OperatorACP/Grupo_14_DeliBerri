@@ -1,0 +1,17 @@
+.profile-avatar {
+  margin: auto;
+  margin-top: 30px;
+  width: 15%;
+  color: white;
+  text-align: center;
+  display: table;
+  font-size: 25px;
+  border-radius: 20px;
+}
+
+.h2-prof {
+  text-align: center;
+  margin-left: 15px;
+  color: white;
+  margin-bottom: 30px;
+}

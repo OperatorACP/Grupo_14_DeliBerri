@@ -1,57 +1,52 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <title>DeliBerri</title>
-  <meta charset="utf-8">
-  <link rel="icon" type="image/x-icon" href="img/favicon.ico"/> 
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="css/main.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
-</head>
-<body>
+<%-include('../partials/head')%>
+   <title>DeliBerri - Ingresá/Registrate</title>
 
-    <%-include('../partials/header')%>
+   <body>
 
-    <form action="/login" method="POST" class="login">
-   
+      <%-include('../partials/header')%>
 
-      <div class="control-formulario-login">
-        <label class="control-formulario-titulo ">Bienvenido a Deliberri!</label>
-        <input type="email" name="email" class="control" placeholder="Correo Electronico" value="<%= locals.oldData ? oldData.email:'' %>">
-        <% if (locals.errors && errors.eMail) { %>
-          <span style="color: red"><%= errors.eMail.msg %></span>
-        <%} %>
-    </div>
-    
-    <div class="control-formulario-login">
-        <input type="password" name="password" placeholder="Contraseña" class="control" value="<%= locals.oldData ? oldData.password:'' %>">
-        <% if (locals.errors && errors.password) { %>
-          <span style="color: red"><%= errors.password.msg %></span>
-        <%} %>
-    </div>
+         <form action="/login" method="POST" class="login">
 
- 
- 
+            <div class="control-formulario-login">
+               <label class="control-formulario-titulo ">Ingresá a Deliberri!</label>
+               <input type="email" name="email" class="control" placeholder="Correo Electronico"
+                  value="<%= locals.oldData ? oldData.email:'' %>">
+               <% if (locals.errors && errors.eMail) { %>
+                  <span style="color: red">
+                     <%= errors.eMail.msg %>
+                  </span>
+                  <%} %>
+            </div>
 
-  <div id="checkboxalignment">
-    <div id="checkboxes">
-        <div id="agree"><input type="checkbox" name="agree"><label class="form-check">Recordar credenciales de Login</label></div>
-    </div>
-</div>
-  
-    <button type="submit" class="boton-formulario-login " name="ingresar">Ingresar</button>
+            <div class="control-formulario-login">
+               <input type="password" name="password" placeholder="Contraseña" class="control"
+                  value="<%= locals.oldData ? oldData.password:'' %>">
+               <% if (locals.errors && errors.password) { %>
+                  <span style="color: red">
+                     <%= errors.password.msg %>
+                  </span>
+                  <%} %>
+            </div>
 
+            <div id="checkboxalignment">
+               <div id="checkboxes">
+                  <div id="agree"><input type="checkbox" name="agree"><label class="form-check">Recordar
+                        credenciales</label></div>
+               </div>
+            </div>
 
+            <div class="control-formulario">
+               <button type="submit" class="boton-formulario-login" name="ingresar">Ingresar</button>
+            </div>
+            <div class="control-formulario">
+               <a href="/register" class="otras-opciones">¿No tienes una cuenta? Registrate!</a>
+            </div>
 
-   
-    <div class="control-formulario-login">
-        <a href="/register" class="otras-opciones">Registrate!</a>
-    </div>
+         </form>
 
-<%-include('../partials/footer')%>
+         <%-include('../partials/footer')%>
 
-<script src='/js/usersLoginValidation.js'></script>
+            <script src='/js/usersLoginValidation.js'></script>
+   </body>
 
-</body>
-</html>
+   </html>

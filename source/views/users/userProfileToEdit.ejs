@@ -1,28 +1,18 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>DeliBerri || Editar perfil de <%= locals.userLogged.user_alias %> </title>
-   <link rel="icon" type="image/x-icon" href="img/favicon.ico" />
-    <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
-</head>
-<body>  
-    <!-- Navbar -->
-    
-    <%-include('../partials/header')%>
-    
-    <form class="container-form" action="/users/profileToEdit/<%=locals.userLogged.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
+<%-include('../partials/head')%>
+
+<body>
+
+   <%-include('../partials/header')%>
+
+    <form class="container-form" action="/profileToEdit/<%=locals.userLogged.id %>?_method=POST" method="POST" enctype="multipart/form-data">
+
         <h2 class="h2-prof-edit">Datos a modificar</h2>
         <label>Nombre</label>
         <input class="input-form" type="text" name="name" value="<%= locals.userLogged.name %>" required>
         <label>Apellido</label>
-        <input class="input-form" type="text" name="lastName" value="<%= locals.userLogged.lastname %>" required>
+        <input class="input-form" type="text" name="lastname" value="<%= locals.userLogged.lastname %>" required>
         <label>Usuario</label>
-        <input class="input-form" type="text" name="userAlias" value="<%= locals.userLogged.user %>" required>
+        <input class="input-form" type="text" name="user" value="<%= locals.userLogged.user %>" required>
         <label>E-Mail</label>
         <input class="input-form" type="email" name="eMail" value="<%= locals.userLogged.email %>" disabled selected required>
         <label>Avatar</label>
@@ -34,9 +24,13 @@
         <input class="button-for" id="submit" type="submit" value="Guardar cambios">
     </form>
 
-    <!-- Footer --> 
-    <%-include('../partials/footer')%>
-     
-</body>
-</html>
+<%-include('../partials/footer')%>
+
+   <script src='/js/usersRegisterValidation.js'></script>
+
+   </body>
+
+
+
+   </html>
 
