@@ -3,11 +3,74 @@ const sequelize = db.sequelize;
 const Category = db.category;
 
 const productsController = {
-  list: (req, res) => {
-    db.product.findAll().then((product) => {
-      res.render("products/productsList", { product });
-    });
-  },
+
+  beers: async (req, res) => {
+    db.product.findAll({
+        order: [["title", "ASC"]],
+    }) 
+       .then(products => {
+           res.render('main/beers', {products});
+       console.log(products)}) 
+       .catch(err => {
+        res.send(err)
+
+    })
+},
+
+wines: async (req, res) => {
+  db.product.findAll({
+      order: [["title", "ASC"]],
+  }) 
+     .then(products => {
+         res.render('main/wines', {products});
+     console.log(products)}) 
+     .catch(err => {
+      res.send(err)
+
+  })
+},
+
+
+liquors: async (req, res) => {
+  db.product.findAll({
+      order: [["title", "ASC"]],
+  }) 
+     .then(products => {
+         res.render('main/spirits', {products});
+     console.log(products)}) 
+     .catch(err => {
+      res.send(err)
+
+  })
+},
+
+
+promotions: async (req, res) => {
+  db.product.findAll({
+      order: [["title", "ASC"]],
+  }) 
+     .then(products => {
+         res.render('main/sale', {products});
+     console.log(products)}) 
+     .catch(err => {
+      res.send(err)
+
+  })
+},
+
+
+  list: async (req, res) => {
+    db.product.findAll({
+        order: [["title", "ASC"]],
+    }) 
+       .then(products => {
+           res.render('products/productsList', {products});
+       console.log(products)}) 
+       .catch(err => {
+        res.send(err)
+
+    })
+},
 
   detail: (req, res) => {
     db.product.findByPk(req.params.id).then((product) => {
