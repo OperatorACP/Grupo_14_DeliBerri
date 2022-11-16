@@ -12,11 +12,10 @@ const apiUsersController = {
     },
     
     detail: (req, res) => {
-		db.user.findByPk(req.params.id, {attributes: ['id', 'name', 'lastname', 'user_alias', 'email', 'avatar' ]})
+		db.user.findByPk(req.params.id, {attributes: ['id', 'name', 'lastname', 'user', 'email', 'avatar' ]})
 		.then(users => {
 			return res.status(200).json({
                 user: users
-			 
 			})
 		})
 	   .catch(err => {

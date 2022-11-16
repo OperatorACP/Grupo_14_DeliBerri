@@ -16,7 +16,7 @@ router.get("/login", guestMiddleware, usersController.login);
 router.post("/login", validationsMiddlewareUser, userLoggedMiddleware, usersController.loginProcess);
 router.get("/profile", authMiddleware, usersController.profile);
 router.get("/profileToEdit/:id", authMiddleware, usersController.edit);
-router.post("/profileToEdit/:id", validationsMiddlewareUser, authMiddleware, uploadAvatar.any(), usersController.update);
+router.post("/profileToEdit/:id", validationsMiddlewareUser, authMiddleware, uploadAvatar.any("avatar"), usersController.update);
 router.get("/logout", usersController.logout);
 //************ Register ************
 router.get("/register", guestMiddleware, usersController.register);

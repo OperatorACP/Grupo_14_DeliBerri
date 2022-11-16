@@ -7,50 +7,39 @@
 
          <form action='/register' class="register" method="POST" enctype="multipart/form-data">
 
-            <div class="errores">
-               <ul></ul>
-            </div>
-
-            <div class="control-formulario">
+            <div class="control-formulario-login">
+               <label class="control-formulario-titulo ">Registrate en Deliberri!</label>
                <label>Datos de Usuario</label>
-
-               <input type="text" name="name" id='name' class="control" placeholder="Nombre/s"
-                  value="<%= locals.oldData ? oldData.name:'' %>">
+               <input type="text" name="name" id='name' class="control" placeholder="Nombre/s">
             </div>
 
-            <div class="control-formulario">
-               <input type="text" name="lastname" id='lastname' class="control" placeholder="Apellido/s"
-                  value="<%= locals.oldData ? oldData.lastname:''  %>">
+            <div class="control-formulario-login">
+               <input type="text" name="lastname" id='lastname' class="control" placeholder="Apellido/s">
             </div>
 
-            <div class="control-formulario">
-               <input type="text" name="user" id='user' class="control" placeholder="Nombre de usuario"
-                  value="<%= locals.oldData ? oldData.user:''  %>">
+            <div class="control-formulario-login">
+               <input type="text" name="user" id='user' class="control" placeholder="Usuario">
             </div>
 
-            <div class="control-formulario">
-               <input type="email" name="email" id='email' class="control" placeholder="Email"
-                  value="<%= locals.oldData ? oldData.email:''  %>">
+            <div class="control-formulario-login">
+               <input type="email" name="email" id='email' class="control" placeholder="Correo Electronico">
             </div>
 
-
-            <div class="control-formulario">
-               <input type="password" name="password" id="password" placeholder="Contraseña" class="control"
-                  id='password' value="<%= locals.oldData ? oldData.passsword:'' %>">
+            <div class="control-formulario-login">
+               <input type="password" name="password" id="password" placeholder="Contraseña" class="control">
             </div>
 
-            <div class="control-formulario">
-               <label>Fecha de nacimiento</label>
-               <input type="date" name="date" id="date" class="control"
-                  value="<%= locals.oldData ? oldData.date:''  %>">
+            <div class="control-formulario-login">
+               <label>Fecha de Nacimiento</label>
+               <input type="date" name="date" id="date" class="control">
             </div>
 
-            <div class="control-formulario">
+            <div class="control-formulario-login">
                <label>Lugar de Nacimiento</label>
 
-               <div class="control-formulario">
+               <div class="control-formulario-login">
                   <select name="nationality" value="nationality" id="nationality" class="control"
-                     placeholder="nationality" value="<%= locals.oldData ? oldData.nationality:'' %>">
+                     placeholder="nationality">
                      <optgroup label="Pais">
                         <option value="Argentina">Argentina</option>
                         <option value="Colombia">Colombia</option>
@@ -67,41 +56,40 @@
                </div>
             </div>
 
-            <div class="control-formulario">
+            <div class="control-formulario-login">
                <label>Categoría Preferida</label>
 
-               <select name="interestCategory" value="interestCategory" id="interestCategory"
-                  value="<%= locals.oldData ? oldData.interestCategory:'' %>">
-                  <option value="1">Licores </option>
-                  <option value="2"> Cervezas</option>
-                  <option value="3">Vinos</option>
-                  <option value="4">Bebidas No Alcoholicas</option>
-                  <option value="5">Otros</option>
-                  <option value="6">No tengo preferencia</option>
-               </select>
+               <div class="control-formulario-login">
+                  <select name="interestCategory" value="interestCategory" id="interestCategory" required>
+                     <option value="1">Licores </option>
+                     <option value="2"> Cervezas</option>
+                     <option value="3">Vinos</option>
+                     <option value="4">Bebidas No Alcoholicas</option>
+                     <option value="5">Otros</option>
+                     <option value="6">No tengo preferencia</option>
+                  </select>
+               </div>
             </div>
 
-            <!-- <div class="control-formulario">
-            <label class="control">Foto de perfil:</label>
-            <input name="avatar" type="file" multiple="multiple" class="control" accept= ".jpg, .jpeg .png .gif" id="avatar">
-            <% if (locals.errors && errors.avatar) { %>
-              <span style="color: red"><%= errors.avatar.msg %></span>
-            <%} %>
-        </div> -->
-
-            <div class="control-formulario">
+            <div class="control-formulario-login">
                <label for="name">Avatar del Usuario </label>
+               <div class="control-formulario-login">
+                  <p><input type="file" name="avatar" id="avatar">
+                  </p>
+               </div>
+            </div>
 
-               <p><input type="file" name="avatar" id="avatar" value="<%= locals.oldData ? oldData.avatar:''  %>"></p>
+            <div style="color: red" class="errores">
+               <ul></ul>
             </div>
 
             <div class="control-formulario">
                <button type="submit" class="boton-formulario-register">Guardar</button>
-               <button type="reset" class="boton-formulario-register">Borrar</button>
+               <button type="reset" class="boton-formulario-register">Borrar todo</button>
             </div>
 
             <div class="control-formulario">
-               <a href="/login" class="otras-opciones">¿Ya tienes una cuenta? Ingresá!</a>
+               <a href="/login" class="otras-opciones">¿Ya tenés una cuenta? Ingresá!</a>
             </div>
 
          </form>

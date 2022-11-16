@@ -1,49 +1,33 @@
+<%-include('../partials/head')%>
+   <title>DeliBerri - Listado de Productos</title>
 
+   <body>
 
-   <!DOCTYPE html>
-   <html lang="en">
-   <head>
-      <title>DeliBerri</title>
-      <link rel="icon" type="image/x-icon" href="../../../img/favicon.ico"/> 
-      <meta charset="utf-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1">
-      <link rel="stylesheet" href="/css/main.css">
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-      <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
-       <meta charset="UTF-8">
-       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-       <title><%= product.title %> </title>
-</head>
+      <%-include('../partials/header')%>
 
-<%-include('../partials/header')%>
+         <div class="control-formulario-login">
+            LISTADO DE PRODUCTOS
+         </div>
 
-<body>
-   <h1>LISTADO DE PRODUCTOS</h1>
-   <br>
-   <p>
-      <a class="botonAgregar" href="/productos/add">Agregar un Producto</a>
-      <a class="botonVolver" href="/">Inicio</a>
+         <div class="control-formulario-login">
+            <ul>
+               <% for( let i=0; i < product.length; i++ ) { %>
+                  <li>
+                     <a href="/productos/detalle/<%= product[i].id %>">
+                        <%= product[i].title %>
+                     </a>
+                  </li>
+                  <% } %>
+            </ul>
+         </div>
 
-   </p>
-   <br>
-   <div class="buscar-titulo">
-      <form action="/productos/buscar" method="POST">
-         <input type="text" name="titulo" id="titulo">
-      </form>
+         <div class="control-formulario">
+            <a class="boton-formulario-register" href="/productos/add">Agregar un Producto</a>
+            <a class="boton-formulario-register" href="/profile">Volver al Perfil</a>
+         </div>
 
-   </div>
-   <ul>
-      <% for( let i=0; i < product.length; i++ ) { %>
-         <li>
-            <a href="/productos/detalle/<%= product[i].id %>">
-               <%= product[i].title %>
-            </a>
-         </li>
-         <% } %>
+   </body>
 
-   </ul>
-</body>
+   <%-include('../partials/footer')%>
 
-<%-include('../partials/footer')%>
-
-</html>
+      </html>

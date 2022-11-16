@@ -1,87 +1,74 @@
+<%-include('../partials/head')%>
+   <title>DeliBerri - Agregar Productos</title>
 
+   <body>
 
-   <!DOCTYPE html>
-   <html lang="en">
-   <head>
-      <title>DeliBerri</title>
-      <link rel="icon" type="image/x-icon" href="../../../img/favicon.ico"/> 
-      <meta charset="utf-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1">
-      <link rel="stylesheet" href="/css/main.css">
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-      <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
-       <meta charset="UTF-8">
-       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-       <title><%= product.title %> </title>
-</head>
+      <%-include('../partials/header')%>
 
-<body>
-
-   <%-include('../partials/header')%>
-
-<main>
-
-   
-
-   <h1 class="titulo">Agregar Producto</h1>
-   <br>
-   <section class="formulario">
-      <form class="products" action="/productos/create" method="POST">
-
-         <div class="errores">
-         <ul></ul>
+         <div class="control-formulario-login">
+            AGREGAR PRODUCTO
          </div>
 
-         <label for="name">Nombre del producto </label>
+         <form class="products" action="/productos/create" method="POST" enctype="multipart/form-data">
 
-         <p><input type="text" name="title" id="title" value="<%= product.title %>" ></p>
+            <div class="control-formulario-login">
+               <input class="control" type="text" name="title" id="title" placeholder="Nombre">
+            </div>
 
-         <label for="name">Precio </label>
-      
-         <p><input type="text" name="price" id="price" value="<%= product.price %>" ></p>
+            <div class="control-formulario-login">
+               <input class="control" type="text" name="price" id="price" placeholder="Precio">
+            </div>
 
-         <label for="name">Descripcion del Producto </label>
+            <div class="control-formulario-login">
+               <input class="control" type="text" name="description" id="description" placeholder="Descripción">
+            </div>
 
-         <p><input type="text" name="description" id="description" value="<%= product.description %>" ></p>
+            <div class="control-formulario-login">
+               <label for="name">Status de Promoción </label>
+            </div>
+            <div class="control-formulario-login">
+               <p><input type="radio" name="promotion" id="promotion" value="0" checked>Sin Descuento</p>
+               <p><input type="radio" name="promotion" id="promotion" value="25">25%</p>
+               <p><input type="radio" name="promotion" id="promotion" value="50">50%</p>
+               <p><input type="radio" name="promotion" id="promotion" value="75">75%</p>
+            </div>
 
-         <label for="name">Status de Promo </label>
+            <div class="control-formulario-login">
+               <label for="name">Imagen del Producto </label>
+               <div class="control-formulario-login">
+                  <input type="file" name="image" id="image">
+               </div>
+            </div>
 
-         <p><input type="radio" name="promotion" id="promotion" value="0">Sin Descuento</p>
-         <p><input type="radio" name="promotion" id="promotion" value="25">25%</p>
-         <p><input type="radio" name="promotion" id="promotion" value="50">50%</p>
-         <p><input type="radio" name="promotion" id="promotion" value="75">75%</p>
+            <div class="control-formulario">
+               <label for="name">Categoría </label>
+               <select name="interestCategory" value="interestCategory" id="interestCategory">
+                  <option value="1">Licores </option>
+                  <option value="2"> Cervezas</option>
+                  <option value="3">Vinos</option>
+                  <option value="4">Bebidas No Alcoholicas</option>
+                  <option value="5">Otros</option>
+                  <option value="6">No tengo preferencia</option>
+               </select>
+            </div>
 
-         <label for="name">Imagen del Producto </label>
+            <div class="control-formulario">
+               <div style="color: red" class="errores">
+                  <ul></ul>
+               </div>
+            </div>
 
-         <p><input type="file" name="image" id="image" value="<%= product.image %>" ></p>
+            <div class="control-formulario">
+               <button class="boton-formulario-register" type="submit" href="/productos">Agregar</button>
+               <a class="boton-formulario-register" href="/productos">Volver al Listado de Productos</a>
+            </div>
 
+         </form>
 
-         <div class="control-formulario">
-        
-            <label>Categoría Preferida</label>
-         
-        <select name="interestCategory" value="interestCategory" id="interestCategory" value="<%= locals.oldData ? oldData.interestCategory:'' %>">
-            <option value="1">Licores </option>
-            <option value="2"> Cervezas</option>
-            <option value="3">Vinos</option>
-            <option value="4">Bebidas No Alcoholicas</option>
-            <option value="5">Otros</option>
-            <option value="6">No tengo preferencia</option>
-          </select>
-     </div>
+         <script src='/js/productsAddValidation.js'></script>
 
-         <p> <button class="botonAgregar" type="submit" href="/productos">Agregar</button>
-            
-            <a class="botonVolver" href="/productos">Volver al Listado de Productos</a>
-         </p>
-         
-      </form>
-   </section>
+         <%-include('../partials/footer')%>
 
-<script src='/js/productsAddValidation.js' ></script>
-</body>
-</main>
+   </body>
 
-<%-include('../partials/footer')%>
-
-</html>
+   </html>

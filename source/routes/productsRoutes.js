@@ -1,6 +1,6 @@
 const express = require("express");
 const path = require("path");
-const upload = require("../middlewares/multerMiddlewareProduct");
+const upload = require("../middlewares/multerMiddleware");
 const router = express.Router();
 const productsController = require("../controllers/productsController");
 const authMiddleware = require("../middlewares/authMiddleware");
@@ -11,19 +11,20 @@ const validationsMiddlewareProducts = require("../middlewares/validationsMiddlew
 // CREATE //
 router.get("/productos/add", authMiddleware, productsController.add);
 router.post(
-  "/productos/create", authMiddleware, validationsMiddlewareProducts, upload.any(), productsController.create
+  "/productos/create", upload.any("image"), validationsMiddlewareProducts, authMiddleware, productsController.create
 );
 
 // READ //
-router.get("/productos", productsController.list);
-router.get("/productos/detalle/:id", productsController.detail);
+router.get("/productos", authMiddleware, productsController.list);
+router.get("/productos/detalle/:id", authMiddleware, productsController.detail);
 
 // UPDATE //
 router.get("/productos/edit/:id", authMiddleware, productsController.edit);
-router.post("/productos/edit/:id", authMiddleware, validationsMiddlewareProducts, upload.any(), productsController.update);
+router.post("/productos/edit/:id", upload.any("image"), validationsMiddlewareProducts, authMiddleware, productsController.update
+);
 
 // DELETE //
-router.get("/productos/delete/:id", productsController.delete);
-router.post("/productos/delete/:id", productsController.destroy);
+router.get("/productos/delete/:id", authMiddleware, productsController.delete);
+router.post("/productos/delete/:id", authMiddleware, productsController.destroy);
 
 module.exports = router;

@@ -9,7 +9,7 @@ window.addEventListener("load", function (e) {
 
     if (campoTitulo.value == "") {
       errores.push("El campo de nombre del producto debe estar completo.");
-    } else if (campoTitulo.value.length <= 5) {
+    } else if (campoTitulo.value.length <= 4) {
       errores.push(
         "El nombre del producto debe contener al menos 5 caracteres."
       );
@@ -19,7 +19,7 @@ window.addEventListener("load", function (e) {
 
     if (campoPrecio.value == "") {
       errores.push("El campo de precio del producto debe estar completo.");
-    } else if (campoPrecio.value > 0) {
+    } else if (campoPrecio.value < 0) {
       errores.push("El campo de precio del producto debe ser un número.");
     }
 
@@ -29,7 +29,7 @@ window.addEventListener("load", function (e) {
       errores.push(
         "El campo de la descripción del producto debe estar completo."
       );
-    } else if (campoDescripcion.value.length <= 20) {
+    } else if (campoDescripcion.value.length <= 19) {
       errores.push(
         "El campo de la descripción del producto debe contener al menos 20 caracteres."
       );
