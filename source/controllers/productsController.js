@@ -1,6 +1,7 @@
 const db = require("../database/models");
 const sequelize = db.sequelize;
 const Category = db.category;
+const {Op} = require('sequelize')
 
 const productsController = {
 
@@ -155,6 +156,21 @@ promotions: async (req, res) => {
       })
       .catch((error) => res.send(error));
   },
+
+	search: (req, res) =>{
+		db.Product.findAll({
+			where:{
+				title: {[Op.like] : "%" + req.body.title + "%"}
+			}
+		})
+			.then(products => {
+				res.render('product', {products})
+			})
+			.catch(err => {
+                res.send(err)
+            })
+	}
+  
 };
 
 module.exports = productsController;

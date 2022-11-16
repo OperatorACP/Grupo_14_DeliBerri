@@ -27,4 +27,9 @@ router.post("/productos/edit/:id", upload.any("image"), validationsMiddlewarePro
 router.get("/productos/delete/:id", authMiddleware, productsController.delete);
 router.post("/productos/delete/:id", authMiddleware, productsController.destroy);
 
+// SEARCH //
+
+router.post("/search", productsController.search);
+
+
 module.exports = router;

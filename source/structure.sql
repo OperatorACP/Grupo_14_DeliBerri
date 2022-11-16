@@ -84,8 +84,7 @@ CREATE TABLE `users` (
   `birthDate` date DEFAULT NULL,
   `nationality` varchar(45) DEFAULT NULL,
   `interestCategory` varchar(45) DEFAULT NULL,
-  `avatar` varchar(80) DEFAULT NULL,
-  `isAdmin` varchar(45) DEFAULT NULL
+  `avatar` varchar(80) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --

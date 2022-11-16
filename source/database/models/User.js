@@ -41,9 +41,7 @@ module.exports = function (sequelize, DataTypes) {
     avatar: {
       type: DataTypes.STRING,
     },
-    isAdmin: {
-      type: DataTypes.TINYINT(1),
-    },
+
   };
 
   let config = {
