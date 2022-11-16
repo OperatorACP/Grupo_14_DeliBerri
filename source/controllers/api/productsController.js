@@ -45,7 +45,7 @@ const apiProductsController = {
   lastProduct: (req, res) => {
     db.product
       .findOne({
-        // include: ["Category"],
+       
         order: [["id", "DESC"]],
       })
       .then((product) => {
@@ -54,7 +54,7 @@ const apiProductsController = {
           status: 200,
           product: {
             ...product,
-            image:'http://localhost:3001/img/'+product.image
+            image:'http://localhost:3001/img/' + product.image
           },
         });
       })
