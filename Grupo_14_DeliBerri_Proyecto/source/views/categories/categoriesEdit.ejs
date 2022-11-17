@@ -1,0 +1,43 @@
+
+   <!DOCTYPE html>
+   <html lang="en">
+   <head>
+      <title>DeliBerri</title>
+      <link rel="icon" type="image/x-icon" href="../../../img/favicon.ico"/> 
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" href="/css/main.css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+      <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+       <meta charset="UTF-8">
+       <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+</head>
+
+<%-include('../partials/header')%>
+
+<body>
+
+    <h1 class="titulo">Categoria:  <%= category.name %></h1>
+<h2>
+    <section class="formulario">
+</h2>
+        <form action="/categorias/edit/<%= category.id %>?_method=POST" method="POST">
+
+            <label for="name">Nombre </label>
+
+            <p><input type="text" name="name" id="name" value="<%= category.name %>" required></p>
+           
+            <p> <button class="botonAgregar" type="submit">Guardar</button>
+        
+            <a  class="botonVolver" href="/categorias">Volver al Listado</a></p>
+
+        </form>
+        
+    </section>
+
+</body>
+
+<%-include('../partials/footer')%> 
+
+</html>

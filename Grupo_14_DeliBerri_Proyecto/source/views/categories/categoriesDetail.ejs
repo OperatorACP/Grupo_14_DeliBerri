@@ -1,0 +1,44 @@
+
+
+   <!DOCTYPE html>
+   <html lang="en">
+   <head>
+      <title>DeliBerri</title>
+      <link rel="icon" type="image/x-icon" href="../../../img/favicon.ico"/> 
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" href="/css/main.css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+      <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+       <meta charset="UTF-8">
+       <meta name="viewport" content="width=device-width, initial-scale=1.0">
+       <title><%= category.name %> </title>
+</head>
+
+<%-include('../partials/header')%>
+
+<body>
+   <h1>
+      <%= category.name %>
+   </h1>
+   <br>
+   <p>NAME: <%= category.name %>
+   </p>
+   <p>ID: <%= category.id %>
+   </p>
+
+<a href="/categorias/edit/<%=category.id%>">
+<button>Editar la categoría </button>
+</a>
+<a href="/categorias/delete/<%=category.id%>">
+<button>Eliminar la categoria </button>
+</a>
+<p>
+   <a class="botonVolver" href="/categorias">Volver al Listado de Categorias</a>
+</p>
+</body>
+
+<%-include('../partials/footer')%>
+
+
+</html>

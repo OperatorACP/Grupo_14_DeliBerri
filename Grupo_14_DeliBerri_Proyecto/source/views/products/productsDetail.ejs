@@ -1,0 +1,50 @@
+<%-include('../partials/head')%>
+   <title>DeliBerri - Detalle de producto</title>
+
+
+
+   <body>
+
+      <%-include('../partials/header')%>
+
+         <main>
+
+            <section class="conteiner-detalleProducto">
+
+               <div class="products-conteiner-detalleProducto">
+
+                  <div class="product-detalleProducto" data-name="p-1">
+                     <picture class="product-image-detalleProducto"><img src="/img/<%= product.image %>" alt=""
+                           class="product-imageconteiner-detalleProducto"></picture>
+                     <h3 class="product-name-detalleProducto">
+                        <%= product.title %>
+                     </h3>
+                     <div class="price-detalleProducto">$<%= product.price %></div>
+                     <p class="description-detalleProducto">
+                        <%= product.description %>
+                     </p>
+
+                     <p class="stock-detalleProducto">Stock disponible</p>
+                     <div class="price-detalleProducto">Descuento %<%= product.promotion %></div>
+
+                     <div class="buttons-detalleProducto">
+                        <a class="boton-formulario-register" href="/productos/edit/<%=product.id%>" style="color: white">Editar el producto</a>
+                        <a class="boton-formulario-register" href="/productos/delete/<%=product.id%>" style="color: white">Eliminar el producto</a>
+                     </div>
+                  </div>
+
+               </div>
+
+            </section>
+
+            <div class="control-formulario">
+               <a class="boton-formulario-register" href="/productos">Volver al Listado de Productos</a>
+            </div>
+
+         </main>
+
+         <%-include('../partials/footer')%>
+
+   </body>
+
+   </html>

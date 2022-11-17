@@ -1,0 +1,77 @@
+<%-include('../partials/head')%>
+   <title>DeliBerri - Editar Productos</title>
+
+   <body>
+
+      <%-include('../partials/header')%>
+
+         <div class="control-formulario-login">
+            EDITAR PRODUCTO
+         </div>
+
+         <form class="products" action="/productos/edit/<%= product.id %>?_method=POST" method="POST">
+
+            <div class="control-formulario-login">
+               <input class="control" type="text" name="title" id="title" placeholder="Nombre"
+                  value="<%= product.title %>">
+            </div>
+
+            <div class="control-formulario-login">
+               <input class="control" type="text" name="price" id="price" placeholder="Precio"
+                  value="<%= product.price %>">
+            </div>
+
+            <div class="control-formulario-login">
+               <input class="control" type="text" name="description" id="description" placeholder="Descripción"
+                  value="<%= product.description %>">
+            </div>
+
+            <div class="control-formulario-login">
+               <label for="name">Status de Promoción </label>
+            </div>
+            <div class="control-formulario-login">
+               <p><input type="radio" name="promotion" id="promotion" value="0" checked>Sin Descuento</p>
+               <p><input type="radio" name="promotion" id="promotion" value="25">25%</p>
+               <p><input type="radio" name="promotion" id="promotion" value="50">50%</p>
+               <p><input type="radio" name="promotion" id="promotion" value="75">75%</p>
+            </div>
+
+            <div class="control-formulario-login">
+               <label for="name">Imagen del Producto </label>
+               <div class="control-formulario-login">
+                  <input type="file" name="image" id="image" value="<%= product.image %>">
+               </div>
+            </div>
+
+            <div class="control-formulario">
+               <label for="name">Categoría </label>
+               <select name="interestCategory" value="interestCategory" id="interestCategory">
+                  <option value="1">Licores </option>
+                  <option value="2"> Cervezas</option>
+                  <option value="3">Vinos</option>
+                  <option value="4">Bebidas No Alcoholicas</option>
+                  <option value="5">Otros</option>
+                  <option value="6">No tengo preferencia</option>
+               </select>
+            </div>
+
+            <div class="control-formulario">
+               <div style="color: red" class="errores">
+                  <ul></ul>
+               </div>
+            </div>
+
+            <div class="control-formulario">
+               <button class="boton-formulario-register" type="submit">Guardar cambios</button>
+               <a class="boton-formulario-register" href="/productos">Volver al Listado de Productos</a>
+            </div>
+
+         </form>
+
+         <script src='/js/productsAddValidation.js'></script>
+
+         <%-include('../partials/footer')%>
+
+   </body>
+
+   </html>

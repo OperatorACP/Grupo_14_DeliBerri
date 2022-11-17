@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <title>DeliBerri</title>
+   <link rel="icon" type="image/x-icon" href="../../../img/favicon.ico"/> 
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <link rel="stylesheet" href="/css/main.css">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+   <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= category.name %> </title>
+</head>
+
+<body>
+   <h1>Estas seguro de querer borrar esta categoría: <%= category.name %>???</h1>
+   <p>
+   <form action="/categorias/delete/<%= category.id %>?_method=PUT" method="POST">
+      <br>
+      <p> <button class="botonBorrar" type="submit">Borrar la Categoría</button>
+
+         <a class="botonVolver" href="/categories">Listado de Categorías</a>
+      </p>
+
+   </form>
+   </p>
+
+</body>
+
+<%-include('../partials/footer')%>
+
+
+</html>

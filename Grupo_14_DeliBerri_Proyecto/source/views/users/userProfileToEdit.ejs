@@ -1,0 +1,52 @@
+<%-include('../partials/head')%>
+   <title>DeliBerri - Editar Usuario</title>
+
+   <body>
+
+      <%-include('../partials/header')%>
+
+         <form class="register" action="/profileToEdit/<%=locals.userLogged.id %>?_method=POST" method="POST"
+            enctype="multipart/form-data">
+
+            <div class="control-formulario">
+               <h2 class="h2-prof-edit">¿Qué deseas modificar?</h2>
+            </div>
+            <div class="control-formulario-login">
+               <label>Nombre</label>
+               <input placeholder="Nombre/s" class="control" type="text" name="name"
+                  value="<%= locals.userLogged.name %>">
+            </div>
+            <div class="control-formulario-login">
+               <label>Apellido</label>
+               <input placeholder="Apellido/s" class="control" type="text" name="lastname"
+                  value="<%= locals.userLogged.lastname %>">
+            </div>
+            <div class="control-formulario-login">
+               <label>Usuario</label>
+               <input placeholder="Usuario" class="control" type="text" name="user"
+                  value="<%= locals.userLogged.user %>">
+            </div>
+            <div class="control-formulario-login">
+               <label>Correo Electronico</label>
+               <input placeholder="Correo electronico" class="control" type="email" name="eMail"
+                  value="<%= locals.userLogged.email %>" disabled selected>
+            </div>
+            <div class="control-formulario-login">
+               <label>Avatar</label>
+               <div class="divAvatar">
+                  <input name="image" id="prod-image" type="file" multiple="multiple" class="addImagesProfileToEdit"
+                     accept=".jpg, .jpeg .png">
+               </div>
+            </div>
+
+            <div class="control-formulario"></div>
+            <button type="submit" class="boton-formulario-register">Guardar</button>
+            <div class="control-formulario"></div>
+
+         </form>
+
+         <%-include('../partials/footer')%>
+
+   </body>
+
+   </html>

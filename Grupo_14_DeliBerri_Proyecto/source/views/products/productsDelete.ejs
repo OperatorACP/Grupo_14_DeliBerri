@@ -1,0 +1,28 @@
+<%-include('../partials/head')%>
+   <title>DeliBerri - Eliminar Productos</title>
+
+   <%-include('../partials/header')%>
+
+      <body>
+
+         <div class="control-formulario-login">
+            Está seguro de querer borrar el producto <%= product.title %>?
+         </div>
+         <form action="/productos/delete/<%= product.id %>?_method=PUT" method="POST">
+
+            <div class="control-formulario">
+               <button class="boton-formulario-register" type="submit">Borrar el Producto</button>
+               <a class="boton-formulario-register" href="/productos">Volver al Listado de Productos</a>
+            </div>
+
+
+         </form>
+         </p>
+
+         <script src='/js/productsAddValidation.js'></script>
+
+         <%-include('../partials/footer')%>
+
+      </body>
+
+      </html>

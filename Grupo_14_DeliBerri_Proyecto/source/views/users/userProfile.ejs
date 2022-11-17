@@ -1,0 +1,49 @@
+<%-include('../partials/head')%>
+   <title>DeliBerri - Perfil de Usuario</title>
+
+   <body>
+
+      <%-include('../partials/header')%>
+
+         <% if (locals.registerSuccessful) { %>
+            <script>
+               alert('Registro exitoso')
+            </script>
+            <%} %>
+               <section class="user-profile">
+                  <div class="avatar-profile">
+                     <img class="profile-avatar" src="/img/<%= locals.userLogged.avatar || 'default-avatar.png' %>"
+                        alt="avatar" width="100%" height="100%">
+                  </div>
+                  <h2 class="h2-prof">Bienvenid@ <div class="user-text">
+                        <%= locals.userLogged.user %>
+                     </div>
+                  </h2>
+
+                  <div class="button-container">
+
+                     <form class="button-form" action="/" method="get">
+                        <button class="button">Página principal</button>
+                     </form>
+
+                     <form class="button-form" action="/productos" method="get">
+                        <button class="button">Listado de productos</button>
+                     </form>
+
+                     <form class="button-form" action="/profileToEdit/<%=locals.userLogged.id%>?_method=PUT"
+                        method="get">
+                        <button class="button" href="/profileToEdit">Editar usuario</button>
+                     </form>
+
+                     <form class="button-form" action="/logout" method="get">
+                        <button class="button">Cerrar sesión</button>
+                     </form>
+
+                  </div>
+               </section>
+
+               <%-include('../partials/footer')%>
+
+   </body>
+
+   </html>

@@ -1,0 +1,115 @@
+[
+ {
+   "id": 1,
+  "nombre": "Jose",
+  "apellido": "Molinas",
+  "usuario": "JM097",
+  "email": "josemolinas97@gmail.com",
+  "password": "$2a$10$lEBG8BUboZJkmdtj.9YRbu559ehUs2xM6Wksjlj3QI.7GOm440RIK",
+  "fecha": "1980-11-04",
+  "lugar": "Colombia",
+  "categoriaDeInteres": [
+   "Cervezas",
+   "Licores",
+   "Vinos"
+  ],
+  "avatar": "1663030831703_img.jpg"
+ },
+ {
+  "id": 2,
+  "nombre": "Axel Jose",
+  "apellido": "Caceres Prayones",
+  "usuario": "PachiiAxe",
+  "email": "axelcp1997@gmail.com",
+  "password": "$2a$10$upw2hn8oiLzt4B.Fx7vWP.uiEz9YblXyGj/j13a/rppY/8uGwsqWm",
+  "fecha": "1997-11-27",
+  "pais": "Paraguay",
+  "categoriaDeInteres": [
+   "Cervezas",
+   "Licores",
+   "Vinos",
+   "Bebidas No Alcoholicas",
+   "Otros"
+  ],
+  "avatar": "1663034972297_img.jpg"
+ },
+ {
+  "id": 3,
+  "nombre": "ENZO JAVIER",
+  "apellido": "BAROSI",
+  "usuario": "enzojb",
+  "email": "enzo@gmail.com",
+  "password": "$2a$10$Ezh7WwskDASqPFp9QG6OM.GhYPijgq8Mq8gHO8z2H9olWgmpT2l62",
+  "fecha": "1995-12-21",
+  "pais": "Argentina",
+  "categoriaDeInteres": [
+   "Cervezas",
+   "Vinos"
+  ],
+  "avatar": "1663089540293_img.jpg"
+ },
+ {
+  "id": 4,
+  "nombre": "Ivan",
+  "apellido": "Caceres",
+  "usuario": "Carling79",
+  "email": "ivan123@gmail.com",
+  "password": "$2a$10$n/JgQVJUxYaFpiv7ff/Tb.e.211JoPk0pvZGYQz6iXzs/Dp2sLrWW",
+  "fecha": "1111-11-11",
+  "pais": "Paraguay",
+  "categoriaDeInteres": [
+   "Cervezas",
+   "Licores",
+   "Vinos",
+   "Bebidas No Alcoholicas"
+  ],
+  "avatar": "1663886160119_img.jpg"
+ },
+ {
+  "id": 5,
+  "nombre": "dasd",
+  "apellido": "Caceresdasdsa",
+  "usuario": "dsadsad",
+  "email": "dasdsad@gmail.com",
+  "password": "$2a$10$NmPEekcn/K0YhyIulqMp6eTjuxiqLcVWdNVl0bZXqTHAu5PM2ti8.",
+  "fecha": "1111-11-11",
+  "pais": "Paraguay",
+  "categoriaDeInteres": [
+   "Cervezas",
+   "Licores",
+   "Vinos",
+   "Bebidas No Alcoholicas"
+  ],
+  "avatar": "1663886343789_img.jpg"
+ },
+ {
+  "id": 6,
+  "nombre": "asd",
+  "apellido": "asd",
+  "usuario": "asd",
+  "email": "asd@asd.com",
+  "password": "$2a$10$CWC.kthiUE0bIf5EBhYpnuZofh2tHtivmMjW89teZjmougK0QrHmK",
+  "fecha": "1111-11-11",
+  "pais": "Argentina",
+  "categoriaDeInteres": [
+   "Vinos",
+   "Bebidas No Alcoholicas"
+  ],
+  "avatar": "1664235353591_img.jpg"
+ },
+ {
+  "id": 7,
+  "name": "Jose",
+  "lastname": "Blabla",
+  "user": "jose123",
+  "email": "jose123@hotmail.com",
+  "password": "$2a$10$Mr8S8qkHiYpMUlWmvC9K7.86svtjuKuC0UTOwuGRWYEKOob.CnYQi",
+  "date": "1111-11-11",
+  "country": "Argentina",
+  "categoriaDeInteres": [
+   "Licores",
+   "Vinos"
+  ],
+  "avatar": "1666820881439_img.jpg"
+ }
+]

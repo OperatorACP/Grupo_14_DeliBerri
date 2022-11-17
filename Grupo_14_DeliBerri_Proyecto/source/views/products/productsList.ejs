@@ -1,0 +1,33 @@
+<%-include('../partials/head')%>
+   <title>DeliBerri - Listado de Productos</title>
+
+   <body>
+
+      <%-include('../partials/header')%>
+
+         <div class="control-formulario-login">
+            LISTADO DE PRODUCTOS
+         </div>
+
+         <div class="control-formulario-login">
+            <ul>
+               <% for( let i=0; i < products.length; i++ ) { %>
+                  <li>
+                     <a href="/productos/detalle/<%= products[i].id %>">
+                        <%= products[i].title %>
+                     </a>
+                  </li>
+                  <% } %>
+            </ul>
+         </div>
+
+         <div class="control-formulario">
+            <a class="boton-formulario-register" href="/productos/add">Agregar un Producto</a>
+            <a class="boton-formulario-register" href="/profile">Volver al Perfil</a>
+         </div>
+
+   </body>
+
+   <%-include('../partials/footer')%>
+
+      </html>
