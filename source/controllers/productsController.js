@@ -5,6 +5,19 @@ const {Op} = require('sequelize')
 
 const productsController = {
 
+  index: async (req, res) => {
+    db.product.findAll({
+        order: [["title", "ASC"]],
+    }) 
+       .then(products => {
+           res.render('index', {products});
+       console.log(products)}) 
+       .catch(err => {
+        res.send(err)
+
+    })
+},
+
   beers: async (req, res) => {
     db.product.findAll({
         order: [["title", "ASC"]],
@@ -58,6 +71,20 @@ promotions: async (req, res) => {
 
   })
 },
+
+refrescos: async (req, res) => {
+  db.product.findAll({
+      order: [["title", "ASC"]],
+  }) 
+     .then(products => {
+         res.render('main/refrescos', {products});
+     console.log(products)}) 
+     .catch(err => {
+      res.send(err)
+
+  })
+},
+
 
 
   list: async (req, res) => {

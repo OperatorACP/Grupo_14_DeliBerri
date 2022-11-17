@@ -5,201 +5,135 @@
 
       <%-include('./partials/header')%>
 
+      <main class="background">
+
+         <img class='main-banner' src="/img/Banner_Escabia3.jpg">
+
+
          <main class="background">
 
+          
+   
             <section class="conteiner">
                <h2 class="title">Promociones</h2>
                <div class="products-conteiner">
-
+                  <% for (let i = 0; i < products.length; i++){%>
+                     <% if (products[i].promotion > 0) {%>  
+   
+   
                   <div class="product" data-name="p-1">
-                     <img class="desierto25" src="/img/Desierto25-Malbec.jpeg" alt="">
-                     <h4 class="promo">35% off</h4>
-                     <div class="price">$7.267 ($̶11̶.̶1̶8̶0̶)</div>
-                     <h3 class="product-name">Cabernet Franc - Bodega Del Desierto x6 unidades</h3>
+                     <a href="/productos/detalle/<%=products[i].id%>"> 
+                        <img class="desierto25" src="/img/<%=products[i].image%>" alt="">
+                        </a> 
+                     <h4 class="promo"><%=products[i].description%></h4>
+                     <div class="price">$<%=products[i].price%></div>
+                     <h3 class="product-name"><%=products[i].title%></h3>
                      <div class="buttons">
                         <a href="#" class="buy">Comprar ahora</a>
                         <a href="#" class="cart">Añadir al carrito</a>
                      </div>
                   </div>
+                        <%}%>
+                        <%}%>
+               </section>
 
-                  <div class="product" data-name="p-2">
-                     <img class="red-bull-24" src="/img/red-bull-24.jpg" alt="">
-                     <h4 class="promo">20% off</h4>
-                     <div class="price">$7.267 ($̶5̶.̶8̶1̶3̶)</div>
-                     <h3 class="product-name">Energizante Red Bull Sugar Free 250 Ml Caja X24 Unidades </h3>
-                     <div class="buttons">
-                        <a href="#" class="buy">Comprar ahora</a>
-                        <a href="#" class="cart">Añadir al carrito</a>
-                     </div>
+         <section class="conteiner">
+            <h2 class="title">Licores</h2>
+            <div class="products-conteiner">
+               <% for (let i = 0; i < products.length; i++){%>
+                  <% if (products[i].category_id === 1) {%>  
+
+
+               <div class="product" data-name="p-1">
+                  <a href="/productos/detalle/<%=products[i].id%>"> 
+                     <img class="desierto25" src="/img/<%=products[i].image%>" alt="">
+                     </a> 
+                  <h4 class="promo"><%=products[i].description%></h4>
+                  <div class="price">$<%=products[i].price%></div>
+                  <h3 class="product-name"><%=products[i].title%></h3>
+                  <div class="buttons">
+                     <a href="#" class="buy">Comprar ahora</a>
+                     <a href="#" class="cart">Añadir al carrito</a>
                   </div>
-
-                  <div class="product" data-name="p-3">
-                     <img class="coca-cola" src="/img/coca-cola-2.25L.jpg" alt="">
-                     <h4 class="promo">20% off</h4>
-                     <div class="price">$2.056 ($̶2̶.̶5̶7̶0̶)</div>
-                     <h3 class="product-name">Gaseosa Coca Cola 2.25L Pack X6 Unidades</h3>
-                     <div class="buttons">
-                        <a href="#" class="buy">Comprar ahora</a>
-                        <a href="#" class="cart">Añadir al carrito</a>
-                     </div>
-                  </div>
-
-                  <div class="product" data-name="p-4">
-                     <img class="imperial-cream-scout-beer" src="/img/imperial-cream-stout-lata.jpg" alt="">
-                     <h4 class="promo">10% off</h4>
-                     <div class="price">$4.752 ($̶5̶.̶2̶8̶0̶)</div>
-                     <h3 class="product-name">Cerveza Imperial Cream Stout Negra Lata 473ml Pack X24 Promo</h3>
-                     <div class="buttons">
-                        <a href="#" class="buy">Comprar ahora</a>
-                        <a href="#" class="cart">Añadir al carrito</a>
-                     </div>
-                  </div>
-
                </div>
-            </section>
-
-            <section class="conteiner">
-               <h2 class="title">Cervezas</h2>
-               <div class="products-conteiner">
-
-                  <div class="product" data-name="p-1">
-                     <img src="/img/cerveza-andes-rubia.jpg" alt="">
-                     <div class="price">$6.770</div>
-                     <h3 class="product-name">Cerveza Andes Origen Rubia Golden rubia lata 473ml 6 unidades</h3>
-                     <div class="buttons">
-                        <a href="#" class="buy">Comprar ahora</a>
-                        <a href="#" class="cart">Añadir al carrito</a>
-                     </div>
-                  </div>
-
-                  <div class="product" data-name="p-2">
-                     <img src="/img/cerveza-andes-ipa.jpg" alt="">
-                     <div class="price">$6.770</div>
-                     <h3 class="product-name">Cerveza Andes Origen IPA lata 473ml 6 unidades</h3>
-                     <div class="buttons">
-                        <a href="#" class="buy">Comprar ahora</a>
-                        <a href="#" class="cart">Añadir al carrito</a>
-                     </div>
-                  </div>
-
-                  <div class="product" data-name="p-3">
-                     <img src="/img/cerveza-andes-roja.jpg" alt="">
-                     <div class="price">$6.770</div>
-                     <h3 class="product-name">Cerveza Andes Origen Roja Vienna Lager roja lata 473ml 6 unidades</h3>
-                     <div class="buttons">
-                        <a href="#" class="buy">Comprar ahora</a>
-                        <a href="#" class="cart">Añadir al carrito</a>
-                     </div>
-                  </div>
-
-                  <div class="product" data-name="p-4">
-                     <img src="/img/cerveza-heineken-rubia.jpg" alt="">
-                     <div class="price">$6.770</div>
-                     <h3 class="product-name">Cerveza Heineken Rubia lata 473ml 6 unidades</h3>
-                     <div class="buttons">
-                        <a href="#" class="buy">Comprar ahora</a>
-                        <a href="#" class="cart">Añadir al carrito</a>
-                     </div>
-                  </div>
-
-               </div>
-            </section>
-
-            <section class="conteiner">
-               <h2 class="title">Licores</h2>
-               <div class="products-conteiner">
-
-                  <div class="product" data-name="p-1">
-                     <img class="baileys" src="/img/baileys-original-irish-cream-liqueur.jpg" alt="">
-                     <div class="price">$3.147</div>
-                     <h3 class="product-name">Baileys Licor Original Crema Irlandesa Irish 750ml</h3>
-                     <div class="buttons">
-                        <a href="#" class="buy">Comprar ahora</a>
-                        <a href="#" class="cart">Añadir al carrito</a>
-                     </div>
-                  </div>
-
-                  <div class="product" data-name="p-2">
-                     <img class='fernet-branca' src="/img/fernet-branca-1l.jpg" alt="">
-                     <div class="price">$2.103</div>
-                     <h3 class="product-name">Fernet Branca 1000ml (1L)</h3>
-                     <div class="buttons">
-                        <a href="#" class="buy">Comprar ahora</a>
-                        <a href="#" class="cart">Añadir al carrito</a>
-                     </div>
-                  </div>
-
-                  <div class="product" data-name="p-3">
-                     <img class='blue-coracao' src="/img/blue-coracao.png" alt="">
-                     <div class="price">$6.979</div>
-                     <h3 class="product-name">Licor BOLS BLUE CURACAO 700ml </h3>
-                     <div class="buttons">
-                        <a href="#" class="buy">Comprar ahora</a>
-                        <a href="#" class="cart">Añadir al carrito</a>
-                     </div>
-                  </div>
-
-                  <div class="product" data-name="p-4">
-                     <img class='jagermeister' src="/img/jagermeister.jpg" alt="">
-                     <div class="price">$6.875</div>
-                     <h3 class="product-name">Jägermeister 700ml </h3>
-                     <div class="buttons">
-                        <a href="#" class="buy">Comprar ahora</a>
-                        <a href="#" class="cart">Añadir al carrito</a>
-                     </div>
-                  </div>
-
-               </div>
+                     <%}%>
+                     <%}%>
             </section>
 
             <section class="conteiner">
                <h2 class="title">Vinos</h2>
                <div class="products-conteiner">
-
+                  <% for (let i = 0; i < products.length; i++){%>
+                     <% if (products[i].category_id === 2) {%>  
+   
+   
                   <div class="product" data-name="p-1">
-                     <img class="cafayate" src="/img/cafayate-reserve-malbec.jpeg" alt="">
-                     <div class="price">$6.000</div>
-                     <h3 class="product-name">Vino tinto Malbec Cafayate Reserve bodega Etchart 750 ml</h3>
+                     <a href="/productos/detalle/<%=products[i].id%>"> 
+                        <img class="desierto25" src="/img/<%=products[i].image%>" alt="">
+                        </a> 
+                     <h4 class="promo"><%=products[i].description%></h4>
+                     <div class="price">$<%=products[i].price%></div>
+                     <h3 class="product-name"><%=products[i].title%></h3>
                      <div class="buttons">
                         <a href="#" class="buy">Comprar ahora</a>
                         <a href="#" class="cart">Añadir al carrito</a>
                      </div>
                   </div>
+                        <%}%>
+                        <%}%>
+               </section>
 
-                  <div class="product" data-name="p-2">
-                     <img class="calia-tinto" src="/img/vino_callia_tinto.jpg" alt="">
-                     <div class="price">$471</div>
-                     <h3 class="product-name">Vino Callia Malbec X 750 Ml</h3>
-                     <div class="buttons">
-                        <a href="#" class="buy">Comprar ahora</a>
-                        <a href="#" class="cart">Añadir al carrito</a>
+     <img class='main-banner' src='/img/banner-envios-27-oct.jpg'>
+
+               <section class="conteiner">
+                  <h2 class="title">Cervezas</h2>
+                  <div class="products-conteiner">
+                     <% for (let i = 0; i < products.length; i++){%>
+                        <% if (products[i].category_id === 3) {%>  
+      
+      
+                     <div class="product" data-name="p-1">
+                        <a href="/productos/detalle/<%=products[i].id%>"> 
+                           <img class="desierto25" src="/img/<%=products[i].image%>" alt="">
+                           </a> 
+                        <h4 class="promo"><%=products[i].description%></h4>
+                        <div class="price">$<%=products[i].price%></div>
+                        <h3 class="product-name"><%=products[i].title%></h3>
+                        <div class="buttons">
+                           <a href="#" class="buy">Comprar ahora</a>
+                           <a href="#" class="cart">Añadir al carrito</a>
+                        </div>
                      </div>
-                  </div>
+                           <%}%>
+                           <%}%>
+                  </section>
 
-                  <div class="product" data-name="p-3">
-                     <img class='calia-blanco' src="/img/vino_callia_blanco.jpg" alt="">
-                     <div class="price">$440</div>
-                     <h3 class="product-name">Vino Callia Tardio Rosado X 750 Ml</h3>
-                     <div class="buttons">
-                        <a href="#" class="buy">Comprar ahora</a>
-                        <a href="#" class="cart">Añadir al carrito</a>
-                     </div>
-                  </div>
+                  <section class="conteiner">
+                     <h2 class="title">Refrescos</h2>
+                     <div class="products-conteiner">
+                        <% for (let i = 0; i < products.length; i++){%>
+                           <% if (products[i].category_id === 4) {%>  
+         
+         
+                        <div class="product" data-name="p-1">
+                           <a href="/productos/detalle/<%=products[i].id%>"> 
+                              <img class="desierto25" src="/img/<%=products[i].image%>" alt="">
+                              </a> 
+                           <h4 class="promo"><%=products[i].description%></h4>
+                           <div class="price">$<%=products[i].price%></div>
+                           <h3 class="product-name"><%=products[i].title%></h3>
+                           <div class="buttons">
+                              <a href="#" class="buy">Comprar ahora</a>
+                              <a href="#" class="cart">Añadir al carrito</a>
+                           </div>
+                        </div>
+                              <%}%>
+                              <%}%>
+                     </section>
 
-                  <div class="product" data-name="p-4">
-                     <img class="trumpeter" src="/img/vino-trumpeter-malbec.png" alt="">
-                     <div class="price">$1.340</div>
-                     <h3 class="product-name">Vino Trumpeter Malbec 750ml Botella Tinto</h3>
-                     <div class="buttons">
-                        <a href="#" class="buy">Comprar ahora</a>
-                        <a href="#" class="cart">Añadir al carrito</a>
-                     </div>
-                  </div>
+            </main>
 
-               </div>
-            </section>
-
-         </main>
+        
 
          <%-include('./partials/footer')%>
 

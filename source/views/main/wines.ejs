@@ -5,6 +5,38 @@
 
       <%-include('../partials/header')%>
 
+
+      <main class="background">
+
+         <img class='main-banner' src='\img\banner_vinos.jpg'>
+
+         <section class="conteiner">
+            <h2 class="title"></h2>
+            <div class="products-conteiner">
+               <% for (let i = 0; i < products.length; i++){%>
+                  <% if (products[i].category_id === 3) {%>  
+
+
+               <div class="product" data-name="p-1">
+                  <a href="/productos/detalle/<%=products[i].id%>"> 
+                     <img class="desierto25" src="/img/<%=products[i].image%>" alt="">
+                     </a> 
+                  <h4 class="promo"><%=products[i].description%></h4>
+                  <div class="price">$<%=products[i].price%></div>
+                  <h3 class="product-name"><%=products[i].title%></h3>
+                  <div class="buttons">
+                     <a href="#" class="buy">Comprar ahora</a>
+                     <a href="#" class="cart">Añadir al carrito</a>
+                  </div>
+               </div>
+                     <%}%>
+                     <%}%>
+            </section>
+
+            </main>
+
+
+<!-- 
          <main class="background">
 
            
@@ -37,7 +69,7 @@
             </div>
          </section>
 
-         </main>
+         </main> -->
 
          <%-include('../partials/footer')%>
 
