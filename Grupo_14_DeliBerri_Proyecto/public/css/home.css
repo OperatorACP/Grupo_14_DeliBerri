@@ -121,6 +121,19 @@ position: relative;
 margin-left: 5px;
 }
 
+.fa-glass-whiskey {
+	color: #e91e63;
+	padding: 2px;
+	line-height: 25px;
+	position: relative;
+	margin-left: 5px;
+}
+
+.fa-glass-whiskey:hover{
+	color: #ffffff;
+}
+
+
 .fa-glass-martini:hover{
 	color: #ffffff;
 }
@@ -180,7 +193,17 @@ margin-left: 5px;
 	
     width: 100%;
     height: auto;
-    background-size: contain;
+    
+}
+
+.section-banners{
+	background: url('/img/banner_index3.jpg') no-repeat;
+    border: 3px solid #e91e63;
+	height: 400px;
+	width: 100%;
+	background-size: 100% auto;
+    background-position: 100%;
+	display: flex;
 }
 
 
