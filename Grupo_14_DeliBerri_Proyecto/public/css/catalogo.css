@@ -98,6 +98,7 @@ body{
 
 .promo{
 	color: #e91e63;
+	margin-top: 25px;
 }
 
 .desierto25{
@@ -175,9 +176,10 @@ body{
 }
 
 .buy{
-   display:block;
-	background: rgba(233, 30, 99, 0.1);
-	transition: 150ms;
+	display: block;
+    background: rgba(233, 30, 99, 0.1);
+    transition: 150ms;
+    margin-top: 25px;
 }
 .buy:hover{
 	background: rgba(233, 30, 99, 0.1);

@@ -57,7 +57,7 @@ CREATE TABLE `products` (
   `title` varchar(45) DEFAULT NULL,
   `price` decimal(10,0) DEFAULT NULL,
   `image` varchar(45) DEFAULT NULL,
-  `description` varchar(45) DEFAULT NULL,
+  `description` varchar(200) DEFAULT NULL,
   `promotion` int(11) DEFAULT NULL,
   `category_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
