@@ -2,7 +2,7 @@ const { join } = require("path");
 const express = require("express");
 const router = express.Router();
 const productsController = require("../controllers/productsController");
-
+const authMiddleware = require("../middlewares/authMiddleware");
 
 /* INDEX */
 
@@ -28,6 +28,10 @@ router.get("/sale", productsController.promotions);
 /* REFRESCOS */
 
 router.get("/refrescos", productsController.refrescos);
+
+// CARRITO DE COMPRAS
+
+router.get("/productCart", authMiddleware);
 
 router.get("/sale", (req, res) => {
   return res.render(join(__dirname, "../views/main/sale.ejs"));

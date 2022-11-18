@@ -1,8 +1,6 @@
 <%-include('../partials/head')%>
    <title>DeliBerri - Detalle de producto</title>
 
-
-
    <body>
 
       <%-include('../partials/header')%>
@@ -19,31 +17,42 @@
                      <h3 class="product-name-detalleProducto">
                         <%= product.title %>
                      </h3>
-                     <div class="price-detalleProducto">$<%= product.price %></div>
+                     <div class="price-detalleProducto">$<%= product.price %>
+                     </div>
                      <p class="description-detalleProducto">
                         <%= product.description %>
                      </p>
 
                      <p class="stock-detalleProducto">Stock disponible</p>
-                     <div class="price-detalleProducto">Descuento %<%= product.promotion %></div>
-
-                     <div class="buttons-detalleProducto">
-                        <a class="boton-formulario-register" href="/productos/edit/<%=product.id%>" style="color: white">Editar el producto</a>
-                        <a class="boton-formulario-register" href="/productos/delete/<%=product.id%>" style="color: white">Eliminar el producto</a>
+                     <div class="price-detalleProducto">Descuento %<%= product.promotion %>
                      </div>
+
+                     <% if (locals.isLogged) { %>
+                        <div class="buttons-detalleProducto">
+                           <a class="boton-formulario-register" href="/productos/edit/<%=product.id%>"
+                              style="color: white">Editar el producto</a>
+                           <a class="boton-formulario-register" href="/productos/delete/<%=product.id%>"
+                              style="color: white">Eliminar el producto</a>
+                        </div>
+                        <% } else { %>
+                           <div class="buttons">
+                              <a href="http://localhost:3001/productCart" class="cart">Comprar ahora</a>
+                              <a href="http://localhost:3001/productCart" class="cart">Añadir al carrito</a>
+                           </div>
+                           <% } %>
                   </div>
 
                </div>
 
             </section>
 
-            <div class="control-formulario">
-               <a class="boton-formulario-register" href="/productos">Volver al Listado de Productos</a>
-            </div>
+            <% if (locals.isLogged) { %>
+               <div class="control-formulario">
+                  <a class="boton-formulario-register" href="/productos">Volver al Listado de Productos</a>
+               </div>
+               <% } %></main>
 
-         </main>
-
-         <%-include('../partials/footer')%>
+                  <%-include('../partials/footer')%>
 
    </body>
 

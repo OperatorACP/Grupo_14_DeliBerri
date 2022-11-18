@@ -16,7 +16,7 @@ router.post(
 
 // READ //
 router.get("/productos", authMiddleware, productsController.list);
-router.get("/productos/detalle/:id", authMiddleware, productsController.detail);
+router.get("/productos/detalle/:id", productsController.detail);
 
 // UPDATE //
 router.get("/productos/edit/:id", authMiddleware, productsController.edit);
