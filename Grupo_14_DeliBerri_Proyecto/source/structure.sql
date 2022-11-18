@@ -84,12 +84,16 @@ CREATE TABLE `users` (
   `birthDate` date DEFAULT NULL,
   `nationality` varchar(45) DEFAULT NULL,
   `interestCategory` varchar(45) DEFAULT NULL,
-  `avatar` varchar(80) DEFAULT NULL
+  `avatar` varchar(80) DEFAULT NULL,
+  `isAdmin` varchar(80) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Volcado de datos para la tabla `users`
 --
+
+INSERT INTO `users` (`id`, `name`, `lastname`, `user`, `email`, `password`, `birthDate`, `nationality`, `interestCategory`, `avatar`, `isAdmin`) VALUES
+(1, 'Enzo', 'Barosi', 'enzobarosi', 'enzobarosi@gmail.com', '$2a$10$UqMZN5F6rJtsugJPGGUjluzie3oV492578F8Ppt1TyNolLZkEeBlO', '1995-12-21', 'Argentina', '3', 'image-1668734999803.jpg', NULL);
 
 
 --

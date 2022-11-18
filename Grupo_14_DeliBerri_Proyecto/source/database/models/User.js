@@ -42,6 +42,10 @@ module.exports = function (sequelize, DataTypes) {
       type: DataTypes.STRING,
     },
 
+    isAdmin: {
+      type: DataTypes.STRING,
+    }
+
   };
 
   let config = {

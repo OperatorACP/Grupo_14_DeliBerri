@@ -185,13 +185,13 @@ refrescos: async (req, res) => {
   },
 
 	search: (req, res) =>{
-		db.Product.findAll({
+		db.product.findAll({
 			where:{
 				title: {[Op.like] : "%" + req.body.title + "%"}
 			}
 		})
 			.then(products => {
-				res.render('product', {products})
+				res.render('products/productsList', {products})
 			})
 			.catch(err => {
                 res.send(err)
