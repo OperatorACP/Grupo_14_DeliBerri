@@ -117,9 +117,9 @@ refrescos: async (req, res) => {
       .create({
         title: req.body.title,
         price: req.body.price,
+        image: req.files ? req.files[0].filename : null,
         description: req.body.description,
         promotion: req.body.promotion,
-        image: req.files[0].filename,
         category_id: req.body.interestCategory,
       })
       .then(() => {
@@ -145,15 +145,14 @@ refrescos: async (req, res) => {
   },
 
   update: function (req, res) {
-    db.product
-      .update(
+    db.product.update(
         {
           title: req.body.title,
           price: req.body.price,
+          image: req.files ? req.files[0].filename : null,
           description: req.body.description,
           promotion: req.body.promotion,
-         //  image: req.files[0].filename, <-- NO FUNCIONA
-          category_id: req.body.interestCategory,
+          category_id: req.body.interestCategory
         },
         {
           where: {
