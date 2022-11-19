@@ -1,0 +1,48 @@
+  <%-include('../partials/head')%>
+     <title>DeliBerri - Busqueda</title>
+  
+     <body>
+  
+        <%-include('../partials/header')%>
+  
+           <main class="background">
+  
+              <div class="banner">
+                 <div class="capa"></div>
+                 <div class="info">
+                 </div>
+              </div>
+  
+              <section class="conteiner">
+                 <h2 class="title">Resultado de Busqueda</h2>
+                 <div class="products-conteiner">
+                    <% for (let i=0; i < products.length; i++){%>
+                     
+                          <div class="product" data-name="p-1">
+                             <a href="/productos/detalle/<%=products[i].id%>">
+                                <img class="desierto25" src="img\<%=products[i].image%>" alt="">
+                             </a>
+                             <h3 class="product-name">
+                                <%=products[i].title%>
+                             </h3>
+                             <div class="price">$<%=products[i].price%>
+                             </div>
+                             <h4 class="promo">
+                                <%=products[i].description%>
+                             </h4>
+                             <div class="buttons">
+                                <a href="http://localhost:3001/productCart" class="cart">Comprar ahora</a>
+                                <a href="http://localhost:3001/productCart" class="cart">Añadir al carrito</a>
+                             </div>
+                          </div>
+                          <%}%>
+                           
+              </section>
+  
+           </main>
+  
+           <%-include('../partials/footer')%>
+  
+     </body>
+  
+     </html>

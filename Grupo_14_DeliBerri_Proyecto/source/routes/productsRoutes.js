@@ -29,7 +29,7 @@ router.post("/productos/delete/:id", authMiddleware, productsController.destroy)
 
 // SEARCH //
 
-router.post("/productos/search", productsController.search);
+router.post("/search", productsController.search);
 
 
 module.exports = router;

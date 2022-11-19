@@ -190,7 +190,7 @@ refrescos: async (req, res) => {
 			}
 		})
 			.then(products => {
-				res.render('products/productsList', {products})
+				res.render("products/productsSearchResult", {products})
 			})
 			.catch(err => {
                 res.send(err)
