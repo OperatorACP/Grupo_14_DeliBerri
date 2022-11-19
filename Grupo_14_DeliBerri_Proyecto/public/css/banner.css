@@ -7,16 +7,17 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
+
 }
 @keyframes banner{
 	0%, 20%{
 		background-image: url("/img/banner_index3.jpg");
 	}
 	25%, 45%{
-		background-image: url("/img/banner_index.jpg");
+		background-image: url('/img/banner_index_4.jpg');
 	}
 	50%, 70%{
-		background-image: url("/img/banner_index_2.jpg");
+		background-image: url("/img/banner_index_5.jpg");
 	}
 	75%, 100%{
 		background-image: url("/img/banner_promo.jpg");
@@ -29,6 +30,7 @@
 	top: 0;
 	left: 0;
 	background: rgba(0,0,0,0.3);
+	border: 3px solid #e91e63;
 }
 .info{
 	z-index: 1;
