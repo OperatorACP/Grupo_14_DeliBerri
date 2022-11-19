@@ -6,38 +6,47 @@
       <%-include('../partials/header')%>
 
 
-      <main class="background">
+         <main class="background">
 
-         <img class='section-banners' src='\img\banner_vinos.jpg'>
+            <div class="banner">
+               <div class="capa"></div>
+               <div class="info">
+               </div>
+            </div>
 
-         <section class="conteiner">
-            <h2 class="title">Vinos</h2>
-            <div class="products-conteiner">
-               <% for (let i = 0; i < products.length; i++){%>
-                  <% if (products[i].category_id === 3) {%>  
+            <section class="conteiner">
+               <h2 class="title">Vinos</h2>
+               <div class="products-conteiner">
+                  <% for (let i=0; i < products.length; i++){%>
+                     <% if (products[i].category_id===3) {%>
 
 
-               <div class="product" data-name="p-1">
-                  <a href="/productos/detalle/<%=products[i].id%>"> 
-                     <img class="desierto25" src="/img/<%=products[i].image%>" alt="">
-                     </a> 
-                     <h3 class="product-name"><%=products[i].title%></h3>
-                  <h4 class="promo"><%=products[i].description%></h4>
-                  <div class="price">$<%=products[i].price%></div>
-                  <p class="stock-detalleProducto">Stock disponible</p>
-                  <div class="buttons">
+                        <div class="product" data-name="p-1">
+                           <a href="/productos/detalle/<%=products[i].id%>">
+                              <img class="desierto25" src="/img/<%=products[i].image%>" alt="">
+                           </a>
+                           <h3 class="product-name">
+                              <%=products[i].title%>
+                           </h3>
+                           <h4 class="promo">
+                              <%=products[i].description%>
+                           </h4>
+                           <div class="price">$<%=products[i].price%>
+                           </div>
+                           <p class="stock-detalleProducto">Stock disponible</p>
+                           <div class="buttons">
                               <a href="http://localhost:3001/productCart" class="cart">Comprar ahora</a>
                               <a href="http://localhost:3001/productCart" class="cart">Añadir al carrito</a>
-                  </div>
-               </div>
-                     <%}%>
-                     <%}%>
+                           </div>
+                        </div>
+                        <%}%>
+                           <%}%>
             </section>
 
-            </main>
+         </main>
 
 
-<!-- 
+         <!-- 
          <main class="background">
 
            
@@ -75,7 +84,7 @@
          <%-include('../partials/footer')%>
 
    </body>
-   
+
    </html>
 
    </html>
