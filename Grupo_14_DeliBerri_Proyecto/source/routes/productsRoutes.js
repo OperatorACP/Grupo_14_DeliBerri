@@ -21,7 +21,7 @@ router.get("/productos/detalle/:id", productsController.detail);
 
 // UPDATE //
 router.get("/productos/edit/:id", authMiddleware, productsController.edit);
-router.post("/productos/edit/:id",authMiddleware, upload.any('image'),  validationsMiddlewareProducts,  productsController.update);
+router.post("/productos/edit/:id",upload.any('image'), authMiddleware,  validationsMiddlewareProducts,  productsController.update);
 
 // DELETE //
 router.get("/productos/delete/:id", authMiddleware, productsController.delete);

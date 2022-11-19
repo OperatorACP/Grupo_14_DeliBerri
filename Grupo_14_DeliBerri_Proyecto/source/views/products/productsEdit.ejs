@@ -9,7 +9,7 @@
             EDITAR PRODUCTO
          </div>
 
-      <form class="products"action="/productos/edit/<%= product.id %>?_method=POST" method="POST">
+      <form class="products"action="/productos/edit/<%= product.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
 
             <div class="control-formulario-login">
                <input class="control" type="text" name="title" id="title" placeholder="Nombre" value="<%= product.title %>">
