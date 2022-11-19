@@ -425,6 +425,7 @@ ul {
     transition: 0.3s;
     padding-top: 1rem;
     margin-left: 80px;
+    margin-bottom: 2px;
   }
 
   .nav-item {
