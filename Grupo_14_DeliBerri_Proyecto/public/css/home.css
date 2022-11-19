@@ -311,6 +311,7 @@ ul {
     text-align: center;
     transition: 0.3s;
     padding-top: 1rem;
+    gap: 29px !important;
   }
 
   .nav-item {
