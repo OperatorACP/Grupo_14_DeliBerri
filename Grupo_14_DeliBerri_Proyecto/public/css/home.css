@@ -29,6 +29,7 @@ a {
   display: flex;
   padding: 0 1.5rem;
   background: none;
+  justify-content: center;
 }
 
 .nav-link {
