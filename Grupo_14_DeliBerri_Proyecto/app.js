@@ -11,7 +11,7 @@ server.use(express.urlencoded({ extended: true }));
 
 const statics = require("./modules/static");
 server.use(cookies());
-server.use(statics(join(__dirname, "../public")));
+server.use(statics(join(__dirname, "/public")));
 server.use(methodOverride("m"));
 server.use(session( {secret: "Shh, it's a secret!",resave: false,saveUninitialized: false,} ));
 server.use(cors());

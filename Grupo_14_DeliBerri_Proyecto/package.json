@@ -2,9 +2,9 @@
   "name": "Deliberri",
   "version": "1.0.0",
   "description": "Proyecto integrador Grupo 14 Digital House",
-  "main": "source/app.js",
+  "main": "app.js",
   "scripts": {
-    "test": "nodemon source/app.js -e js,mjs,json,ejs,css",
+    "test": "nodemon app.js -e js,mjs,json,ejs,css",
     "sq": "sequelize init"
   },
   "keywords": [],
